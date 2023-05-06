@@ -8,30 +8,111 @@ else:
 # This class defines a complete listener for a parse tree produced by VyperParser.
 class VyperListener(ParseTreeListener):
 
-    # Enter a parse tree produced by VyperParser#single_input.
-    def enterSingle_input(self, ctx:VyperParser.Single_inputContext):
+    # Enter a parse tree produced by VyperParser#module.
+    def enterModule(self, ctx:VyperParser.ModuleContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#single_input.
-    def exitSingle_input(self, ctx:VyperParser.Single_inputContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#file_input.
-    def enterFile_input(self, ctx:VyperParser.File_inputContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#file_input.
-    def exitFile_input(self, ctx:VyperParser.File_inputContext):
+    # Exit a parse tree produced by VyperParser#module.
+    def exitModule(self, ctx:VyperParser.ModuleContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#eval_input.
-    def enterEval_input(self, ctx:VyperParser.Eval_inputContext):
+    # Enter a parse tree produced by VyperParser#importname.
+    def enterImportname(self, ctx:VyperParser.ImportnameContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#eval_input.
-    def exitEval_input(self, ctx:VyperParser.Eval_inputContext):
+    # Exit a parse tree produced by VyperParser#importname.
+    def exitImportname(self, ctx:VyperParser.ImportnameContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#importpath.
+    def enterImportpath(self, ctx:VyperParser.ImportpathContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#importpath.
+    def exitImportpath(self, ctx:VyperParser.ImportpathContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#importalias.
+    def enterImportalias(self, ctx:VyperParser.ImportaliasContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#importalias.
+    def exitImportalias(self, ctx:VyperParser.ImportaliasContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#importlist.
+    def enterImportlist(self, ctx:VyperParser.ImportlistContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#importlist.
+    def exitImportlist(self, ctx:VyperParser.ImportlistContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#importfrom.
+    def enterImportfrom(self, ctx:VyperParser.ImportfromContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#importfrom.
+    def exitImportfrom(self, ctx:VyperParser.ImportfromContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#import_.
+    def enterImport_(self, ctx:VyperParser.Import_Context):
+        pass
+
+    # Exit a parse tree produced by VyperParser#import_.
+    def exitImport_(self, ctx:VyperParser.Import_Context):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#constantdef.
+    def enterConstantdef(self, ctx:VyperParser.ConstantdefContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#constantdef.
+    def exitConstantdef(self, ctx:VyperParser.ConstantdefContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#immutabledef.
+    def enterImmutabledef(self, ctx:VyperParser.ImmutabledefContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#immutabledef.
+    def exitImmutabledef(self, ctx:VyperParser.ImmutabledefContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#variable.
+    def enterVariable(self, ctx:VyperParser.VariableContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#variable.
+    def exitVariable(self, ctx:VyperParser.VariableContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#variablewithgetter.
+    def enterVariablewithgetter(self, ctx:VyperParser.VariablewithgetterContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#variablewithgetter.
+    def exitVariablewithgetter(self, ctx:VyperParser.VariablewithgetterContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#variabledef.
+    def enterVariabledef(self, ctx:VyperParser.VariabledefContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#variabledef.
+    def exitVariabledef(self, ctx:VyperParser.VariabledefContext):
         pass
 
 
@@ -53,21 +134,12 @@ class VyperListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#decorated.
-    def enterDecorated(self, ctx:VyperParser.DecoratedContext):
+    # Enter a parse tree produced by VyperParser#parameter.
+    def enterParameter(self, ctx:VyperParser.ParameterContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#decorated.
-    def exitDecorated(self, ctx:VyperParser.DecoratedContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#funcdef.
-    def enterFuncdef(self, ctx:VyperParser.FuncdefContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#funcdef.
-    def exitFuncdef(self, ctx:VyperParser.FuncdefContext):
+    # Exit a parse tree produced by VyperParser#parameter.
+    def exitParameter(self, ctx:VyperParser.ParameterContext):
         pass
 
 
@@ -80,39 +152,210 @@ class VyperListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#typedargslist.
-    def enterTypedargslist(self, ctx:VyperParser.TypedargslistContext):
+    # Enter a parse tree produced by VyperParser#returns_.
+    def enterReturns_(self, ctx:VyperParser.Returns_Context):
         pass
 
-    # Exit a parse tree produced by VyperParser#typedargslist.
-    def exitTypedargslist(self, ctx:VyperParser.TypedargslistContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#tfpdef.
-    def enterTfpdef(self, ctx:VyperParser.TfpdefContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#tfpdef.
-    def exitTfpdef(self, ctx:VyperParser.TfpdefContext):
+    # Exit a parse tree produced by VyperParser#returns_.
+    def exitReturns_(self, ctx:VyperParser.Returns_Context):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#varargslist.
-    def enterVarargslist(self, ctx:VyperParser.VarargslistContext):
+    # Enter a parse tree produced by VyperParser#functionsig.
+    def enterFunctionsig(self, ctx:VyperParser.FunctionsigContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#varargslist.
-    def exitVarargslist(self, ctx:VyperParser.VarargslistContext):
+    # Exit a parse tree produced by VyperParser#functionsig.
+    def exitFunctionsig(self, ctx:VyperParser.FunctionsigContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#vfpdef.
-    def enterVfpdef(self, ctx:VyperParser.VfpdefContext):
+    # Enter a parse tree produced by VyperParser#functiondef.
+    def enterFunctiondef(self, ctx:VyperParser.FunctiondefContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#vfpdef.
-    def exitVfpdef(self, ctx:VyperParser.VfpdefContext):
+    # Exit a parse tree produced by VyperParser#functiondef.
+    def exitFunctiondef(self, ctx:VyperParser.FunctiondefContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#eventmember.
+    def enterEventmember(self, ctx:VyperParser.EventmemberContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#eventmember.
+    def exitEventmember(self, ctx:VyperParser.EventmemberContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#indexedeventarg.
+    def enterIndexedeventarg(self, ctx:VyperParser.IndexedeventargContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#indexedeventarg.
+    def exitIndexedeventarg(self, ctx:VyperParser.IndexedeventargContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#eventbody.
+    def enterEventbody(self, ctx:VyperParser.EventbodyContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#eventbody.
+    def exitEventbody(self, ctx:VyperParser.EventbodyContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#eventdef.
+    def enterEventdef(self, ctx:VyperParser.EventdefContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#eventdef.
+    def exitEventdef(self, ctx:VyperParser.EventdefContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#enummember.
+    def enterEnummember(self, ctx:VyperParser.EnummemberContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#enummember.
+    def exitEnummember(self, ctx:VyperParser.EnummemberContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#enumbody.
+    def enterEnumbody(self, ctx:VyperParser.EnumbodyContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#enumbody.
+    def exitEnumbody(self, ctx:VyperParser.EnumbodyContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#enumdef.
+    def enterEnumdef(self, ctx:VyperParser.EnumdefContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#enumdef.
+    def exitEnumdef(self, ctx:VyperParser.EnumdefContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#arraydef.
+    def enterArraydef(self, ctx:VyperParser.ArraydefContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#arraydef.
+    def exitArraydef(self, ctx:VyperParser.ArraydefContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#simple_arraydef.
+    def enterSimple_arraydef(self, ctx:VyperParser.Simple_arraydefContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#simple_arraydef.
+    def exitSimple_arraydef(self, ctx:VyperParser.Simple_arraydefContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#dynarraydef.
+    def enterDynarraydef(self, ctx:VyperParser.DynarraydefContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#dynarraydef.
+    def exitDynarraydef(self, ctx:VyperParser.DynarraydefContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#index.
+    def enterIndex(self, ctx:VyperParser.IndexContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#index.
+    def exitIndex(self, ctx:VyperParser.IndexContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#dynindex.
+    def enterDynindex(self, ctx:VyperParser.DynindexContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#dynindex.
+    def exitDynindex(self, ctx:VyperParser.DynindexContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#tupledef.
+    def enterTupledef(self, ctx:VyperParser.TupledefContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#tupledef.
+    def exitTupledef(self, ctx:VyperParser.TupledefContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#mapdef.
+    def enterMapdef(self, ctx:VyperParser.MapdefContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#mapdef.
+    def exitMapdef(self, ctx:VyperParser.MapdefContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#type_.
+    def enterType_(self, ctx:VyperParser.Type_Context):
+        pass
+
+    # Exit a parse tree produced by VyperParser#type_.
+    def exitType_(self, ctx:VyperParser.Type_Context):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#structmember.
+    def enterStructmember(self, ctx:VyperParser.StructmemberContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#structmember.
+    def exitStructmember(self, ctx:VyperParser.StructmemberContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#structdef.
+    def enterStructdef(self, ctx:VyperParser.StructdefContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#structdef.
+    def exitStructdef(self, ctx:VyperParser.StructdefContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#mutability.
+    def enterMutability(self, ctx:VyperParser.MutabilityContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#mutability.
+    def exitMutability(self, ctx:VyperParser.MutabilityContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#interfacefunction.
+    def enterInterfacefunction(self, ctx:VyperParser.InterfacefunctionContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#interfacefunction.
+    def exitInterfacefunction(self, ctx:VyperParser.InterfacefunctionContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#interfacedef.
+    def enterInterfacedef(self, ctx:VyperParser.InterfacedefContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#interfacedef.
+    def exitInterfacedef(self, ctx:VyperParser.InterfacedefContext):
         pass
 
 
@@ -125,39 +368,39 @@ class VyperListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#simple_stmt.
-    def enterSimple_stmt(self, ctx:VyperParser.Simple_stmtContext):
+    # Enter a parse tree produced by VyperParser#declaration.
+    def enterDeclaration(self, ctx:VyperParser.DeclarationContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#simple_stmt.
-    def exitSimple_stmt(self, ctx:VyperParser.Simple_stmtContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#small_stmt.
-    def enterSmall_stmt(self, ctx:VyperParser.Small_stmtContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#small_stmt.
-    def exitSmall_stmt(self, ctx:VyperParser.Small_stmtContext):
+    # Exit a parse tree produced by VyperParser#declaration.
+    def exitDeclaration(self, ctx:VyperParser.DeclarationContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#expr_stmt.
-    def enterExpr_stmt(self, ctx:VyperParser.Expr_stmtContext):
+    # Enter a parse tree produced by VyperParser#multipleassign.
+    def enterMultipleassign(self, ctx:VyperParser.MultipleassignContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#expr_stmt.
-    def exitExpr_stmt(self, ctx:VyperParser.Expr_stmtContext):
+    # Exit a parse tree produced by VyperParser#multipleassign.
+    def exitMultipleassign(self, ctx:VyperParser.MultipleassignContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#testlist_star_expr.
-    def enterTestlist_star_expr(self, ctx:VyperParser.Testlist_star_exprContext):
+    # Enter a parse tree produced by VyperParser#assign.
+    def enterAssign(self, ctx:VyperParser.AssignContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#testlist_star_expr.
-    def exitTestlist_star_expr(self, ctx:VyperParser.Testlist_star_exprContext):
+    # Exit a parse tree produced by VyperParser#assign.
+    def exitAssign(self, ctx:VyperParser.AssignContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#augoperator.
+    def enterAugoperator(self, ctx:VyperParser.AugoperatorContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#augoperator.
+    def exitAugoperator(self, ctx:VyperParser.AugoperatorContext):
         pass
 
 
@@ -170,354 +413,129 @@ class VyperListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#del_stmt.
-    def enterDel_stmt(self, ctx:VyperParser.Del_stmtContext):
+    # Enter a parse tree produced by VyperParser#passstmt.
+    def enterPassstmt(self, ctx:VyperParser.PassstmtContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#del_stmt.
-    def exitDel_stmt(self, ctx:VyperParser.Del_stmtContext):
+    # Exit a parse tree produced by VyperParser#passstmt.
+    def exitPassstmt(self, ctx:VyperParser.PassstmtContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#pass_stmt.
-    def enterPass_stmt(self, ctx:VyperParser.Pass_stmtContext):
+    # Enter a parse tree produced by VyperParser#breakstmt.
+    def enterBreakstmt(self, ctx:VyperParser.BreakstmtContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#pass_stmt.
-    def exitPass_stmt(self, ctx:VyperParser.Pass_stmtContext):
+    # Exit a parse tree produced by VyperParser#breakstmt.
+    def exitBreakstmt(self, ctx:VyperParser.BreakstmtContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#flow_stmt.
-    def enterFlow_stmt(self, ctx:VyperParser.Flow_stmtContext):
+    # Enter a parse tree produced by VyperParser#continuestmt.
+    def enterContinuestmt(self, ctx:VyperParser.ContinuestmtContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#flow_stmt.
-    def exitFlow_stmt(self, ctx:VyperParser.Flow_stmtContext):
+    # Exit a parse tree produced by VyperParser#continuestmt.
+    def exitContinuestmt(self, ctx:VyperParser.ContinuestmtContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#break_stmt.
-    def enterBreak_stmt(self, ctx:VyperParser.Break_stmtContext):
+    # Enter a parse tree produced by VyperParser#logstmt.
+    def enterLogstmt(self, ctx:VyperParser.LogstmtContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#break_stmt.
-    def exitBreak_stmt(self, ctx:VyperParser.Break_stmtContext):
+    # Exit a parse tree produced by VyperParser#logstmt.
+    def exitLogstmt(self, ctx:VyperParser.LogstmtContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#continue_stmt.
-    def enterContinue_stmt(self, ctx:VyperParser.Continue_stmtContext):
+    # Enter a parse tree produced by VyperParser#returnstmt.
+    def enterReturnstmt(self, ctx:VyperParser.ReturnstmtContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#continue_stmt.
-    def exitContinue_stmt(self, ctx:VyperParser.Continue_stmtContext):
+    # Exit a parse tree produced by VyperParser#returnstmt.
+    def exitReturnstmt(self, ctx:VyperParser.ReturnstmtContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#return_stmt.
-    def enterReturn_stmt(self, ctx:VyperParser.Return_stmtContext):
+    # Enter a parse tree produced by VyperParser#raisestmt.
+    def enterRaisestmt(self, ctx:VyperParser.RaisestmtContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#return_stmt.
-    def exitReturn_stmt(self, ctx:VyperParser.Return_stmtContext):
+    # Exit a parse tree produced by VyperParser#raisestmt.
+    def exitRaisestmt(self, ctx:VyperParser.RaisestmtContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#yield_stmt.
-    def enterYield_stmt(self, ctx:VyperParser.Yield_stmtContext):
+    # Enter a parse tree produced by VyperParser#assertstmt.
+    def enterAssertstmt(self, ctx:VyperParser.AssertstmtContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#yield_stmt.
-    def exitYield_stmt(self, ctx:VyperParser.Yield_stmtContext):
+    # Exit a parse tree produced by VyperParser#assertstmt.
+    def exitAssertstmt(self, ctx:VyperParser.AssertstmtContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#raise_stmt.
-    def enterRaise_stmt(self, ctx:VyperParser.Raise_stmtContext):
+    # Enter a parse tree produced by VyperParser#body.
+    def enterBody(self, ctx:VyperParser.BodyContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#raise_stmt.
-    def exitRaise_stmt(self, ctx:VyperParser.Raise_stmtContext):
+    # Exit a parse tree produced by VyperParser#body.
+    def exitBody(self, ctx:VyperParser.BodyContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#import_stmt.
-    def enterImport_stmt(self, ctx:VyperParser.Import_stmtContext):
+    # Enter a parse tree produced by VyperParser#condexec.
+    def enterCondexec(self, ctx:VyperParser.CondexecContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#import_stmt.
-    def exitImport_stmt(self, ctx:VyperParser.Import_stmtContext):
+    # Exit a parse tree produced by VyperParser#condexec.
+    def exitCondexec(self, ctx:VyperParser.CondexecContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#import_name.
-    def enterImport_name(self, ctx:VyperParser.Import_nameContext):
+    # Enter a parse tree produced by VyperParser#defaultexec.
+    def enterDefaultexec(self, ctx:VyperParser.DefaultexecContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#import_name.
-    def exitImport_name(self, ctx:VyperParser.Import_nameContext):
+    # Exit a parse tree produced by VyperParser#defaultexec.
+    def exitDefaultexec(self, ctx:VyperParser.DefaultexecContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#import_from.
-    def enterImport_from(self, ctx:VyperParser.Import_fromContext):
+    # Enter a parse tree produced by VyperParser#ifstmt.
+    def enterIfstmt(self, ctx:VyperParser.IfstmtContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#import_from.
-    def exitImport_from(self, ctx:VyperParser.Import_fromContext):
+    # Exit a parse tree produced by VyperParser#ifstmt.
+    def exitIfstmt(self, ctx:VyperParser.IfstmtContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#import_as_name.
-    def enterImport_as_name(self, ctx:VyperParser.Import_as_nameContext):
+    # Enter a parse tree produced by VyperParser#loopvariable.
+    def enterLoopvariable(self, ctx:VyperParser.LoopvariableContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#import_as_name.
-    def exitImport_as_name(self, ctx:VyperParser.Import_as_nameContext):
+    # Exit a parse tree produced by VyperParser#loopvariable.
+    def exitLoopvariable(self, ctx:VyperParser.LoopvariableContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#dotted_as_name.
-    def enterDotted_as_name(self, ctx:VyperParser.Dotted_as_nameContext):
+    # Enter a parse tree produced by VyperParser#loopiterator.
+    def enterLoopiterator(self, ctx:VyperParser.LoopiteratorContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#dotted_as_name.
-    def exitDotted_as_name(self, ctx:VyperParser.Dotted_as_nameContext):
+    # Exit a parse tree produced by VyperParser#loopiterator.
+    def exitLoopiterator(self, ctx:VyperParser.LoopiteratorContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#import_as_names.
-    def enterImport_as_names(self, ctx:VyperParser.Import_as_namesContext):
+    # Enter a parse tree produced by VyperParser#forstmt.
+    def enterForstmt(self, ctx:VyperParser.ForstmtContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#import_as_names.
-    def exitImport_as_names(self, ctx:VyperParser.Import_as_namesContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#dotted_as_names.
-    def enterDotted_as_names(self, ctx:VyperParser.Dotted_as_namesContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#dotted_as_names.
-    def exitDotted_as_names(self, ctx:VyperParser.Dotted_as_namesContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#dotted_name.
-    def enterDotted_name(self, ctx:VyperParser.Dotted_nameContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#dotted_name.
-    def exitDotted_name(self, ctx:VyperParser.Dotted_nameContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#global_stmt.
-    def enterGlobal_stmt(self, ctx:VyperParser.Global_stmtContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#global_stmt.
-    def exitGlobal_stmt(self, ctx:VyperParser.Global_stmtContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#contract_global_stmt.
-    def enterContract_global_stmt(self, ctx:VyperParser.Contract_global_stmtContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#contract_global_stmt.
-    def exitContract_global_stmt(self, ctx:VyperParser.Contract_global_stmtContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#nonlocal_stmt.
-    def enterNonlocal_stmt(self, ctx:VyperParser.Nonlocal_stmtContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#nonlocal_stmt.
-    def exitNonlocal_stmt(self, ctx:VyperParser.Nonlocal_stmtContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#assert_stmt.
-    def enterAssert_stmt(self, ctx:VyperParser.Assert_stmtContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#assert_stmt.
-    def exitAssert_stmt(self, ctx:VyperParser.Assert_stmtContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#compound_stmt.
-    def enterCompound_stmt(self, ctx:VyperParser.Compound_stmtContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#compound_stmt.
-    def exitCompound_stmt(self, ctx:VyperParser.Compound_stmtContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#if_stmt.
-    def enterIf_stmt(self, ctx:VyperParser.If_stmtContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#if_stmt.
-    def exitIf_stmt(self, ctx:VyperParser.If_stmtContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#while_stmt.
-    def enterWhile_stmt(self, ctx:VyperParser.While_stmtContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#while_stmt.
-    def exitWhile_stmt(self, ctx:VyperParser.While_stmtContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#for_stmt.
-    def enterFor_stmt(self, ctx:VyperParser.For_stmtContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#for_stmt.
-    def exitFor_stmt(self, ctx:VyperParser.For_stmtContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#try_stmt.
-    def enterTry_stmt(self, ctx:VyperParser.Try_stmtContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#try_stmt.
-    def exitTry_stmt(self, ctx:VyperParser.Try_stmtContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#with_stmt.
-    def enterWith_stmt(self, ctx:VyperParser.With_stmtContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#with_stmt.
-    def exitWith_stmt(self, ctx:VyperParser.With_stmtContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#with_item.
-    def enterWith_item(self, ctx:VyperParser.With_itemContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#with_item.
-    def exitWith_item(self, ctx:VyperParser.With_itemContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#except_clause.
-    def enterExcept_clause(self, ctx:VyperParser.Except_clauseContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#except_clause.
-    def exitExcept_clause(self, ctx:VyperParser.Except_clauseContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#suite.
-    def enterSuite(self, ctx:VyperParser.SuiteContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#suite.
-    def exitSuite(self, ctx:VyperParser.SuiteContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#test.
-    def enterTest(self, ctx:VyperParser.TestContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#test.
-    def exitTest(self, ctx:VyperParser.TestContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#test_nocond.
-    def enterTest_nocond(self, ctx:VyperParser.Test_nocondContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#test_nocond.
-    def exitTest_nocond(self, ctx:VyperParser.Test_nocondContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#lambdef.
-    def enterLambdef(self, ctx:VyperParser.LambdefContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#lambdef.
-    def exitLambdef(self, ctx:VyperParser.LambdefContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#lambdef_nocond.
-    def enterLambdef_nocond(self, ctx:VyperParser.Lambdef_nocondContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#lambdef_nocond.
-    def exitLambdef_nocond(self, ctx:VyperParser.Lambdef_nocondContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#or_test.
-    def enterOr_test(self, ctx:VyperParser.Or_testContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#or_test.
-    def exitOr_test(self, ctx:VyperParser.Or_testContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#and_test.
-    def enterAnd_test(self, ctx:VyperParser.And_testContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#and_test.
-    def exitAnd_test(self, ctx:VyperParser.And_testContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#not_test.
-    def enterNot_test(self, ctx:VyperParser.Not_testContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#not_test.
-    def exitNot_test(self, ctx:VyperParser.Not_testContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#comparison.
-    def enterComparison(self, ctx:VyperParser.ComparisonContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#comparison.
-    def exitComparison(self, ctx:VyperParser.ComparisonContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#comp_op.
-    def enterComp_op(self, ctx:VyperParser.Comp_opContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#comp_op.
-    def exitComp_op(self, ctx:VyperParser.Comp_opContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#star_expr.
-    def enterStar_expr(self, ctx:VyperParser.Star_exprContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#star_expr.
-    def exitStar_expr(self, ctx:VyperParser.Star_exprContext):
+    # Exit a parse tree produced by VyperParser#forstmt.
+    def exitForstmt(self, ctx:VyperParser.ForstmtContext):
         pass
 
 
@@ -530,165 +548,57 @@ class VyperListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#xor_expr.
-    def enterXor_expr(self, ctx:VyperParser.Xor_exprContext):
+    # Enter a parse tree produced by VyperParser#variableaccess.
+    def enterVariableaccess(self, ctx:VyperParser.VariableaccessContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#xor_expr.
-    def exitXor_expr(self, ctx:VyperParser.Xor_exprContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#and_expr.
-    def enterAnd_expr(self, ctx:VyperParser.And_exprContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#and_expr.
-    def exitAnd_expr(self, ctx:VyperParser.And_exprContext):
+    # Exit a parse tree produced by VyperParser#variableaccess.
+    def exitVariableaccess(self, ctx:VyperParser.VariableaccessContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#shift_expr.
-    def enterShift_expr(self, ctx:VyperParser.Shift_exprContext):
+    # Enter a parse tree produced by VyperParser#getattr.
+    def enterGetattr(self, ctx:VyperParser.GetattrContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#shift_expr.
-    def exitShift_expr(self, ctx:VyperParser.Shift_exprContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#arith_expr.
-    def enterArith_expr(self, ctx:VyperParser.Arith_exprContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#arith_expr.
-    def exitArith_expr(self, ctx:VyperParser.Arith_exprContext):
+    # Exit a parse tree produced by VyperParser#getattr.
+    def exitGetattr(self, ctx:VyperParser.GetattrContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#term.
-    def enterTerm(self, ctx:VyperParser.TermContext):
+    # Enter a parse tree produced by VyperParser#getitem.
+    def enterGetitem(self, ctx:VyperParser.GetitemContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#term.
-    def exitTerm(self, ctx:VyperParser.TermContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#factor.
-    def enterFactor(self, ctx:VyperParser.FactorContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#factor.
-    def exitFactor(self, ctx:VyperParser.FactorContext):
+    # Exit a parse tree produced by VyperParser#getitem.
+    def exitGetitem(self, ctx:VyperParser.GetitemContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#power.
-    def enterPower(self, ctx:VyperParser.PowerContext):
+    # Enter a parse tree produced by VyperParser#call.
+    def enterCall(self, ctx:VyperParser.CallContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#power.
-    def exitPower(self, ctx:VyperParser.PowerContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#atom.
-    def enterAtom(self, ctx:VyperParser.AtomContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#atom.
-    def exitAtom(self, ctx:VyperParser.AtomContext):
+    # Exit a parse tree produced by VyperParser#call.
+    def exitCall(self, ctx:VyperParser.CallContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#testlist_comp.
-    def enterTestlist_comp(self, ctx:VyperParser.Testlist_compContext):
+    # Enter a parse tree produced by VyperParser#arg.
+    def enterArg(self, ctx:VyperParser.ArgContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#testlist_comp.
-    def exitTestlist_comp(self, ctx:VyperParser.Testlist_compContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#trailer.
-    def enterTrailer(self, ctx:VyperParser.TrailerContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#trailer.
-    def exitTrailer(self, ctx:VyperParser.TrailerContext):
+    # Exit a parse tree produced by VyperParser#arg.
+    def exitArg(self, ctx:VyperParser.ArgContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#subscriptlist.
-    def enterSubscriptlist(self, ctx:VyperParser.SubscriptlistContext):
+    # Enter a parse tree produced by VyperParser#kwarg.
+    def enterKwarg(self, ctx:VyperParser.KwargContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#subscriptlist.
-    def exitSubscriptlist(self, ctx:VyperParser.SubscriptlistContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#subscript.
-    def enterSubscript(self, ctx:VyperParser.SubscriptContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#subscript.
-    def exitSubscript(self, ctx:VyperParser.SubscriptContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#sliceop.
-    def enterSliceop(self, ctx:VyperParser.SliceopContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#sliceop.
-    def exitSliceop(self, ctx:VyperParser.SliceopContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#exprlist.
-    def enterExprlist(self, ctx:VyperParser.ExprlistContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#exprlist.
-    def exitExprlist(self, ctx:VyperParser.ExprlistContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#testlist.
-    def enterTestlist(self, ctx:VyperParser.TestlistContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#testlist.
-    def exitTestlist(self, ctx:VyperParser.TestlistContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#dictorsetmaker.
-    def enterDictorsetmaker(self, ctx:VyperParser.DictorsetmakerContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#dictorsetmaker.
-    def exitDictorsetmaker(self, ctx:VyperParser.DictorsetmakerContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#classdef.
-    def enterClassdef(self, ctx:VyperParser.ClassdefContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#classdef.
-    def exitClassdef(self, ctx:VyperParser.ClassdefContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#arglist.
-    def enterArglist(self, ctx:VyperParser.ArglistContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#arglist.
-    def exitArglist(self, ctx:VyperParser.ArglistContext):
+    # Exit a parse tree produced by VyperParser#kwarg.
+    def exitKwarg(self, ctx:VyperParser.KwargContext):
         pass
 
 
@@ -701,57 +611,192 @@ class VyperListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#comp_iter.
-    def enterComp_iter(self, ctx:VyperParser.Comp_iterContext):
+    # Enter a parse tree produced by VyperParser#arguments.
+    def enterArguments(self, ctx:VyperParser.ArgumentsContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#comp_iter.
-    def exitComp_iter(self, ctx:VyperParser.Comp_iterContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#comp_for.
-    def enterComp_for(self, ctx:VyperParser.Comp_forContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#comp_for.
-    def exitComp_for(self, ctx:VyperParser.Comp_forContext):
+    # Exit a parse tree produced by VyperParser#arguments.
+    def exitArguments(self, ctx:VyperParser.ArgumentsContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#comp_if.
-    def enterComp_if(self, ctx:VyperParser.Comp_ifContext):
+    # Enter a parse tree produced by VyperParser#tuple.
+    def enterTuple(self, ctx:VyperParser.TupleContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#comp_if.
-    def exitComp_if(self, ctx:VyperParser.Comp_ifContext):
-        pass
-
-
-    # Enter a parse tree produced by VyperParser#yield_expr.
-    def enterYield_expr(self, ctx:VyperParser.Yield_exprContext):
-        pass
-
-    # Exit a parse tree produced by VyperParser#yield_expr.
-    def exitYield_expr(self, ctx:VyperParser.Yield_exprContext):
+    # Exit a parse tree produced by VyperParser#tuple.
+    def exitTuple(self, ctx:VyperParser.TupleContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#yield_arg.
-    def enterYield_arg(self, ctx:VyperParser.Yield_argContext):
+    # Enter a parse tree produced by VyperParser#list.
+    def enterList(self, ctx:VyperParser.ListContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#yield_arg.
-    def exitYield_arg(self, ctx:VyperParser.Yield_argContext):
+    # Exit a parse tree produced by VyperParser#list.
+    def exitList(self, ctx:VyperParser.ListContext):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#strr.
-    def enterStrr(self, ctx:VyperParser.StrrContext):
+    # Enter a parse tree produced by VyperParser#dict.
+    def enterDict(self, ctx:VyperParser.DictContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#strr.
-    def exitStrr(self, ctx:VyperParser.StrrContext):
+    # Exit a parse tree produced by VyperParser#dict.
+    def exitDict(self, ctx:VyperParser.DictContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#operation.
+    def enterOperation(self, ctx:VyperParser.OperationContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#operation.
+    def exitOperation(self, ctx:VyperParser.OperationContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#boolor.
+    def enterBoolor(self, ctx:VyperParser.BoolorContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#boolor.
+    def exitBoolor(self, ctx:VyperParser.BoolorContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#booland.
+    def enterBooland(self, ctx:VyperParser.BoolandContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#booland.
+    def exitBooland(self, ctx:VyperParser.BoolandContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#boolnot.
+    def enterBoolnot(self, ctx:VyperParser.BoolnotContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#boolnot.
+    def exitBoolnot(self, ctx:VyperParser.BoolnotContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#comparator.
+    def enterComparator(self, ctx:VyperParser.ComparatorContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#comparator.
+    def exitComparator(self, ctx:VyperParser.ComparatorContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#bitwiseor.
+    def enterBitwiseor(self, ctx:VyperParser.BitwiseorContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#bitwiseor.
+    def exitBitwiseor(self, ctx:VyperParser.BitwiseorContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#bitwisexor.
+    def enterBitwisexor(self, ctx:VyperParser.BitwisexorContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#bitwisexor.
+    def exitBitwisexor(self, ctx:VyperParser.BitwisexorContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#bitwiseand.
+    def enterBitwiseand(self, ctx:VyperParser.BitwiseandContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#bitwiseand.
+    def exitBitwiseand(self, ctx:VyperParser.BitwiseandContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#shift.
+    def enterShift(self, ctx:VyperParser.ShiftContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#shift.
+    def exitShift(self, ctx:VyperParser.ShiftContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#summation.
+    def enterSummation(self, ctx:VyperParser.SummationContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#summation.
+    def exitSummation(self, ctx:VyperParser.SummationContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#product.
+    def enterProduct(self, ctx:VyperParser.ProductContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#product.
+    def exitProduct(self, ctx:VyperParser.ProductContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#unary.
+    def enterUnary(self, ctx:VyperParser.UnaryContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#unary.
+    def exitUnary(self, ctx:VyperParser.UnaryContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#power.
+    def enterPower(self, ctx:VyperParser.PowerContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#power.
+    def exitPower(self, ctx:VyperParser.PowerContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#empty.
+    def enterEmpty(self, ctx:VyperParser.EmptyContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#empty.
+    def exitEmpty(self, ctx:VyperParser.EmptyContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#abidecode.
+    def enterAbidecode(self, ctx:VyperParser.AbidecodeContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#abidecode.
+    def exitAbidecode(self, ctx:VyperParser.AbidecodeContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#specialbuiltins.
+    def enterSpecialbuiltins(self, ctx:VyperParser.SpecialbuiltinsContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#specialbuiltins.
+    def exitSpecialbuiltins(self, ctx:VyperParser.SpecialbuiltinsContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#atom.
+    def enterAtom(self, ctx:VyperParser.AtomContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#atom.
+    def exitAtom(self, ctx:VyperParser.AtomContext):
         pass
 
 
@@ -764,12 +809,12 @@ class VyperListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by VyperParser#integer.
-    def enterInteger(self, ctx:VyperParser.IntegerContext):
+    # Enter a parse tree produced by VyperParser#literal.
+    def enterLiteral(self, ctx:VyperParser.LiteralContext):
         pass
 
-    # Exit a parse tree produced by VyperParser#integer.
-    def exitInteger(self, ctx:VyperParser.IntegerContext):
+    # Exit a parse tree produced by VyperParser#literal.
+    def exitLiteral(self, ctx:VyperParser.LiteralContext):
         pass
 
 

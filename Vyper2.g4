@@ -34,21 +34,18 @@ import: _IMPORT DOT* _import_path [import_alias]
       | _import_from _IMPORT ( WILDCARD | _import_name [import_alias] )
       | _import_from _IMPORT "(" import_list ")"
 
+
 // Constant definitions
 // NOTE: Temporary until decorators used
-constant: "constant" "(" type ")"
-constant_private: NAME ":" constant
-constant_with_getter: NAME ":" "public" "(" constant ")"
-constant_def: (constant_private | constant_with_getter) "=" _expr
+constant_def: NAME ":" "constant" "(" type ")" "=" _expr
 
 // immutable definitions
 // NOTE: Temporary until decorators used
-immutable: "immutable" "(" type ")"
-immutable_def: NAME ":" immutable
+immutable_def: NAME ":" "immutable" "(" type ")"
 
 variable: NAME ":" type
 // NOTE: Temporary until decorators used
-variable_with_getter: NAME ":" "public" "(" (type | immutable) ")"
+variable_with_getter: NAME ":" "public" "(" type ")"
 variable_def: variable | variable_with_getter
 
 // A decorator "wraps" a method, modifying it's context.
@@ -73,7 +70,7 @@ function_def: [decorators] function_sig ":" body
 _EVENT_DECL: "event"
 event_member: NAME ":" type
 indexed_event_arg: NAME ":" "indexed" "(" type ")"
-event_body: _NEWLINE _INDENT ((event_member | indexed_event_arg) _NEWLINE)+ _DEDENT
+event_body: _NEWLINE _INDENT ((variable | indexed_event_arg) _NEWLINE)+ _DEDENT
 // Events which use no args use a pass statement instead
 event_def: _EVENT_DECL NAME ":" ( event_body | _PASS )
 
@@ -84,8 +81,8 @@ enum_body: _NEWLINE _INDENT (enum_member _NEWLINE)+ _DEDENT
 enum_def: _ENUM_DECL NAME ":" enum_body
 
 // Types
-array_def: (NAME | array_def | dyn_array_def) "[" _expr "]"
-dyn_array_def: "DynArray" "[" (NAME | array_def | dyn_array_def) "," _expr "]"
+array_def: (NAME | array_def | dyn_array_def) "[" (DEC_NUMBER | NAME) "]"
+dyn_array_def: "DynArray" "[" (NAME | array_def | dyn_array_def) "," (DEC_NUMBER | NAME) "]"
 tuple_def: "(" ( NAME | array_def | dyn_array_def | tuple_def ) ( "," ( NAME | array_def | dyn_array_def | tuple_def ) )* [","] ")"
 // NOTE: Map takes a basic type and maps to another type (can be non-basic, including maps)
 _MAP: "HashMap"
@@ -102,8 +99,6 @@ _INTERFACE_DECL: "interface"
 mutability: NAME
 interface_function: function_sig ":" mutability
 interface_def: _INTERFACE_DECL NAME ":" _NEWLINE _INDENT ( interface_function _NEWLINE)+ _DEDENT
-_IMPLEMENTS_DECL: "implements"
-implements_def: _IMPLEMENTS_DECL ":" NAME
 
 
 // Statements

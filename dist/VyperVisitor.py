@@ -9,18 +9,63 @@ else:
 
 class VyperVisitor(ParseTreeVisitor):
 
-    # Visit a parse tree produced by VyperParser#single_input.
-    def visitSingle_input(self, ctx:VyperParser.Single_inputContext):
+    # Visit a parse tree produced by VyperParser#module.
+    def visitModule(self, ctx:VyperParser.ModuleContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#file_input.
-    def visitFile_input(self, ctx:VyperParser.File_inputContext):
+    # Visit a parse tree produced by VyperParser#importname.
+    def visitImportname(self, ctx:VyperParser.ImportnameContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#eval_input.
-    def visitEval_input(self, ctx:VyperParser.Eval_inputContext):
+    # Visit a parse tree produced by VyperParser#importpath.
+    def visitImportpath(self, ctx:VyperParser.ImportpathContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#importalias.
+    def visitImportalias(self, ctx:VyperParser.ImportaliasContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#importlist.
+    def visitImportlist(self, ctx:VyperParser.ImportlistContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#importfrom.
+    def visitImportfrom(self, ctx:VyperParser.ImportfromContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#import_.
+    def visitImport_(self, ctx:VyperParser.Import_Context):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#constantdef.
+    def visitConstantdef(self, ctx:VyperParser.ConstantdefContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#immutabledef.
+    def visitImmutabledef(self, ctx:VyperParser.ImmutabledefContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#variable.
+    def visitVariable(self, ctx:VyperParser.VariableContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#variablewithgetter.
+    def visitVariablewithgetter(self, ctx:VyperParser.VariablewithgetterContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#variabledef.
+    def visitVariabledef(self, ctx:VyperParser.VariabledefContext):
         return self.visitChildren(ctx)
 
 
@@ -34,13 +79,8 @@ class VyperVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#decorated.
-    def visitDecorated(self, ctx:VyperParser.DecoratedContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#funcdef.
-    def visitFuncdef(self, ctx:VyperParser.FuncdefContext):
+    # Visit a parse tree produced by VyperParser#parameter.
+    def visitParameter(self, ctx:VyperParser.ParameterContext):
         return self.visitChildren(ctx)
 
 
@@ -49,23 +89,118 @@ class VyperVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#typedargslist.
-    def visitTypedargslist(self, ctx:VyperParser.TypedargslistContext):
+    # Visit a parse tree produced by VyperParser#returns_.
+    def visitReturns_(self, ctx:VyperParser.Returns_Context):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#tfpdef.
-    def visitTfpdef(self, ctx:VyperParser.TfpdefContext):
+    # Visit a parse tree produced by VyperParser#functionsig.
+    def visitFunctionsig(self, ctx:VyperParser.FunctionsigContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#varargslist.
-    def visitVarargslist(self, ctx:VyperParser.VarargslistContext):
+    # Visit a parse tree produced by VyperParser#functiondef.
+    def visitFunctiondef(self, ctx:VyperParser.FunctiondefContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#vfpdef.
-    def visitVfpdef(self, ctx:VyperParser.VfpdefContext):
+    # Visit a parse tree produced by VyperParser#eventmember.
+    def visitEventmember(self, ctx:VyperParser.EventmemberContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#indexedeventarg.
+    def visitIndexedeventarg(self, ctx:VyperParser.IndexedeventargContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#eventbody.
+    def visitEventbody(self, ctx:VyperParser.EventbodyContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#eventdef.
+    def visitEventdef(self, ctx:VyperParser.EventdefContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#enummember.
+    def visitEnummember(self, ctx:VyperParser.EnummemberContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#enumbody.
+    def visitEnumbody(self, ctx:VyperParser.EnumbodyContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#enumdef.
+    def visitEnumdef(self, ctx:VyperParser.EnumdefContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#arraydef.
+    def visitArraydef(self, ctx:VyperParser.ArraydefContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#simple_arraydef.
+    def visitSimple_arraydef(self, ctx:VyperParser.Simple_arraydefContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#dynarraydef.
+    def visitDynarraydef(self, ctx:VyperParser.DynarraydefContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#index.
+    def visitIndex(self, ctx:VyperParser.IndexContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#dynindex.
+    def visitDynindex(self, ctx:VyperParser.DynindexContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#tupledef.
+    def visitTupledef(self, ctx:VyperParser.TupledefContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#mapdef.
+    def visitMapdef(self, ctx:VyperParser.MapdefContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#type_.
+    def visitType_(self, ctx:VyperParser.Type_Context):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#structmember.
+    def visitStructmember(self, ctx:VyperParser.StructmemberContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#structdef.
+    def visitStructdef(self, ctx:VyperParser.StructdefContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#mutability.
+    def visitMutability(self, ctx:VyperParser.MutabilityContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#interfacefunction.
+    def visitInterfacefunction(self, ctx:VyperParser.InterfacefunctionContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#interfacedef.
+    def visitInterfacedef(self, ctx:VyperParser.InterfacedefContext):
         return self.visitChildren(ctx)
 
 
@@ -74,23 +209,23 @@ class VyperVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#simple_stmt.
-    def visitSimple_stmt(self, ctx:VyperParser.Simple_stmtContext):
+    # Visit a parse tree produced by VyperParser#declaration.
+    def visitDeclaration(self, ctx:VyperParser.DeclarationContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#small_stmt.
-    def visitSmall_stmt(self, ctx:VyperParser.Small_stmtContext):
+    # Visit a parse tree produced by VyperParser#multipleassign.
+    def visitMultipleassign(self, ctx:VyperParser.MultipleassignContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#expr_stmt.
-    def visitExpr_stmt(self, ctx:VyperParser.Expr_stmtContext):
+    # Visit a parse tree produced by VyperParser#assign.
+    def visitAssign(self, ctx:VyperParser.AssignContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#testlist_star_expr.
-    def visitTestlist_star_expr(self, ctx:VyperParser.Testlist_star_exprContext):
+    # Visit a parse tree produced by VyperParser#augoperator.
+    def visitAugoperator(self, ctx:VyperParser.AugoperatorContext):
         return self.visitChildren(ctx)
 
 
@@ -99,198 +234,73 @@ class VyperVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#del_stmt.
-    def visitDel_stmt(self, ctx:VyperParser.Del_stmtContext):
+    # Visit a parse tree produced by VyperParser#passstmt.
+    def visitPassstmt(self, ctx:VyperParser.PassstmtContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#pass_stmt.
-    def visitPass_stmt(self, ctx:VyperParser.Pass_stmtContext):
+    # Visit a parse tree produced by VyperParser#breakstmt.
+    def visitBreakstmt(self, ctx:VyperParser.BreakstmtContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#flow_stmt.
-    def visitFlow_stmt(self, ctx:VyperParser.Flow_stmtContext):
+    # Visit a parse tree produced by VyperParser#continuestmt.
+    def visitContinuestmt(self, ctx:VyperParser.ContinuestmtContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#break_stmt.
-    def visitBreak_stmt(self, ctx:VyperParser.Break_stmtContext):
+    # Visit a parse tree produced by VyperParser#logstmt.
+    def visitLogstmt(self, ctx:VyperParser.LogstmtContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#continue_stmt.
-    def visitContinue_stmt(self, ctx:VyperParser.Continue_stmtContext):
+    # Visit a parse tree produced by VyperParser#returnstmt.
+    def visitReturnstmt(self, ctx:VyperParser.ReturnstmtContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#return_stmt.
-    def visitReturn_stmt(self, ctx:VyperParser.Return_stmtContext):
+    # Visit a parse tree produced by VyperParser#raisestmt.
+    def visitRaisestmt(self, ctx:VyperParser.RaisestmtContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#yield_stmt.
-    def visitYield_stmt(self, ctx:VyperParser.Yield_stmtContext):
+    # Visit a parse tree produced by VyperParser#assertstmt.
+    def visitAssertstmt(self, ctx:VyperParser.AssertstmtContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#raise_stmt.
-    def visitRaise_stmt(self, ctx:VyperParser.Raise_stmtContext):
+    # Visit a parse tree produced by VyperParser#body.
+    def visitBody(self, ctx:VyperParser.BodyContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#import_stmt.
-    def visitImport_stmt(self, ctx:VyperParser.Import_stmtContext):
+    # Visit a parse tree produced by VyperParser#condexec.
+    def visitCondexec(self, ctx:VyperParser.CondexecContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#import_name.
-    def visitImport_name(self, ctx:VyperParser.Import_nameContext):
+    # Visit a parse tree produced by VyperParser#defaultexec.
+    def visitDefaultexec(self, ctx:VyperParser.DefaultexecContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#import_from.
-    def visitImport_from(self, ctx:VyperParser.Import_fromContext):
+    # Visit a parse tree produced by VyperParser#ifstmt.
+    def visitIfstmt(self, ctx:VyperParser.IfstmtContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#import_as_name.
-    def visitImport_as_name(self, ctx:VyperParser.Import_as_nameContext):
+    # Visit a parse tree produced by VyperParser#loopvariable.
+    def visitLoopvariable(self, ctx:VyperParser.LoopvariableContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#dotted_as_name.
-    def visitDotted_as_name(self, ctx:VyperParser.Dotted_as_nameContext):
+    # Visit a parse tree produced by VyperParser#loopiterator.
+    def visitLoopiterator(self, ctx:VyperParser.LoopiteratorContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#import_as_names.
-    def visitImport_as_names(self, ctx:VyperParser.Import_as_namesContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#dotted_as_names.
-    def visitDotted_as_names(self, ctx:VyperParser.Dotted_as_namesContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#dotted_name.
-    def visitDotted_name(self, ctx:VyperParser.Dotted_nameContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#global_stmt.
-    def visitGlobal_stmt(self, ctx:VyperParser.Global_stmtContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#contract_global_stmt.
-    def visitContract_global_stmt(self, ctx:VyperParser.Contract_global_stmtContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#nonlocal_stmt.
-    def visitNonlocal_stmt(self, ctx:VyperParser.Nonlocal_stmtContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#assert_stmt.
-    def visitAssert_stmt(self, ctx:VyperParser.Assert_stmtContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#compound_stmt.
-    def visitCompound_stmt(self, ctx:VyperParser.Compound_stmtContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#if_stmt.
-    def visitIf_stmt(self, ctx:VyperParser.If_stmtContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#while_stmt.
-    def visitWhile_stmt(self, ctx:VyperParser.While_stmtContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#for_stmt.
-    def visitFor_stmt(self, ctx:VyperParser.For_stmtContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#try_stmt.
-    def visitTry_stmt(self, ctx:VyperParser.Try_stmtContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#with_stmt.
-    def visitWith_stmt(self, ctx:VyperParser.With_stmtContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#with_item.
-    def visitWith_item(self, ctx:VyperParser.With_itemContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#except_clause.
-    def visitExcept_clause(self, ctx:VyperParser.Except_clauseContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#suite.
-    def visitSuite(self, ctx:VyperParser.SuiteContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#test.
-    def visitTest(self, ctx:VyperParser.TestContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#test_nocond.
-    def visitTest_nocond(self, ctx:VyperParser.Test_nocondContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#lambdef.
-    def visitLambdef(self, ctx:VyperParser.LambdefContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#lambdef_nocond.
-    def visitLambdef_nocond(self, ctx:VyperParser.Lambdef_nocondContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#or_test.
-    def visitOr_test(self, ctx:VyperParser.Or_testContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#and_test.
-    def visitAnd_test(self, ctx:VyperParser.And_testContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#not_test.
-    def visitNot_test(self, ctx:VyperParser.Not_testContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#comparison.
-    def visitComparison(self, ctx:VyperParser.ComparisonContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#comp_op.
-    def visitComp_op(self, ctx:VyperParser.Comp_opContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#star_expr.
-    def visitStar_expr(self, ctx:VyperParser.Star_exprContext):
+    # Visit a parse tree produced by VyperParser#forstmt.
+    def visitForstmt(self, ctx:VyperParser.ForstmtContext):
         return self.visitChildren(ctx)
 
 
@@ -299,93 +309,33 @@ class VyperVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#xor_expr.
-    def visitXor_expr(self, ctx:VyperParser.Xor_exprContext):
+    # Visit a parse tree produced by VyperParser#variableaccess.
+    def visitVariableaccess(self, ctx:VyperParser.VariableaccessContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#and_expr.
-    def visitAnd_expr(self, ctx:VyperParser.And_exprContext):
+    # Visit a parse tree produced by VyperParser#getattr.
+    def visitGetattr(self, ctx:VyperParser.GetattrContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#shift_expr.
-    def visitShift_expr(self, ctx:VyperParser.Shift_exprContext):
+    # Visit a parse tree produced by VyperParser#getitem.
+    def visitGetitem(self, ctx:VyperParser.GetitemContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#arith_expr.
-    def visitArith_expr(self, ctx:VyperParser.Arith_exprContext):
+    # Visit a parse tree produced by VyperParser#call.
+    def visitCall(self, ctx:VyperParser.CallContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#term.
-    def visitTerm(self, ctx:VyperParser.TermContext):
+    # Visit a parse tree produced by VyperParser#arg.
+    def visitArg(self, ctx:VyperParser.ArgContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#factor.
-    def visitFactor(self, ctx:VyperParser.FactorContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#power.
-    def visitPower(self, ctx:VyperParser.PowerContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#atom.
-    def visitAtom(self, ctx:VyperParser.AtomContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#testlist_comp.
-    def visitTestlist_comp(self, ctx:VyperParser.Testlist_compContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#trailer.
-    def visitTrailer(self, ctx:VyperParser.TrailerContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#subscriptlist.
-    def visitSubscriptlist(self, ctx:VyperParser.SubscriptlistContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#subscript.
-    def visitSubscript(self, ctx:VyperParser.SubscriptContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#sliceop.
-    def visitSliceop(self, ctx:VyperParser.SliceopContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#exprlist.
-    def visitExprlist(self, ctx:VyperParser.ExprlistContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#testlist.
-    def visitTestlist(self, ctx:VyperParser.TestlistContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#dictorsetmaker.
-    def visitDictorsetmaker(self, ctx:VyperParser.DictorsetmakerContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#classdef.
-    def visitClassdef(self, ctx:VyperParser.ClassdefContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by VyperParser#arglist.
-    def visitArglist(self, ctx:VyperParser.ArglistContext):
+    # Visit a parse tree produced by VyperParser#kwarg.
+    def visitKwarg(self, ctx:VyperParser.KwargContext):
         return self.visitChildren(ctx)
 
 
@@ -394,33 +344,108 @@ class VyperVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#comp_iter.
-    def visitComp_iter(self, ctx:VyperParser.Comp_iterContext):
+    # Visit a parse tree produced by VyperParser#arguments.
+    def visitArguments(self, ctx:VyperParser.ArgumentsContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#comp_for.
-    def visitComp_for(self, ctx:VyperParser.Comp_forContext):
+    # Visit a parse tree produced by VyperParser#tuple.
+    def visitTuple(self, ctx:VyperParser.TupleContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#comp_if.
-    def visitComp_if(self, ctx:VyperParser.Comp_ifContext):
+    # Visit a parse tree produced by VyperParser#list.
+    def visitList(self, ctx:VyperParser.ListContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#yield_expr.
-    def visitYield_expr(self, ctx:VyperParser.Yield_exprContext):
+    # Visit a parse tree produced by VyperParser#dict.
+    def visitDict(self, ctx:VyperParser.DictContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#yield_arg.
-    def visitYield_arg(self, ctx:VyperParser.Yield_argContext):
+    # Visit a parse tree produced by VyperParser#operation.
+    def visitOperation(self, ctx:VyperParser.OperationContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#strr.
-    def visitStrr(self, ctx:VyperParser.StrrContext):
+    # Visit a parse tree produced by VyperParser#boolor.
+    def visitBoolor(self, ctx:VyperParser.BoolorContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#booland.
+    def visitBooland(self, ctx:VyperParser.BoolandContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#boolnot.
+    def visitBoolnot(self, ctx:VyperParser.BoolnotContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#comparator.
+    def visitComparator(self, ctx:VyperParser.ComparatorContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#bitwiseor.
+    def visitBitwiseor(self, ctx:VyperParser.BitwiseorContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#bitwisexor.
+    def visitBitwisexor(self, ctx:VyperParser.BitwisexorContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#bitwiseand.
+    def visitBitwiseand(self, ctx:VyperParser.BitwiseandContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#shift.
+    def visitShift(self, ctx:VyperParser.ShiftContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#summation.
+    def visitSummation(self, ctx:VyperParser.SummationContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#product.
+    def visitProduct(self, ctx:VyperParser.ProductContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#unary.
+    def visitUnary(self, ctx:VyperParser.UnaryContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#power.
+    def visitPower(self, ctx:VyperParser.PowerContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#empty.
+    def visitEmpty(self, ctx:VyperParser.EmptyContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#abidecode.
+    def visitAbidecode(self, ctx:VyperParser.AbidecodeContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#specialbuiltins.
+    def visitSpecialbuiltins(self, ctx:VyperParser.SpecialbuiltinsContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#atom.
+    def visitAtom(self, ctx:VyperParser.AtomContext):
         return self.visitChildren(ctx)
 
 
@@ -429,8 +454,8 @@ class VyperVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by VyperParser#integer.
-    def visitInteger(self, ctx:VyperParser.IntegerContext):
+    # Visit a parse tree produced by VyperParser#literal.
+    def visitLiteral(self, ctx:VyperParser.LiteralContext):
         return self.visitChildren(ctx)
 
 

@@ -48,8 +48,9 @@ def parse_vyper(code):
 
     parser = VyperParser(token_stream)
 
-    parse_tree = parser.single_input()
+    parse_tree = parser.module()
     print(parse_tree.toStringTree(recog=parser))
+    print('a')
 
 
-parse_yul(yul_script)
+parse_vyper(vyper_script)

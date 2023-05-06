@@ -134,15 +134,6 @@ class YulListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by YulParser#path.
-    def enterPath(self, ctx:YulParser.PathContext):
-        pass
-
-    # Exit a parse tree produced by YulParser#path.
-    def exitPath(self, ctx:YulParser.PathContext):
-        pass
-
-
     # Enter a parse tree produced by YulParser#functionCall.
     def enterFunctionCall(self, ctx:YulParser.FunctionCallContext):
         pass
@@ -167,6 +158,33 @@ class YulListener(ParseTreeListener):
 
     # Exit a parse tree produced by YulParser#literal.
     def exitLiteral(self, ctx:YulParser.LiteralContext):
+        pass
+
+
+    # Enter a parse tree produced by YulParser#typedIdentifierList.
+    def enterTypedIdentifierList(self, ctx:YulParser.TypedIdentifierListContext):
+        pass
+
+    # Exit a parse tree produced by YulParser#typedIdentifierList.
+    def exitTypedIdentifierList(self, ctx:YulParser.TypedIdentifierListContext):
+        pass
+
+
+    # Enter a parse tree produced by YulParser#identifierList.
+    def enterIdentifierList(self, ctx:YulParser.IdentifierListContext):
+        pass
+
+    # Exit a parse tree produced by YulParser#identifierList.
+    def exitIdentifierList(self, ctx:YulParser.IdentifierListContext):
+        pass
+
+
+    # Enter a parse tree produced by YulParser#typeName.
+    def enterTypeName(self, ctx:YulParser.TypeNameContext):
+        pass
+
+    # Exit a parse tree produced by YulParser#typeName.
+    def exitTypeName(self, ctx:YulParser.TypeNameContext):
         pass
 
 

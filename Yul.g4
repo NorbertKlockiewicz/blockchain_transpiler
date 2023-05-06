@@ -21,10 +21,9 @@ statement: block
 
 block: LBrace statement* RBrace;
 
-variableDeclaration: (Let variables+=Identifier (Assign expression)?)
-                    | (Let variables+=Identifier (Comma variables+=Identifier)* (Assign functionCall)?);
+variableDeclaration: (Let variables+=typedIdentifierList (Assign expression)?);
 
-assignment: path Assign expression | (path (Comma path)+) Assign functionCall;
+assignment: identifierList Assign expression;
 
 expression: functionCall | Identifier | literal;
 
@@ -41,11 +40,9 @@ switchStatement: Switch expression
                 );
 
 functionDefinition: Function Identifier
-                    LParen (arguments+=Identifier? (Comma arguments+=Identifier)*) RParen
-                    (Arrow returnParameters+=Identifier (Comma arguments+=Identifier)*)?
+                    LParen (arguments+=typedIdentifierList?) RParen
+                    (Arrow returnParameters+=typedIdentifierList)?
                     body=block;
-
-path: Identifier (Period (Identifier | EVMBuiltin))*;
 
 functionCall: (Identifier | EVMBuiltin) LParen (expression (Comma expression)*)? RParen;
 
@@ -53,6 +50,11 @@ boolean: YulTrue | YulFalse;
 
 literal: DecimalNumber | StringLiteral | HexNumber | boolean | HexStringLiteral;
 
+
+typedIdentifierList: Identifier ( ':' typeName )? ( ',' Identifier ( ':' typeName )? )*;
+identifierList: Identifier ( ',' Identifier)*;
+
+typeName: Identifier;
 Colon: ':';
 Object: 'object';
 Code: 'code';
@@ -83,7 +85,6 @@ DecimalNumber: [0-9]+;
 StringLiteral: '"' (~["\r\n])*  '"';
 HexNumber: '0x' [0-9a-fA-F]+;
 HexStringLiteral: 'hex"' ~["\r\n]* '"';
-
 LINE_COMMENT
   : '//' ~[\r\n]* -> channel(HIDDEN) ;
 

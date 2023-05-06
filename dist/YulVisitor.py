@@ -79,11 +79,6 @@ class YulVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by YulParser#path.
-    def visitPath(self, ctx:YulParser.PathContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by YulParser#functionCall.
     def visitFunctionCall(self, ctx:YulParser.FunctionCallContext):
         return self.visitChildren(ctx)
@@ -96,6 +91,21 @@ class YulVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by YulParser#literal.
     def visitLiteral(self, ctx:YulParser.LiteralContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YulParser#typedIdentifierList.
+    def visitTypedIdentifierList(self, ctx:YulParser.TypedIdentifierListContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YulParser#identifierList.
+    def visitIdentifierList(self, ctx:YulParser.IdentifierListContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YulParser#typeName.
+    def visitTypeName(self, ctx:YulParser.TypeNameContext):
         return self.visitChildren(ctx)
 
 

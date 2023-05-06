@@ -10,7 +10,7 @@ from dist.VyperParser import VyperParser
 
 # Define the input code to be parsed
 solidity_script = open("./scripts/solidity_1.sol", "r").read()
-yul_script = open("./scripts/yul_1.yul", "r").read()
+yul_script = open("./scripts/yul_2.yul", "r").read()
 vyper_script = open("./scripts/vyper_1.vy", "r").read()
 
 def parse_solidity(code):
@@ -35,7 +35,7 @@ def parse_yul(code):
 
     parser = YulParser(token_stream)
 
-    parse_tree = parser.start()
+    parse_tree = parser.sourceUnit()
     print(parse_tree.toStringTree(recog=parser))
 
 

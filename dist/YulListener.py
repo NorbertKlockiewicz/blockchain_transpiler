@@ -8,12 +8,12 @@ else:
 # This class defines a complete listener for a parse tree produced by YulParser.
 class YulListener(ParseTreeListener):
 
-    # Enter a parse tree produced by YulParser#start.
-    def enterStart(self, ctx:YulParser.StartContext):
+    # Enter a parse tree produced by YulParser#sourceUnit.
+    def enterSourceUnit(self, ctx:YulParser.SourceUnitContext):
         pass
 
-    # Exit a parse tree produced by YulParser#start.
-    def exitStart(self, ctx:YulParser.StartContext):
+    # Exit a parse tree produced by YulParser#sourceUnit.
+    def exitSourceUnit(self, ctx:YulParser.SourceUnitContext):
         pass
 
 
@@ -131,6 +131,15 @@ class YulListener(ParseTreeListener):
 
     # Exit a parse tree produced by YulParser#functionDefinition.
     def exitFunctionDefinition(self, ctx:YulParser.FunctionDefinitionContext):
+        pass
+
+
+    # Enter a parse tree produced by YulParser#path.
+    def enterPath(self, ctx:YulParser.PathContext):
+        pass
+
+    # Exit a parse tree produced by YulParser#path.
+    def exitPath(self, ctx:YulParser.PathContext):
         pass
 
 

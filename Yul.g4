@@ -1,7 +1,6 @@
 grammar Yul;
 
-start: object
-        | statement;
+sourceUnit: (object | statement)* EOF;
 
 object: Object StringLiteral LBrace code ( object | data )* RBrace;
 code: Code block;
@@ -25,7 +24,7 @@ block: LBrace statement* RBrace;
 variableDeclaration: (Let variables+=Identifier (Assign expression)?)
                     | (Let variables+=Identifier (Comma variables+=Identifier)* (Assign functionCall)?);
 
-assignment: IdentifierList Assign expression;
+assignment: path Assign expression | (path (Comma path)+) Assign functionCall;
 
 expression: functionCall | Identifier | literal;
 
@@ -42,20 +41,18 @@ switchStatement: Switch expression
                 );
 
 functionDefinition: Function Identifier
-                    LParen (arguments+=TypedIdentifierList?) RParen
-                    (Arrow returnParameters+=TypedIdentifierList)?
+                    LParen (arguments+=Identifier? (Comma arguments+=Identifier)*) RParen
+                    (Arrow returnParameters+=Identifier (Comma arguments+=Identifier)*)?
                     body=block;
+
+path: Identifier (Period (Identifier | EVMBuiltin))*;
 
 functionCall: (Identifier | EVMBuiltin) LParen (expression (Comma expression)*)? RParen;
 
 boolean: YulTrue | YulFalse;
 
-literal: (DecimalNumber | StringLiteral | HexNumber | boolean | HexStringLiteral) ( Colon TypeName)?;
+literal: DecimalNumber | StringLiteral | HexNumber | boolean | HexStringLiteral;
 
-TypedIdentifierList: Identifier ( Colon TypeName )? ( Comma Identifier ( Colon TypeName )? )*;
-IdentifierList: Identifier ( Comma Identifier )*;
-
-TypeName: Identifier;
 Colon: ':';
 Object: 'object';
 Code: 'code';
@@ -63,7 +60,7 @@ Data: 'data';
 LBrace: '{';
 RBrace: '}';
 Let: 'let';
-Assign: '=';
+Assign: ':=';
 Comma: ',';
 If: 'if';
 For: 'for';
@@ -83,7 +80,14 @@ EVMBuiltin: [a-zA-Z_][a-zA-Z0-9_]*;
 YulTrue: 'true';
 YulFalse: 'false';
 DecimalNumber: [0-9]+;
-StringLiteral: '"' ([^"\r\n\\] | '\\' .)* '"';
+StringLiteral: '"' (~["\r\n])*  '"';
 HexNumber: '0x' [0-9a-fA-F]+;
 HexStringLiteral: 'hex"' ~["\r\n]* '"';
-WS: [ \t\r\n]+;
+
+LINE_COMMENT
+  : '//' ~[\r\n]* -> channel(HIDDEN) ;
+
+COMMENT
+  : '/*' .*? '*/' -> channel(HIDDEN) ;
+
+WS: [ \t\r\n]+ -> skip;

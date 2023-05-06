@@ -9,8 +9,8 @@ else:
 
 class YulVisitor(ParseTreeVisitor):
 
-    # Visit a parse tree produced by YulParser#start.
-    def visitStart(self, ctx:YulParser.StartContext):
+    # Visit a parse tree produced by YulParser#sourceUnit.
+    def visitSourceUnit(self, ctx:YulParser.SourceUnitContext):
         return self.visitChildren(ctx)
 
 
@@ -76,6 +76,11 @@ class YulVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by YulParser#functionDefinition.
     def visitFunctionDefinition(self, ctx:YulParser.FunctionDefinitionContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YulParser#path.
+    def visitPath(self, ctx:YulParser.PathContext):
         return self.visitChildren(ctx)
 
 

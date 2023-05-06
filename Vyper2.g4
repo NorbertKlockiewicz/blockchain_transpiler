@@ -3,6 +3,7 @@
 // A module is a sequence of definitions and methods (and comments).
 // NOTE: Start symbol for the grammar
 // NOTE: Module can start with docstring
+
 module: ( DOCSTRING
         | COMMENT
         | import

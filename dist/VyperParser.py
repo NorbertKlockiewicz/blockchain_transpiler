@@ -10,7 +10,7 @@ else:
 
 def serializedATN():
     return [
-        4,1,77,1001,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,
+        4,1,78,1001,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,
         7,6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,
         13,2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,
         20,7,20,2,21,7,21,2,22,7,22,2,23,7,23,2,24,7,24,2,25,7,25,2,26,7,
@@ -100,8 +100,8 @@ def serializedATN():
         58,60,62,64,66,68,70,72,74,76,78,80,82,84,86,88,90,92,94,96,98,100,
         102,104,106,108,110,112,114,116,118,120,122,124,126,128,130,132,
         134,136,138,140,142,144,146,148,150,152,154,156,158,160,162,164,
-        166,168,170,172,174,176,178,0,3,2,0,66,66,70,70,3,0,30,37,51,52,
-        55,57,1,0,70,74,1062,0,194,1,0,0,0,2,199,1,0,0,0,4,227,1,0,0,0,6,
+        166,168,170,172,174,176,178,0,3,2,0,66,66,71,71,3,0,30,37,51,52,
+        55,57,1,0,71,75,1062,0,194,1,0,0,0,2,199,1,0,0,0,4,227,1,0,0,0,6,
         234,1,0,0,0,8,239,1,0,0,0,10,242,1,0,0,0,12,259,1,0,0,0,14,274,1,
         0,0,0,16,285,1,0,0,0,18,294,1,0,0,0,20,298,1,0,0,0,22,307,1,0,0,
         0,24,312,1,0,0,0,26,324,1,0,0,0,28,328,1,0,0,0,30,336,1,0,0,0,32,
@@ -123,9 +123,9 @@ def serializedATN():
         0,0,158,894,1,0,0,0,160,908,1,0,0,0,162,922,1,0,0,0,164,946,1,0,
         0,0,166,948,1,0,0,0,168,959,1,0,0,0,170,964,1,0,0,0,172,980,1,0,
         0,0,174,991,1,0,0,0,176,993,1,0,0,0,178,998,1,0,0,0,180,193,5,68,
-        0,0,181,193,5,77,0,0,182,193,3,4,2,0,183,193,3,72,36,0,184,193,3,
+        0,0,181,193,5,78,0,0,182,193,3,4,2,0,183,193,3,72,36,0,184,193,3,
         78,39,0,185,193,3,14,7,0,186,193,3,22,11,0,187,193,3,52,26,0,188,
-        193,3,46,23,0,189,193,3,36,18,0,190,193,3,16,8,0,191,193,5,76,0,
+        193,3,46,23,0,189,193,3,36,18,0,190,193,3,16,8,0,191,193,5,77,0,
         0,192,180,1,0,0,0,192,181,1,0,0,0,192,182,1,0,0,0,192,183,1,0,0,
         0,192,184,1,0,0,0,192,185,1,0,0,0,192,186,1,0,0,0,192,187,1,0,0,
         0,192,188,1,0,0,0,192,189,1,0,0,0,192,190,1,0,0,0,192,191,1,0,0,
@@ -155,24 +155,24 @@ def serializedATN():
         0,272,263,1,0,0,0,272,268,1,0,0,0,273,13,1,0,0,0,274,275,5,66,0,
         0,275,276,5,8,0,0,276,277,5,17,0,0,277,278,5,11,0,0,278,279,3,68,
         34,0,279,280,5,12,0,0,280,281,5,9,0,0,281,283,3,118,59,0,282,284,
-        5,76,0,0,283,282,1,0,0,0,283,284,1,0,0,0,284,15,1,0,0,0,285,286,
+        5,77,0,0,283,282,1,0,0,0,283,284,1,0,0,0,284,15,1,0,0,0,285,286,
         5,66,0,0,286,287,5,8,0,0,287,288,5,18,0,0,288,289,5,11,0,0,289,290,
-        3,68,34,0,290,292,5,12,0,0,291,293,5,76,0,0,292,291,1,0,0,0,292,
+        3,68,34,0,290,292,5,12,0,0,291,293,5,77,0,0,292,291,1,0,0,0,292,
         293,1,0,0,0,293,17,1,0,0,0,294,295,5,66,0,0,295,296,5,8,0,0,296,
         297,3,68,34,0,297,19,1,0,0,0,298,299,5,66,0,0,299,300,5,8,0,0,300,
         301,5,19,0,0,301,302,5,11,0,0,302,303,3,68,34,0,303,304,5,12,0,0,
         304,21,1,0,0,0,305,308,3,18,9,0,306,308,3,20,10,0,307,305,1,0,0,
-        0,307,306,1,0,0,0,308,310,1,0,0,0,309,311,5,76,0,0,310,309,1,0,0,
+        0,307,306,1,0,0,0,308,310,1,0,0,0,309,311,5,77,0,0,310,309,1,0,0,
         0,310,311,1,0,0,0,311,23,1,0,0,0,312,313,5,10,0,0,313,319,5,66,0,
         0,314,316,5,11,0,0,315,317,3,134,67,0,316,315,1,0,0,0,316,317,1,
         0,0,0,317,318,1,0,0,0,318,320,5,12,0,0,319,314,1,0,0,0,319,320,1,
-        0,0,0,320,321,1,0,0,0,321,322,5,76,0,0,322,25,1,0,0,0,323,325,3,
+        0,0,0,320,321,1,0,0,0,321,322,5,77,0,0,322,25,1,0,0,0,323,325,3,
         24,12,0,324,323,1,0,0,0,325,326,1,0,0,0,326,324,1,0,0,0,326,327,
         1,0,0,0,327,27,1,0,0,0,328,329,5,66,0,0,329,330,5,8,0,0,330,333,
         3,68,34,0,331,332,5,9,0,0,332,334,3,118,59,0,333,331,1,0,0,0,333,
         334,1,0,0,0,334,29,1,0,0,0,335,337,5,1,0,0,336,335,1,0,0,0,336,337,
         1,0,0,0,337,338,1,0,0,0,338,348,3,28,14,0,339,341,5,7,0,0,340,342,
-        5,76,0,0,341,340,1,0,0,0,341,342,1,0,0,0,342,344,1,0,0,0,343,345,
+        5,77,0,0,341,340,1,0,0,0,341,342,1,0,0,0,342,344,1,0,0,0,343,345,
         3,28,14,0,344,343,1,0,0,0,344,345,1,0,0,0,345,347,1,0,0,0,346,339,
         1,0,0,0,347,350,1,0,0,0,348,346,1,0,0,0,348,349,1,0,0,0,349,352,
         1,0,0,0,350,348,1,0,0,0,351,353,5,2,0,0,352,351,1,0,0,0,352,353,
@@ -182,21 +182,21 @@ def serializedATN():
         5,12,0,0,364,366,3,32,16,0,365,364,1,0,0,0,365,366,1,0,0,0,366,35,
         1,0,0,0,367,369,3,26,13,0,368,367,1,0,0,0,368,369,1,0,0,0,369,370,
         1,0,0,0,370,371,3,34,17,0,371,372,5,8,0,0,372,373,3,38,19,0,373,
-        37,1,0,0,0,374,380,5,1,0,0,375,381,5,77,0,0,376,378,3,80,40,0,377,
-        379,5,76,0,0,378,377,1,0,0,0,378,379,1,0,0,0,379,381,1,0,0,0,380,
+        37,1,0,0,0,374,380,5,1,0,0,375,381,5,69,0,0,376,378,3,80,40,0,377,
+        379,5,77,0,0,378,377,1,0,0,0,378,379,1,0,0,0,379,381,1,0,0,0,380,
         375,1,0,0,0,380,376,1,0,0,0,381,382,1,0,0,0,382,380,1,0,0,0,382,
         383,1,0,0,0,383,384,1,0,0,0,384,385,5,2,0,0,385,39,1,0,0,0,386,387,
         5,66,0,0,387,388,5,8,0,0,388,389,3,68,34,0,389,41,1,0,0,0,390,391,
         5,66,0,0,391,392,5,8,0,0,392,393,5,20,0,0,393,394,5,11,0,0,394,395,
         3,68,34,0,395,396,5,12,0,0,396,43,1,0,0,0,397,405,5,1,0,0,398,401,
         3,40,20,0,399,401,3,42,21,0,400,398,1,0,0,0,400,399,1,0,0,0,401,
-        403,1,0,0,0,402,404,5,76,0,0,403,402,1,0,0,0,403,404,1,0,0,0,404,
+        403,1,0,0,0,402,404,5,77,0,0,403,402,1,0,0,0,403,404,1,0,0,0,404,
         406,1,0,0,0,405,400,1,0,0,0,406,407,1,0,0,0,407,405,1,0,0,0,407,
         408,1,0,0,0,408,409,1,0,0,0,409,410,5,2,0,0,410,45,1,0,0,0,411,412,
         5,24,0,0,412,413,5,66,0,0,413,416,5,8,0,0,414,417,3,44,22,0,415,
         417,5,38,0,0,416,414,1,0,0,0,416,415,1,0,0,0,417,47,1,0,0,0,418,
-        419,5,66,0,0,419,49,1,0,0,0,420,421,5,76,0,0,421,426,5,1,0,0,422,
-        424,3,48,24,0,423,425,5,76,0,0,424,423,1,0,0,0,424,425,1,0,0,0,425,
+        419,5,66,0,0,419,49,1,0,0,0,420,421,5,77,0,0,421,426,5,1,0,0,422,
+        424,3,48,24,0,423,425,5,77,0,0,424,423,1,0,0,0,424,425,1,0,0,0,425,
         427,1,0,0,0,426,422,1,0,0,0,427,428,1,0,0,0,428,426,1,0,0,0,428,
         429,1,0,0,0,429,430,1,0,0,0,430,431,5,2,0,0,431,51,1,0,0,0,432,433,
         5,25,0,0,433,434,5,66,0,0,434,435,5,8,0,0,435,436,3,50,25,0,436,
@@ -223,24 +223,24 @@ def serializedATN():
         0,0,503,500,1,0,0,0,503,501,1,0,0,0,503,502,1,0,0,0,504,69,1,0,0,
         0,505,506,5,66,0,0,506,507,5,8,0,0,507,508,3,68,34,0,508,71,1,0,
         0,0,509,510,5,27,0,0,510,511,5,66,0,0,511,512,5,8,0,0,512,517,5,
-        1,0,0,513,515,3,70,35,0,514,516,5,76,0,0,515,514,1,0,0,0,515,516,
+        1,0,0,513,515,3,70,35,0,514,516,5,77,0,0,515,514,1,0,0,0,515,516,
         1,0,0,0,516,518,1,0,0,0,517,513,1,0,0,0,518,519,1,0,0,0,519,517,
         1,0,0,0,519,520,1,0,0,0,520,521,1,0,0,0,521,522,5,2,0,0,522,73,1,
         0,0,0,523,524,5,66,0,0,524,75,1,0,0,0,525,526,3,34,17,0,526,527,
         5,8,0,0,527,528,3,74,37,0,528,77,1,0,0,0,529,530,5,28,0,0,530,531,
         5,66,0,0,531,532,5,8,0,0,532,537,5,1,0,0,533,535,3,76,38,0,534,536,
-        5,76,0,0,535,534,1,0,0,0,535,536,1,0,0,0,536,538,1,0,0,0,537,533,
+        5,77,0,0,535,534,1,0,0,0,535,536,1,0,0,0,536,538,1,0,0,0,537,533,
         1,0,0,0,538,539,1,0,0,0,539,537,1,0,0,0,539,540,1,0,0,0,540,541,
         1,0,0,0,541,542,5,2,0,0,542,79,1,0,0,0,543,546,3,110,55,0,544,546,
         3,116,58,0,545,543,1,0,0,0,545,544,1,0,0,0,546,548,1,0,0,0,547,549,
-        5,77,0,0,548,547,1,0,0,0,548,549,1,0,0,0,549,567,1,0,0,0,550,562,
+        5,78,0,0,548,547,1,0,0,0,548,549,1,0,0,0,549,567,1,0,0,0,550,562,
         3,82,41,0,551,562,3,86,43,0,552,562,3,90,45,0,553,562,3,100,50,0,
         554,562,3,92,46,0,555,562,3,94,47,0,556,562,3,96,48,0,557,562,3,
         98,49,0,558,562,3,102,51,0,559,562,3,104,52,0,560,562,3,118,59,0,
         561,550,1,0,0,0,561,551,1,0,0,0,561,552,1,0,0,0,561,553,1,0,0,0,
         561,554,1,0,0,0,561,555,1,0,0,0,561,556,1,0,0,0,561,557,1,0,0,0,
         561,558,1,0,0,0,561,559,1,0,0,0,561,560,1,0,0,0,562,564,1,0,0,0,
-        563,565,5,77,0,0,564,563,1,0,0,0,564,565,1,0,0,0,565,567,1,0,0,0,
+        563,565,5,78,0,0,564,563,1,0,0,0,564,565,1,0,0,0,565,567,1,0,0,0,
         566,545,1,0,0,0,566,561,1,0,0,0,567,81,1,0,0,0,568,571,3,18,9,0,
         569,570,5,9,0,0,570,572,3,118,59,0,571,569,1,0,0,0,571,572,1,0,0,
         0,572,83,1,0,0,0,573,576,3,120,60,0,574,576,5,29,0,0,575,573,1,0,
@@ -370,7 +370,7 @@ def serializedATN():
         1,0,0,0,991,982,1,0,0,0,991,983,1,0,0,0,991,984,1,0,0,0,991,985,
         1,0,0,0,991,986,1,0,0,0,991,987,1,0,0,0,992,175,1,0,0,0,993,994,
         7,2,0,0,994,177,1,0,0,0,995,999,3,176,88,0,996,999,5,68,0,0,997,
-        999,5,69,0,0,998,995,1,0,0,0,998,996,1,0,0,0,998,997,1,0,0,0,999,
+        999,5,70,0,0,998,995,1,0,0,0,998,996,1,0,0,0,998,997,1,0,0,0,999,
         179,1,0,0,0,108,192,194,205,210,217,219,227,234,244,249,253,257,
         263,270,272,283,292,307,310,316,319,326,333,336,341,344,348,352,
         361,365,368,378,380,382,400,403,407,416,424,428,443,449,466,474,
@@ -413,9 +413,9 @@ class VyperParser ( Parser ):
                       "ASSERT", "IF", "ELSE", "ELIF", "UNREACHABLE", "FOR", 
                       "IN", "AND", "OR", "NOT", "NEG", "BITAND", "BITOR", 
                       "BITXOR", "EQ", "NE", "LE", "GE", "LT", "GT", "EMPTY", 
-                      "ABIDECODE", "NAME", "TYPE", "STRING", "BOOL", "DECNUMBER", 
-                      "HEXNUMBER", "OCTNUMBER", "BINNUMBER", "FLOATNUMBER", 
-                      "SPACES", "NEWLINE", "COMMENT" ]
+                      "ABIDECODE", "NAME", "TYPE", "STRING", "DOCSTRING", 
+                      "BOOL", "DECNUMBER", "HEXNUMBER", "OCTNUMBER", "BINNUMBER", 
+                      "FLOATNUMBER", "SPACES", "NEWLINE", "COMMENT" ]
 
     RULE_module = 0
     RULE_importname = 1
@@ -444,13 +444,13 @@ class VyperParser ( Parser ):
     RULE_enummember = 24
     RULE_enumbody = 25
     RULE_enumdef = 26
-    RULE_array_def = 27
-    RULE_array_def_tail = 28
-    RULE_dyn_array_def = 29
-    RULE_dyn_array_def_inner = 30
-    RULE_tuple_def = 31
-    RULE_tuple_def_inner = 32
-    RULE_map_def = 33
+    RULE_arraydef = 27
+    RULE_arraydeftail = 28
+    RULE_dynarraydef = 29
+    RULE_dynarraydefinner = 30
+    RULE_tupledef = 31
+    RULE_tupledefinner = 32
+    RULE_mapdef = 33
     RULE_type_ = 34
     RULE_structmember = 35
     RULE_structdef = 36
@@ -514,20 +514,20 @@ class VyperParser ( Parser ):
                    "decorators", "parameter", "parameters", "returns_", 
                    "functionsig", "functiondef", "body", "eventmember", 
                    "indexedeventarg", "eventbody", "eventdef", "enummember", 
-                   "enumbody", "enumdef", "array_def", "array_def_tail", 
-                   "dyn_array_def", "dyn_array_def_inner", "tuple_def", 
-                   "tuple_def_inner", "map_def", "type_", "structmember", 
-                   "structdef", "mutability", "interfacefunction", "interfacedef", 
-                   "stmt", "declaration", "multipleassign", "assign", "augoperator", 
-                   "augassign", "passstmt", "breakstmt", "continuestmt", 
-                   "logstmt", "returnstmt", "raisestmt", "assertstmt", "condexec", 
-                   "defaultexec", "ifstmt", "loopvariable", "loopiterator", 
-                   "forstmt", "expr", "variableaccess", "getattr", "getitem", 
-                   "call", "arg", "kwarg", "argument", "arguments", "tuple", 
-                   "list", "dict", "operation", "boolor", "booland", "boolnot", 
-                   "comparator", "bitwiseor", "bitwisexor", "bitwiseand", 
-                   "shift", "summation", "product", "unary", "power", "empty", 
-                   "abidecode", "specialbuiltins", "atom", "number", "literal" ]
+                   "enumbody", "enumdef", "arraydef", "arraydeftail", "dynarraydef", 
+                   "dynarraydefinner", "tupledef", "tupledefinner", "mapdef", 
+                   "type_", "structmember", "structdef", "mutability", "interfacefunction", 
+                   "interfacedef", "stmt", "declaration", "multipleassign", 
+                   "assign", "augoperator", "augassign", "passstmt", "breakstmt", 
+                   "continuestmt", "logstmt", "returnstmt", "raisestmt", 
+                   "assertstmt", "condexec", "defaultexec", "ifstmt", "loopvariable", 
+                   "loopiterator", "forstmt", "expr", "variableaccess", 
+                   "getattr", "getitem", "call", "arg", "kwarg", "argument", 
+                   "arguments", "tuple", "list", "dict", "operation", "boolor", 
+                   "booland", "boolnot", "comparator", "bitwiseor", "bitwisexor", 
+                   "bitwiseand", "shift", "summation", "product", "unary", 
+                   "power", "empty", "abidecode", "specialbuiltins", "atom", 
+                   "number", "literal" ]
 
     EOF = Token.EOF
     INDENT=1
@@ -598,15 +598,16 @@ class VyperParser ( Parser ):
     NAME=66
     TYPE=67
     STRING=68
-    BOOL=69
-    DECNUMBER=70
-    HEXNUMBER=71
-    OCTNUMBER=72
-    BINNUMBER=73
-    FLOATNUMBER=74
-    SPACES=75
-    NEWLINE=76
-    COMMENT=77
+    DOCSTRING=69
+    BOOL=70
+    DECNUMBER=71
+    HEXNUMBER=72
+    OCTNUMBER=73
+    BINNUMBER=74
+    FLOATNUMBER=75
+    SPACES=76
+    NEWLINE=77
+    COMMENT=78
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -719,6 +720,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitModule" ):
                 listener.exitModule(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitModule" ):
+                return visitor.visitModule(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -732,7 +739,7 @@ class VyperParser ( Parser ):
             self.state = 194
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 457180208) != 0) or ((((_la - 66)) & ~0x3f) == 0 and ((1 << (_la - 66)) & 3077) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 457180208) != 0) or ((((_la - 66)) & ~0x3f) == 0 and ((1 << (_la - 66)) & 6149) != 0):
                 self.state = 192
                 self._errHandler.sync(self)
                 la_ = self._interp.adaptivePredict(self._input,0,self._ctx)
@@ -833,6 +840,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitImportname" ):
                 listener.exitImportname(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitImportname" ):
+                return visitor.visitImportname(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -908,6 +921,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitImport_" ):
                 listener.exitImport_(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitImport_" ):
+                return visitor.visitImport_(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1032,6 +1051,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitImportpath" ):
                 listener.exitImportpath(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitImportpath" ):
+                return visitor.visitImportpath(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1088,6 +1113,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitImportalias" ):
                 listener.exitImportalias(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitImportalias" ):
+                return visitor.visitImportalias(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1148,6 +1179,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitImportlist" ):
                 listener.exitImportlist(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitImportlist" ):
+                return visitor.visitImportlist(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1237,6 +1274,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitImportfrom" ):
                 listener.exitImportfrom(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitImportfrom" ):
+                return visitor.visitImportfrom(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1340,6 +1383,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitConstantdef" ):
                 listener.exitConstantdef(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitConstantdef" ):
+                return visitor.visitConstantdef(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1422,6 +1471,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitImmutabledef" ):
                 listener.exitImmutabledef(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitImmutabledef" ):
+                return visitor.visitImmutabledef(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1488,6 +1543,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitVariable" ):
                 listener.exitVariable(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVariable" ):
+                return visitor.visitVariable(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1549,6 +1610,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitVariablewithgetter" ):
                 listener.exitVariablewithgetter(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVariablewithgetter" ):
+                return visitor.visitVariablewithgetter(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1607,6 +1674,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitVariabledef" ):
                 listener.exitVariabledef(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVariabledef" ):
+                return visitor.visitVariabledef(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1685,6 +1758,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitDecorator" ):
                 listener.exitDecorator(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDecorator" ):
+                return visitor.visitDecorator(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1708,7 +1787,7 @@ class VyperParser ( Parser ):
                 self.state = 316
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if ((((_la - 11)) & ~0x3f) == 0 and ((1 << (_la - 11)) & -81051599151562731) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 27021600985491456) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & 4055) != 0):
                     self.state = 315
                     self.arguments()
 
@@ -1752,6 +1831,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitDecorators" ):
                 listener.exitDecorators(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDecorators" ):
+                return visitor.visitDecorators(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1818,6 +1903,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitParameter" ):
                 listener.exitParameter(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitParameter" ):
+                return visitor.visitParameter(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1897,6 +1988,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitParameters" ):
                 listener.exitParameters(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitParameters" ):
+                return visitor.visitParameters(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1926,7 +2023,7 @@ class VyperParser ( Parser ):
                 self.state = 341
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==76:
+                if _la==77:
                     self.state = 340
                     self.match(VyperParser.NEWLINE)
 
@@ -1984,6 +2081,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitReturns_" ):
                 listener.exitReturns_(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitReturns_" ):
+                return visitor.visitReturns_(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2044,6 +2147,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitFunctionsig" ):
                 listener.exitFunctionsig(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunctionsig" ):
+                return visitor.visitFunctionsig(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2121,6 +2230,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitFunctiondef" ):
                 listener.exitFunctiondef(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunctiondef" ):
+                return visitor.visitFunctiondef(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2167,11 +2282,11 @@ class VyperParser ( Parser ):
         def DEDENT(self):
             return self.getToken(VyperParser.DEDENT, 0)
 
-        def COMMENT(self, i:int=None):
+        def DOCSTRING(self, i:int=None):
             if i is None:
-                return self.getTokens(VyperParser.COMMENT)
+                return self.getTokens(VyperParser.DOCSTRING)
             else:
-                return self.getToken(VyperParser.COMMENT, i)
+                return self.getToken(VyperParser.DOCSTRING, i)
 
         def stmt(self, i:int=None):
             if i is None:
@@ -2197,6 +2312,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitBody" ):
                 listener.exitBody(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBody" ):
+                return visitor.visitBody(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2216,17 +2337,17 @@ class VyperParser ( Parser ):
                 self.state = 380
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
-                if token in [77]:
+                if token in [69]:
                     self.state = 375
-                    self.match(VyperParser.COMMENT)
+                    self.match(VyperParser.DOCSTRING)
                     pass
-                elif token in [11, 13, 15, 29, 30, 31, 38, 39, 40, 41, 42, 43, 44, 45, 49, 53, 54, 64, 65, 66, 68, 69, 70, 71, 72, 73, 74]:
+                elif token in [11, 13, 15, 29, 30, 31, 38, 39, 40, 41, 42, 43, 44, 45, 49, 53, 54, 64, 65, 66, 68, 70, 71, 72, 73, 74, 75]:
                     self.state = 376
                     self.stmt()
                     self.state = 378
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
-                    if _la==76:
+                    if _la==77:
                         self.state = 377
                         self.match(VyperParser.NEWLINE)
 
@@ -2238,7 +2359,7 @@ class VyperParser ( Parser ):
                 self.state = 382 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 27654645342054400) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & 10231) != 0)):
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 27654645342054400) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & 4087) != 0)):
                     break
 
             self.state = 384
@@ -2279,6 +2400,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitEventmember" ):
                 listener.exitEventmember(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitEventmember" ):
+                return visitor.visitEventmember(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2340,6 +2467,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitIndexedeventarg" ):
                 listener.exitIndexedeventarg(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIndexedeventarg" ):
+                return visitor.visitIndexedeventarg(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2415,6 +2548,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitEventbody" ):
                 listener.exitEventbody(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitEventbody" ):
+                return visitor.visitEventbody(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2448,7 +2587,7 @@ class VyperParser ( Parser ):
                 self.state = 403
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==76:
+                if _la==77:
                     self.state = 402
                     self.match(VyperParser.NEWLINE)
 
@@ -2503,6 +2642,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitEventdef" ):
                 listener.exitEventdef(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitEventdef" ):
+                return visitor.visitEventdef(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2563,6 +2708,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitEnummember" ):
                 listener.exitEnummember(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitEnummember" ):
+                return visitor.visitEnummember(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2620,6 +2771,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitEnumbody" ):
                 listener.exitEnumbody(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitEnumbody" ):
+                return visitor.visitEnumbody(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2643,7 +2800,7 @@ class VyperParser ( Parser ):
                 self.state = 424
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==76:
+                if _la==77:
                     self.state = 423
                     self.match(VyperParser.NEWLINE)
 
@@ -2696,6 +2853,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitEnumdef" ):
                 listener.exitEnumdef(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitEnumdef" ):
+                return visitor.visitEnumdef(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -2722,7 +2885,7 @@ class VyperParser ( Parser ):
         return localctx
 
 
-    class Array_defContext(ParserRuleContext):
+    class ArraydefContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -2732,38 +2895,44 @@ class VyperParser ( Parser ):
         def NAME(self):
             return self.getToken(VyperParser.NAME, 0)
 
-        def array_def_tail(self):
-            return self.getTypedRuleContext(VyperParser.Array_def_tailContext,0)
+        def arraydeftail(self):
+            return self.getTypedRuleContext(VyperParser.ArraydeftailContext,0)
 
 
-        def dyn_array_def(self):
-            return self.getTypedRuleContext(VyperParser.Dyn_array_defContext,0)
+        def dynarraydef(self):
+            return self.getTypedRuleContext(VyperParser.DynarraydefContext,0)
 
 
-        def array_def(self):
-            return self.getTypedRuleContext(VyperParser.Array_defContext,0)
+        def arraydef(self):
+            return self.getTypedRuleContext(VyperParser.ArraydefContext,0)
 
 
         def getRuleIndex(self):
-            return VyperParser.RULE_array_def
+            return VyperParser.RULE_arraydef
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterArray_def" ):
-                listener.enterArray_def(self)
+            if hasattr( listener, "enterArraydef" ):
+                listener.enterArraydef(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitArray_def" ):
-                listener.exitArray_def(self)
+            if hasattr( listener, "exitArraydef" ):
+                listener.exitArraydef(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArraydef" ):
+                return visitor.visitArraydef(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
-    def array_def(self, _p:int=0):
+    def arraydef(self, _p:int=0):
         _parentctx = self._ctx
         _parentState = self.state
-        localctx = VyperParser.Array_defContext(self, self._ctx, _parentState)
+        localctx = VyperParser.ArraydefContext(self, self._ctx, _parentState)
         _prevctx = localctx
         _startState = 54
-        self.enterRecursionRule(localctx, 54, self.RULE_array_def, _p)
+        self.enterRecursionRule(localctx, 54, self.RULE_arraydef, _p)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 443
@@ -2773,13 +2942,13 @@ class VyperParser ( Parser ):
                 self.state = 438
                 self.match(VyperParser.NAME)
                 self.state = 439
-                self.array_def_tail()
+                self.arraydeftail()
                 pass
             elif token in [21]:
                 self.state = 440
-                self.dyn_array_def()
+                self.dynarraydef()
                 self.state = 441
-                self.array_def_tail()
+                self.arraydeftail()
                 pass
             else:
                 raise NoViableAltException(self)
@@ -2793,14 +2962,14 @@ class VyperParser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    localctx = VyperParser.Array_defContext(self, _parentctx, _parentState)
-                    self.pushNewRecursionContext(localctx, _startState, self.RULE_array_def)
+                    localctx = VyperParser.ArraydefContext(self, _parentctx, _parentState)
+                    self.pushNewRecursionContext(localctx, _startState, self.RULE_arraydef)
                     self.state = 445
                     if not self.precpred(self._ctx, 2):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
                     self.state = 446
-                    self.array_def_tail() 
+                    self.arraydeftail() 
                 self.state = 451
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,41,self._ctx)
@@ -2814,7 +2983,7 @@ class VyperParser ( Parser ):
         return localctx
 
 
-    class Array_def_tailContext(ParserRuleContext):
+    class ArraydeftailContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -2834,23 +3003,29 @@ class VyperParser ( Parser ):
             return self.getToken(VyperParser.NAME, 0)
 
         def getRuleIndex(self):
-            return VyperParser.RULE_array_def_tail
+            return VyperParser.RULE_arraydeftail
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterArray_def_tail" ):
-                listener.enterArray_def_tail(self)
+            if hasattr( listener, "enterArraydeftail" ):
+                listener.enterArraydeftail(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitArray_def_tail" ):
-                listener.exitArray_def_tail(self)
+            if hasattr( listener, "exitArraydeftail" ):
+                listener.exitArraydeftail(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArraydeftail" ):
+                return visitor.visitArraydeftail(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
 
-    def array_def_tail(self):
+    def arraydeftail(self):
 
-        localctx = VyperParser.Array_def_tailContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 56, self.RULE_array_def_tail)
+        localctx = VyperParser.ArraydeftailContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 56, self.RULE_arraydeftail)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
@@ -2858,7 +3033,7 @@ class VyperParser ( Parser ):
             self.match(VyperParser.LSQUARE)
             self.state = 453
             _la = self._input.LA(1)
-            if not(_la==66 or _la==70):
+            if not(_la==66 or _la==71):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -2874,7 +3049,7 @@ class VyperParser ( Parser ):
         return localctx
 
 
-    class Dyn_array_defContext(ParserRuleContext):
+    class DynarraydefContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -2887,8 +3062,8 @@ class VyperParser ( Parser ):
         def LSQUARE(self):
             return self.getToken(VyperParser.LSQUARE, 0)
 
-        def dyn_array_def_inner(self):
-            return self.getTypedRuleContext(VyperParser.Dyn_array_def_innerContext,0)
+        def dynarraydefinner(self):
+            return self.getTypedRuleContext(VyperParser.DynarraydefinnerContext,0)
 
 
         def COMMA(self):
@@ -2904,23 +3079,29 @@ class VyperParser ( Parser ):
             return self.getToken(VyperParser.NAME, 0)
 
         def getRuleIndex(self):
-            return VyperParser.RULE_dyn_array_def
+            return VyperParser.RULE_dynarraydef
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDyn_array_def" ):
-                listener.enterDyn_array_def(self)
+            if hasattr( listener, "enterDynarraydef" ):
+                listener.enterDynarraydef(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDyn_array_def" ):
-                listener.exitDyn_array_def(self)
+            if hasattr( listener, "exitDynarraydef" ):
+                listener.exitDynarraydef(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDynarraydef" ):
+                return visitor.visitDynarraydef(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
 
-    def dyn_array_def(self):
+    def dynarraydef(self):
 
-        localctx = VyperParser.Dyn_array_defContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 58, self.RULE_dyn_array_def)
+        localctx = VyperParser.DynarraydefContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 58, self.RULE_dynarraydef)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
@@ -2929,12 +3110,12 @@ class VyperParser ( Parser ):
             self.state = 457
             self.match(VyperParser.LSQUARE)
             self.state = 458
-            self.dyn_array_def_inner()
+            self.dynarraydefinner()
             self.state = 459
             self.match(VyperParser.COMMA)
             self.state = 460
             _la = self._input.LA(1)
-            if not(_la==66 or _la==70):
+            if not(_la==66 or _la==71):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -2950,7 +3131,7 @@ class VyperParser ( Parser ):
         return localctx
 
 
-    class Dyn_array_def_innerContext(ParserRuleContext):
+    class DynarraydefinnerContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -2960,32 +3141,38 @@ class VyperParser ( Parser ):
         def NAME(self):
             return self.getToken(VyperParser.NAME, 0)
 
-        def array_def(self):
-            return self.getTypedRuleContext(VyperParser.Array_defContext,0)
+        def arraydef(self):
+            return self.getTypedRuleContext(VyperParser.ArraydefContext,0)
 
 
-        def dyn_array_def(self):
-            return self.getTypedRuleContext(VyperParser.Dyn_array_defContext,0)
+        def dynarraydef(self):
+            return self.getTypedRuleContext(VyperParser.DynarraydefContext,0)
 
 
         def getRuleIndex(self):
-            return VyperParser.RULE_dyn_array_def_inner
+            return VyperParser.RULE_dynarraydefinner
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDyn_array_def_inner" ):
-                listener.enterDyn_array_def_inner(self)
+            if hasattr( listener, "enterDynarraydefinner" ):
+                listener.enterDynarraydefinner(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDyn_array_def_inner" ):
-                listener.exitDyn_array_def_inner(self)
+            if hasattr( listener, "exitDynarraydefinner" ):
+                listener.exitDynarraydefinner(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDynarraydefinner" ):
+                return visitor.visitDynarraydefinner(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
 
-    def dyn_array_def_inner(self):
+    def dynarraydefinner(self):
 
-        localctx = VyperParser.Dyn_array_def_innerContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 60, self.RULE_dyn_array_def_inner)
+        localctx = VyperParser.DynarraydefinnerContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 60, self.RULE_dynarraydefinner)
         try:
             self.state = 466
             self._errHandler.sync(self)
@@ -2999,13 +3186,13 @@ class VyperParser ( Parser ):
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 464
-                self.array_def(0)
+                self.arraydef(0)
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 465
-                self.dyn_array_def()
+                self.dynarraydef()
                 pass
 
 
@@ -3018,7 +3205,7 @@ class VyperParser ( Parser ):
         return localctx
 
 
-    class Tuple_defContext(ParserRuleContext):
+    class TupledefContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -3028,11 +3215,11 @@ class VyperParser ( Parser ):
         def LPAREN(self):
             return self.getToken(VyperParser.LPAREN, 0)
 
-        def tuple_def_inner(self, i:int=None):
+        def tupledefinner(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(VyperParser.Tuple_def_innerContext)
+                return self.getTypedRuleContexts(VyperParser.TupledefinnerContext)
             else:
-                return self.getTypedRuleContext(VyperParser.Tuple_def_innerContext,i)
+                return self.getTypedRuleContext(VyperParser.TupledefinnerContext,i)
 
 
         def RPAREN(self):
@@ -3045,30 +3232,36 @@ class VyperParser ( Parser ):
                 return self.getToken(VyperParser.COMMA, i)
 
         def getRuleIndex(self):
-            return VyperParser.RULE_tuple_def
+            return VyperParser.RULE_tupledef
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTuple_def" ):
-                listener.enterTuple_def(self)
+            if hasattr( listener, "enterTupledef" ):
+                listener.enterTupledef(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTuple_def" ):
-                listener.exitTuple_def(self)
+            if hasattr( listener, "exitTupledef" ):
+                listener.exitTupledef(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTupledef" ):
+                return visitor.visitTupledef(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
 
-    def tuple_def(self):
+    def tupledef(self):
 
-        localctx = VyperParser.Tuple_defContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 62, self.RULE_tuple_def)
+        localctx = VyperParser.TupledefContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 62, self.RULE_tupledef)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 468
             self.match(VyperParser.LPAREN)
             self.state = 469
-            self.tuple_def_inner()
+            self.tupledefinner()
             self.state = 474
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,43,self._ctx)
@@ -3077,7 +3270,7 @@ class VyperParser ( Parser ):
                     self.state = 470
                     self.match(VyperParser.COMMA)
                     self.state = 471
-                    self.tuple_def_inner() 
+                    self.tupledefinner() 
                 self.state = 476
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,43,self._ctx)
@@ -3101,7 +3294,7 @@ class VyperParser ( Parser ):
         return localctx
 
 
-    class Tuple_def_innerContext(ParserRuleContext):
+    class TupledefinnerContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -3111,36 +3304,42 @@ class VyperParser ( Parser ):
         def NAME(self):
             return self.getToken(VyperParser.NAME, 0)
 
-        def array_def(self):
-            return self.getTypedRuleContext(VyperParser.Array_defContext,0)
+        def arraydef(self):
+            return self.getTypedRuleContext(VyperParser.ArraydefContext,0)
 
 
-        def dyn_array_def(self):
-            return self.getTypedRuleContext(VyperParser.Dyn_array_defContext,0)
+        def dynarraydef(self):
+            return self.getTypedRuleContext(VyperParser.DynarraydefContext,0)
 
 
-        def tuple_def(self):
-            return self.getTypedRuleContext(VyperParser.Tuple_defContext,0)
+        def tupledef(self):
+            return self.getTypedRuleContext(VyperParser.TupledefContext,0)
 
 
         def getRuleIndex(self):
-            return VyperParser.RULE_tuple_def_inner
+            return VyperParser.RULE_tupledefinner
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTuple_def_inner" ):
-                listener.enterTuple_def_inner(self)
+            if hasattr( listener, "enterTupledefinner" ):
+                listener.enterTupledefinner(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTuple_def_inner" ):
-                listener.exitTuple_def_inner(self)
+            if hasattr( listener, "exitTupledefinner" ):
+                listener.exitTupledefinner(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTupledefinner" ):
+                return visitor.visitTupledefinner(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
 
-    def tuple_def_inner(self):
+    def tupledefinner(self):
 
-        localctx = VyperParser.Tuple_def_innerContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 64, self.RULE_tuple_def_inner)
+        localctx = VyperParser.TupledefinnerContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 64, self.RULE_tupledefinner)
         try:
             self.state = 486
             self._errHandler.sync(self)
@@ -3154,19 +3353,19 @@ class VyperParser ( Parser ):
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 483
-                self.array_def(0)
+                self.arraydef(0)
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 484
-                self.dyn_array_def()
+                self.dynarraydef()
                 pass
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 485
-                self.tuple_def()
+                self.tupledef()
                 pass
 
 
@@ -3179,7 +3378,7 @@ class VyperParser ( Parser ):
         return localctx
 
 
-    class Map_defContext(ParserRuleContext):
+    class MapdefContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -3205,28 +3404,34 @@ class VyperParser ( Parser ):
         def NAME(self):
             return self.getToken(VyperParser.NAME, 0)
 
-        def array_def(self):
-            return self.getTypedRuleContext(VyperParser.Array_defContext,0)
+        def arraydef(self):
+            return self.getTypedRuleContext(VyperParser.ArraydefContext,0)
 
 
         def getRuleIndex(self):
-            return VyperParser.RULE_map_def
+            return VyperParser.RULE_mapdef
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterMap_def" ):
-                listener.enterMap_def(self)
+            if hasattr( listener, "enterMapdef" ):
+                listener.enterMapdef(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitMap_def" ):
-                listener.exitMap_def(self)
+            if hasattr( listener, "exitMapdef" ):
+                listener.exitMapdef(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMapdef" ):
+                return visitor.visitMapdef(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
 
-    def map_def(self):
+    def mapdef(self):
 
-        localctx = VyperParser.Map_defContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 66, self.RULE_map_def)
+        localctx = VyperParser.MapdefContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 66, self.RULE_mapdef)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 488
@@ -3243,7 +3448,7 @@ class VyperParser ( Parser ):
 
             elif la_ == 2:
                 self.state = 491
-                self.array_def(0)
+                self.arraydef(0)
                 pass
 
 
@@ -3272,20 +3477,20 @@ class VyperParser ( Parser ):
         def NAME(self):
             return self.getToken(VyperParser.NAME, 0)
 
-        def array_def(self):
-            return self.getTypedRuleContext(VyperParser.Array_defContext,0)
+        def arraydef(self):
+            return self.getTypedRuleContext(VyperParser.ArraydefContext,0)
 
 
-        def tuple_def(self):
-            return self.getTypedRuleContext(VyperParser.Tuple_defContext,0)
+        def tupledef(self):
+            return self.getTypedRuleContext(VyperParser.TupledefContext,0)
 
 
-        def map_def(self):
-            return self.getTypedRuleContext(VyperParser.Map_defContext,0)
+        def mapdef(self):
+            return self.getTypedRuleContext(VyperParser.MapdefContext,0)
 
 
-        def dyn_array_def(self):
-            return self.getTypedRuleContext(VyperParser.Dyn_array_defContext,0)
+        def dynarraydef(self):
+            return self.getTypedRuleContext(VyperParser.DynarraydefContext,0)
 
 
         def getRuleIndex(self):
@@ -3298,6 +3503,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitType_" ):
                 listener.exitType_(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitType_" ):
+                return visitor.visitType_(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3318,22 +3529,22 @@ class VyperParser ( Parser ):
 
             elif la_ == 2:
                 self.state = 499
-                self.array_def(0)
+                self.arraydef(0)
                 pass
 
             elif la_ == 3:
                 self.state = 500
-                self.tuple_def()
+                self.tupledef()
                 pass
 
             elif la_ == 4:
                 self.state = 501
-                self.map_def()
+                self.mapdef()
                 pass
 
             elif la_ == 5:
                 self.state = 502
-                self.dyn_array_def()
+                self.dynarraydef()
                 pass
 
 
@@ -3373,6 +3584,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitStructmember" ):
                 listener.exitStructmember(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStructmember" ):
+                return visitor.visitStructmember(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3444,6 +3661,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitStructdef" ):
                 listener.exitStructdef(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStructdef" ):
+                return visitor.visitStructdef(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3471,7 +3694,7 @@ class VyperParser ( Parser ):
                 self.state = 515
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==76:
+                if _la==77:
                     self.state = 514
                     self.match(VyperParser.NEWLINE)
 
@@ -3513,6 +3736,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitMutability" ):
                 listener.exitMutability(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMutability" ):
+                return visitor.visitMutability(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3562,6 +3791,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitInterfacefunction" ):
                 listener.exitInterfacefunction(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInterfacefunction" ):
+                return visitor.visitInterfacefunction(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3633,6 +3868,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitInterfacedef" ):
                 listener.exitInterfacedef(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInterfacedef" ):
+                return visitor.visitInterfacedef(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3660,7 +3901,7 @@ class VyperParser ( Parser ):
                 self.state = 535
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==76:
+                if _la==77:
                     self.state = 534
                     self.match(VyperParser.NEWLINE)
 
@@ -3755,6 +3996,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitStmt" ):
                 listener.exitStmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStmt" ):
+                return visitor.visitStmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3762,6 +4009,7 @@ class VyperParser ( Parser ):
 
         localctx = VyperParser.StmtContext(self, self._ctx, self.state)
         self.enterRule(localctx, 80, self.RULE_stmt)
+        self._la = 0 # Token type
         try:
             self.state = 566
             self._errHandler.sync(self)
@@ -3784,14 +4032,14 @@ class VyperParser ( Parser ):
 
                 self.state = 548
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,53,self._ctx)
-                if la_ == 1:
+                _la = self._input.LA(1)
+                if _la==78:
                     self.state = 547
                     self.match(VyperParser.COMMENT)
 
 
                 pass
-            elif token in [11, 13, 15, 29, 30, 31, 38, 39, 40, 41, 42, 43, 44, 53, 54, 64, 65, 66, 68, 69, 70, 71, 72, 73, 74]:
+            elif token in [11, 13, 15, 29, 30, 31, 38, 39, 40, 41, 42, 43, 44, 53, 54, 64, 65, 66, 68, 70, 71, 72, 73, 74, 75]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 561
                 self._errHandler.sync(self)
@@ -3854,8 +4102,8 @@ class VyperParser ( Parser ):
 
                 self.state = 564
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,55,self._ctx)
-                if la_ == 1:
+                _la = self._input.LA(1)
+                if _la==78:
                     self.state = 563
                     self.match(VyperParser.COMMENT)
 
@@ -3901,6 +4149,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitDeclaration" ):
                 listener.exitDeclaration(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDeclaration" ):
+                return visitor.visitDeclaration(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3969,6 +4223,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitMultipleassign" ):
                 listener.exitMultipleassign(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMultipleassign" ):
+                return visitor.visitMultipleassign(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4067,6 +4327,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAssign" ):
                 listener.exitAssign(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAssign" ):
+                return visitor.visitAssign(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4170,6 +4436,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitAugoperator" ):
                 listener.exitAugoperator(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAugoperator" ):
+                return visitor.visitAugoperator(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4229,6 +4501,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitAugassign" ):
                 listener.exitAugassign(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAugassign" ):
+                return visitor.visitAugassign(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4276,6 +4554,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitPassstmt" ):
                 listener.exitPassstmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPassstmt" ):
+                return visitor.visitPassstmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4317,6 +4601,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitBreakstmt" ):
                 listener.exitBreakstmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBreakstmt" ):
+                return visitor.visitBreakstmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4357,6 +4647,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitContinuestmt" ):
                 listener.exitContinuestmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitContinuestmt" ):
+                return visitor.visitContinuestmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4412,6 +4708,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitLogstmt" ):
                 listener.exitLogstmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLogstmt" ):
+                return visitor.visitLogstmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4431,7 +4733,7 @@ class VyperParser ( Parser ):
             self.state = 614
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if ((((_la - 11)) & ~0x3f) == 0 and ((1 << (_la - 11)) & -81051599151562731) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & 27021600985491456) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & 4055) != 0):
                 self.state = 613
                 self.arguments()
 
@@ -4480,6 +4782,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitReturnstmt" ):
                 listener.exitReturnstmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitReturnstmt" ):
+                return visitor.visitReturnstmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4549,6 +4857,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRaisestmt" ):
                 listener.exitRaisestmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRaisestmt" ):
+                return visitor.visitRaisestmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4626,6 +4940,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAssertstmt" ):
                 listener.exitAssertstmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAssertstmt" ):
+                return visitor.visitAssertstmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4709,6 +5029,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitCondexec" ):
                 listener.exitCondexec(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCondexec" ):
+                return visitor.visitCondexec(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4754,6 +5080,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitDefaultexec" ):
                 listener.exitDefaultexec(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDefaultexec" ):
+                return visitor.visitDefaultexec(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4818,6 +5150,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitIfstmt" ):
                 listener.exitIfstmt(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIfstmt" ):
+                return visitor.visitIfstmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4893,6 +5231,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitLoopvariable" ):
                 listener.exitLoopvariable(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLoopvariable" ):
+                return visitor.visitLoopvariable(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4945,6 +5289,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitLoopiterator" ):
                 listener.exitLoopiterator(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLoopiterator" ):
+                return visitor.visitLoopiterator(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5005,6 +5355,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitForstmt" ):
                 listener.exitForstmt(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitForstmt" ):
+                return visitor.visitForstmt(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -5061,6 +5417,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitExpr" ):
                 listener.exitExpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr" ):
+                return visitor.visitExpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -5072,7 +5434,7 @@ class VyperParser ( Parser ):
             self.state = 686
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [11, 13, 30, 31, 53, 54, 64, 65, 66, 68, 69, 70, 71, 72, 73, 74]:
+            if token in [11, 13, 30, 31, 53, 54, 64, 65, 66, 68, 70, 71, 72, 73, 74, 75]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 684
                 self.operation()
@@ -5145,6 +5507,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitVariableaccess" ):
                 listener.exitVariableaccess(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVariableaccess" ):
+                return visitor.visitVariableaccess(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5233,6 +5601,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitGetattr" ):
                 listener.exitGetattr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitGetattr" ):
+                return visitor.visitGetattr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -5282,6 +5656,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitGetitem" ):
                 listener.exitGetitem(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitGetitem" ):
+                return visitor.visitGetitem(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5335,6 +5715,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitCall" ):
                 listener.exitCall(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCall" ):
+                return visitor.visitCall(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -5351,7 +5737,7 @@ class VyperParser ( Parser ):
             self.state = 712
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if ((((_la - 11)) & ~0x3f) == 0 and ((1 << (_la - 11)) & -81051599151562731) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & 27021600985491456) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & 4055) != 0):
                 self.state = 711
                 self.arguments()
 
@@ -5388,6 +5774,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitArg" ):
                 listener.exitArg(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArg" ):
+                return visitor.visitArg(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5436,6 +5828,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitKwarg" ):
                 listener.exitKwarg(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitKwarg" ):
+                return visitor.visitKwarg(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5486,6 +5884,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitArgument" ):
                 listener.exitArgument(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArgument" ):
+                return visitor.visitArgument(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5549,6 +5953,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitArguments" ):
                 listener.exitArguments(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArguments" ):
+                return visitor.visitArguments(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5628,6 +6038,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitTuple" ):
                 listener.exitTuple(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTuple" ):
+                return visitor.visitTuple(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5744,6 +6160,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitList" ):
                 listener.exitList(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitList" ):
+                return visitor.visitList(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -5854,6 +6276,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitDict" ):
                 listener.exitDict(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDict" ):
+                return visitor.visitDict(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -5947,6 +6375,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitOperation" ):
                 listener.exitOperation(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOperation" ):
+                return visitor.visitOperation(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -5995,6 +6429,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitBoolor" ):
                 listener.exitBoolor(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBoolor" ):
+                return visitor.visitBoolor(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6070,6 +6510,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitBooland" ):
                 listener.exitBooland(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBooland" ):
+                return visitor.visitBooland(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
     def booland(self, _p:int=0):
@@ -6144,6 +6590,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitBoolnot" ):
                 listener.exitBoolnot(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBoolnot" ):
+                return visitor.visitBoolnot(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -6155,7 +6607,7 @@ class VyperParser ( Parser ):
             self.state = 826
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [11, 13, 30, 31, 54, 64, 65, 66, 68, 69, 70, 71, 72, 73, 74]:
+            if token in [11, 13, 30, 31, 54, 64, 65, 66, 68, 70, 71, 72, 73, 74, 75]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 823
                 self.comparator(0)
@@ -6228,6 +6680,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitComparator" ):
                 listener.exitComparator(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitComparator" ):
+                return visitor.visitComparator(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6403,6 +6861,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitBitwiseor" ):
                 listener.exitBitwiseor(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBitwiseor" ):
+                return visitor.visitBitwiseor(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
     def bitwiseor(self, _p:int=0):
@@ -6477,6 +6941,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitBitwisexor" ):
                 listener.exitBitwisexor(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBitwisexor" ):
+                return visitor.visitBitwisexor(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
     def bitwisexor(self, _p:int=0):
@@ -6550,6 +7020,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitBitwiseand" ):
                 listener.exitBitwiseand(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBitwiseand" ):
+                return visitor.visitBitwiseand(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6627,6 +7103,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitShift" ):
                 listener.exitShift(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitShift" ):
+                return visitor.visitShift(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6724,6 +7206,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSummation" ):
                 listener.exitSummation(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSummation" ):
+                return visitor.visitSummation(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6824,6 +7312,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitProduct" ):
                 listener.exitProduct(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitProduct" ):
+                return visitor.visitProduct(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6934,6 +7428,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitUnary" ):
                 listener.exitUnary(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnary" ):
+                return visitor.visitUnary(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -6945,7 +7445,7 @@ class VyperParser ( Parser ):
             self.state = 946
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [11, 13, 64, 65, 66, 68, 69, 70, 71, 72, 73, 74]:
+            if token in [11, 13, 64, 65, 66, 68, 70, 71, 72, 73, 74, 75]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 939
                 self.power(0)
@@ -7011,6 +7511,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitPower" ):
                 listener.exitPower(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPower" ):
+                return visitor.visitPower(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -7088,6 +7594,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitEmpty" ):
                 listener.exitEmpty(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitEmpty" ):
+                return visitor.visitEmpty(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -7162,6 +7674,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitAbidecode" ):
                 listener.exitAbidecode(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAbidecode" ):
+                return visitor.visitAbidecode(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -7230,6 +7748,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitSpecialbuiltins" ):
                 listener.exitSpecialbuiltins(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSpecialbuiltins" ):
+                return visitor.visitSpecialbuiltins(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -7311,6 +7835,12 @@ class VyperParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAtom" ):
                 listener.exitAtom(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAtom" ):
+                return visitor.visitAtom(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -7406,6 +7936,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitNumber" ):
                 listener.exitNumber(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNumber" ):
+                return visitor.visitNumber(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -7418,7 +7954,7 @@ class VyperParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 993
             _la = self._input.LA(1)
-            if not(((((_la - 70)) & ~0x3f) == 0 and ((1 << (_la - 70)) & 31) != 0)):
+            if not(((((_la - 71)) & ~0x3f) == 0 and ((1 << (_la - 71)) & 31) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -7460,6 +7996,12 @@ class VyperParser ( Parser ):
             if hasattr( listener, "exitLiteral" ):
                 listener.exitLiteral(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLiteral" ):
+                return visitor.visitLiteral(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -7472,7 +8014,7 @@ class VyperParser ( Parser ):
             self.state = 998
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [70, 71, 72, 73, 74]:
+            if token in [71, 72, 73, 74, 75]:
                 self.state = 995
                 self.number()
                 pass
@@ -7480,7 +8022,7 @@ class VyperParser ( Parser ):
                 self.state = 996
                 self.match(VyperParser.STRING)
                 pass
-            elif token in [69]:
+            elif token in [70]:
                 self.state = 997
                 self.match(VyperParser.BOOL)
                 pass
@@ -7500,7 +8042,7 @@ class VyperParser ( Parser ):
     def sempred(self, localctx:RuleContext, ruleIndex:int, predIndex:int):
         if self._predicates == None:
             self._predicates = dict()
-        self._predicates[27] = self.array_def_sempred
+        self._predicates[27] = self.arraydef_sempred
         self._predicates[72] = self.boolor_sempred
         self._predicates[73] = self.booland_sempred
         self._predicates[75] = self.comparator_sempred
@@ -7517,7 +8059,7 @@ class VyperParser ( Parser ):
         else:
             return pred(localctx, predIndex)
 
-    def array_def_sempred(self, localctx:Array_defContext, predIndex:int):
+    def arraydef_sempred(self, localctx:ArraydefContext, predIndex:int):
             if predIndex == 0:
                 return self.precpred(self._ctx, 2)
          

@@ -63,7 +63,7 @@ parameters: INDENT? parameter (COMMA NEWLINE? parameter?)* DEDENT?;
 returns_: RETURNTYPE type_;
 functionsig: FUNCDECL NAME LPAREN parameters? RPAREN returns_?;
 functiondef: decorators? functionsig COLON body;
-body: INDENT (COMMENT | stmt NEWLINE?)+ DEDENT;
+body: INDENT (DOCSTRING | stmt NEWLINE?)+ DEDENT;
 
 // Events can be composed of 0 or more members
 eventmember: NAME COLON type_;
@@ -78,18 +78,18 @@ enumbody: NEWLINE INDENT (enummember NEWLINE?)+ DEDENT;
 enumdef: ENUMDECL NAME COLON enumbody;
 
 // Types
-array_def: NAME array_def_tail | array_def array_def_tail | dyn_array_def array_def_tail;
-array_def_tail: LSQUARE (DECNUMBER | NAME) RSQUARE;
+arraydef: NAME arraydeftail | arraydef arraydeftail | dynarraydef arraydeftail;
+arraydeftail: LSQUARE (DECNUMBER | NAME) RSQUARE;
 
-dyn_array_def: DYNARRAY LSQUARE dyn_array_def_inner COMMA (DECNUMBER | NAME) RSQUARE;
-dyn_array_def_inner: NAME | array_def | dyn_array_def;
+dynarraydef: DYNARRAY LSQUARE dynarraydefinner COMMA (DECNUMBER | NAME) RSQUARE;
+dynarraydefinner: NAME | arraydef | dynarraydef;
 
-tuple_def: LPAREN tuple_def_inner ( COMMA tuple_def_inner )* COMMA? RPAREN;
-tuple_def_inner: NAME | array_def | dyn_array_def | tuple_def;
+tupledef: LPAREN tupledefinner ( COMMA tupledefinner )* COMMA? RPAREN;
+tupledefinner: NAME | arraydef | dynarraydef | tupledef;
 
 // NOTE: Map takes a basic type and maps to another type (can be non-basic, including maps)
-map_def: MAP LSQUARE ( NAME | array_def ) COMMA type_ RSQUARE;
-type_: ( NAME | array_def | tuple_def | map_def | dyn_array_def );
+mapdef: MAP LSQUARE ( NAME | arraydef ) COMMA type_ RSQUARE;
+type_: ( NAME | arraydef | tupledef | mapdef | dynarraydef );
 
 // Structs can be composed of 1+ basic types or other customtypes
 structmember: NAME COLON type_;

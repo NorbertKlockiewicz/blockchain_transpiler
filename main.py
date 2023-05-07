@@ -1,6 +1,8 @@
 from io import StringIO
 
 from antlr4 import *
+
+from VyperToSolidityTranspiler import VyperToSolidityTranspiler
 from dist.SolidityParser import SolidityParser
 from dist.SolidityLexer import SolidityLexer
 from dist.YulLexer import YulLexer
@@ -53,8 +55,9 @@ def parse_vyper(code):
     parser = VyperParser(token_stream)
 
     parse_tree = parser.module()
-    print(parse_tree.toStringTree(recog=parser))
-    print('a')
+    with open("./transpiledCode/VyperToSolidity.sol", "w") as f:
+        visitor = VyperToSolidityTranspiler(f)
+        visitor.visitModule(parse_tree)
 
 
-parse_yul(yul_script)
+parse_vyper(vyper_script)

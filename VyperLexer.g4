@@ -146,7 +146,7 @@ NAME: [a-zA-Z_][a-zA-Z0-9_]*;
 
 
 TYPE: [a-zA-Z_][a-zA-Z0-9_]*;
-STRING: ( [b] )? ( SHORT_STRING | LONG_STRING );
+STRING: ( [b] )? ( SHORT_STRING );
 
 /// shortstring     ::=  "'" shortstringitem* "'" | '"' shortstringitem* '"'
 /// shortstringitem ::=  shortstringchar | stringescapeseq
@@ -156,9 +156,9 @@ fragment SHORT_STRING
  | '"' ( STRING_ESCAPE_SEQ | ~[\\\r\n\f"] )* '"'
  ;
 /// longstring      ::=  "'''" longstringitem* "'''" | '"""' longstringitem* '"""'
-fragment LONG_STRING
+DOCSTRING
  : '\'\'\'' LONG_STRING_ITEM*? '\'\'\''
- | '"""' LONG_STRING_ITEM*? '"""'
+ | '"""' LONG_STRING_ITEM*? '"""' NEWLINE?
  ;
 
 /// longstringitem  ::=  longstringchar | stringescapeseq

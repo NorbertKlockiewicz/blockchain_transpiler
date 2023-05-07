@@ -74,16 +74,16 @@ import_: IMPORT DOT* importpath importalias?
 
 // Constant definitions
 // NOTE: Temporary until decorators used
-constantdef: NAME COLON CONSTANT LParen type_ RParen EQUALITY expr;
+constantdef: NAME COLON CONSTANT LParen type_ RParen EQUALITY expr NEWLINE?;
 
 // immutable definitions
 // NOTE: Temporary until decorators used
-immutabledef: NAME COLON IMMUTABLE LParen type_ RParen;
+immutabledef: NAME COLON IMMUTABLE LParen type_ RParen NEWLINE?;
 
 variable: NAME COLON type_;
 // NOTE: Temporary until decorators used
 variablewithgetter: NAME COLON PUBLIC LParen type_ RParen;
-variabledef: (variable | variablewithgetter) NEWLINE;
+variabledef: (variable | variablewithgetter) NEWLINE?;
 
 // A decorator 'wraps' a method, modifying it's context.
 // NOTE: One or more can be applied (some combos might conflict)
@@ -94,27 +94,27 @@ decorators: decorator+;
 // and can return up to one parameter.
 // NOTE: Parameters can have a default value,
 //       which must be a constant or environment variable.
-parameter: NAME COLON type_ (EQUALITY expr)?;
-parameters: parameter (COMMA parameter)*;
+parameter:  NAME SPACES? COLON SPACES? type_ SPACES? (EQUALITY expr)?;
+parameters: INDENT? parameter (COMMA NEWLINE? parameter?)* DEDENT?;
 
 FUNCDECL: 'def';
 RETURNTYPE: '->';
 returns_: RETURNTYPE type_;
 functionsig: FUNCDECL NAME LParen parameters? RParen returns_?;
-functiondef: decorators? functionsig COLON INDENT body DEDENT;
+functiondef: decorators? functionsig COLON body;
 
 // Events can be composed of 0 or more members
 EVENTDECL: 'event';
 eventmember: NAME COLON type_;
 indexedeventarg: NAME COLON INDEXED LParen type_ RParen;
-eventbody: INDENT ((variable | indexedeventarg))+ DEDENT;
+eventbody: INDENT ((variable | indexedeventarg) NEWLINE?)+ DEDENT;
 // Events which use no args use a pass statement instead
 eventdef: EVENTDECL NAME COLON ( eventbody | PASS );
 
 // Enums
 ENUMDECL: 'enum';
 enummember: NAME;
-enumbody: NEWLINE INDENT (enummember NEWLINE)+ DEDENT;
+enumbody: NEWLINE INDENT (enummember NEWLINE?)+ DEDENT;
 enumdef: ENUMDECL NAME COLON enumbody;
 
 // Types
@@ -133,13 +133,13 @@ type_: ( NAME | arraydef | tupledef | mapdef | dynarraydef );
 // Structs can be composed of 1+ basic types or other customtypes
 STRUCTDECL: 'struct';
 structmember: NAME COLON type_;
-structdef: STRUCTDECL NAME COLON NEWLINE INDENT (structmember NEWLINE)+ DEDENT;
+structdef: STRUCTDECL NAME COLON INDENT (structmember NEWLINE?)+ DEDENT;
 
 // Interfaces are composed of a series of method definitions, plus their mutability
 INTERFACEDECL: 'interface';
 mutability: NAME;
 interfacefunction: functionsig COLON mutability;
-interfacedef: INTERFACEDECL NAME COLON NEWLINE INDENT ( interfacefunction NEWLINE)+ DEDENT;
+interfacedef: INTERFACEDECL NAME COLON INDENT ( interfacefunction NEWLINE? )+ DEDENT;
 
 
 // Statements
@@ -217,7 +217,7 @@ assertstmt: ASSERT expr
            | ASSERT expr COMMA expr
            | ASSERT expr COMMA UNREACHABLE;
 
-body: (COMMENT | stmt NEWLINE?)+;
+body: INDENT (COMMENT | stmt NEWLINE?)+ DEDENT;
 condexec: expr COLON body;
 defaultexec: body;
 ifstmt: If condexec (Elif condexec)* (Else COLON defaultexec)?;
@@ -397,7 +397,7 @@ BOOL: 'True' | 'False';
 // TODO: Remove Docstring from here, and ADD to first part of body
 literal: ( number | STRING | BOOL );
 
-SPACES: ' '+ -> skip;
+SPACES: [\t \f]+ -> skip;
 
 NEWLINE
  : ('\r'? '\n' ' '*);

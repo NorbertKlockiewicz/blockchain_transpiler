@@ -1,4 +1,3 @@
-import os
 from io import StringIO
 
 from antlr4 import *
@@ -8,11 +7,12 @@ from dist.YulLexer import YulLexer
 from dist.YulParser import YulParser
 from dist.VyperLexer import VyperLexer
 from dist.VyperParser import VyperParser
+from YulToSolidityTranspiler import YulToSolidityTranspiler
 
 # Define the input code to be parsed
 solidity_script = open("./scripts/solidity_1.sol", "r").read()
 yul_script = open("./scripts/yul_2.yul", "r").read()
-vyper_script = open("./scripts/vyper_2.vy", "r").read()
+vyper_script = open("./scripts/vyper_1.vy", "r").read()
 
 def parse_solidity(code):
     input_stream = InputStream(code)
@@ -37,7 +37,10 @@ def parse_yul(code):
     parser = YulParser(token_stream)
 
     parse_tree = parser.sourceUnit()
-    print(parse_tree.toStringTree(recog=parser))
+    visitor = YulToSolidityTranspiler()
+    visitor.visitSourceUnit(parse_tree)
+    with open("./transpiledCode/YulToSolidity.sol", "w") as f:
+        f.write(visitor.get_solidity_code())
 
 
 def parse_vyper(code):
@@ -51,10 +54,7 @@ def parse_vyper(code):
 
     parse_tree = parser.module()
     print(parse_tree.toStringTree(recog=parser))
+    print('a')
 
 
-for f in os.scandir('scripts/vyper'):
-    if f.is_file():
-        print(f.name)
-        vyper_script = open(f.path, "r").read()
-        parse_vyper(vyper_script)
+parse_yul(yul_script)

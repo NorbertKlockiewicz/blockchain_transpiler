@@ -48,17 +48,28 @@ class YulToSolidityTranspiler(YulVisitor):
         return self.visitChildren(ctx)
 
     def visitIfStatement(self, ctx:YulParser.IfStatementContext):
-        self.add_line(f"if ({ctx.cond.getText()})")
-        return self.visitChildren(ctx)
+        self.add_line(f"if (")
+        self.visit(ctx.expression())
+        self.add_line(f")")
+        return self.visitBlock(ctx.block()),
 
     def visitForStatement(self, ctx:YulParser.ForStatementContext):
         return self.visitChildren(ctx)
 
     def visitSwitchCase(self, ctx:YulParser.SwitchCaseContext):
-        return self.visitChildren(ctx)
+        self.add_line(f"if ({ctx.parentCtx.expression().getText()} == {ctx.literal().getText()})")
+        return self.visit(ctx.block())
 
     def visitSwitchStatement(self, ctx:YulParser.SwitchStatementContext):
-        return self.visitChildren(ctx)
+        print(ctx.switchCase())
+        for x in ctx.switchCase():
+            self.visit(x)
+
+        if ctx.Default() is not None:
+            self.add_line(f"else")
+            return self.visit(ctx.block())
+
+        pass
 
     def visitFunctionDefinition(self, ctx:YulParser.FunctionDefinitionContext):
         func_name = ctx.Identifier()
@@ -79,7 +90,16 @@ class YulToSolidityTranspiler(YulVisitor):
         self.visit(ctx.block())
 
     def visitFunctionCall(self, ctx:YulParser.FunctionCallContext):
-        return self.visitChildren(ctx)
+        if type(ctx.parentCtx.parentCtx) is not YulParser.SwitchStatementContext:
+            expressions = []
+            for expression in ctx.expression():
+                expressions.append(expression.getText())
+
+            expression = ",".join(expressions)
+            self.add_line(f"{ctx.Identifier().getText()}({expression})")
+            return self.visitChildren(ctx)
+
+        pass
 
     def visitBoolean(self, ctx:YulParser.BooleanContext):
         return self.visitChildren(ctx)

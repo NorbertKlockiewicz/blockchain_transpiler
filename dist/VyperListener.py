@@ -1,4 +1,4 @@
-# Generated from Vyper.g4 by ANTLR 4.12.0
+# Generated from VyperParser.g4 by ANTLR 4.12.0
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .VyperParser import VyperParser

@@ -1,30 +1,35 @@
+# @version >=0.3.4
+"""
+@dev Implementation of ERC-1155 non-fungible token standard ownable, with approval, OPENSEA compatible (name, symbol)
+@author Dr. Pixel (github: @Doc-Pixel)
+"""
 ############### imports ###############
 from vyper.interfaces import ERC165
 
 ############### variables ###############
 # maximum items in a batch call. Set to 128, to be determined what the practical limits are.
-BATCH_SIZE: constant(uint256) = 128
+BATCH_SIZE: constant(uint256) = 128             
 
 # callback number of bytes
 CALLBACK_NUMBYTES: constant(uint256) = 4096
 
-# URI length set to 300.
-MAX_URI_LENGTH: constant(uint256) = 300
+# URI length set to 300. 
+MAX_URI_LENGTH: constant(uint256) = 300 
 # for uint2str / dynamic URI
-MAX_DYNURI_LENGTH: constant(uint256) = 78
+MAX_DYNURI_LENGTH: constant(uint256) = 78      
 # for the .json extension on the URL
-MAX_EXTENSION_LENGTH: constant(uint256) = 5
+MAX_EXTENSION_LENGTH: constant(uint256) = 5  
 
 MAX_URL_LENGTH: constant(uint256) = MAX_URI_LENGTH+MAX_DYNURI_LENGTH+MAX_EXTENSION_LENGTH # dynamic URI status
 dynamicUri: bool
 
 # the contract owner
 # not part of the core spec but a common feature for NFT projects
-owner: public(address)
+owner: public(address)                          
 
 # pause status True / False
 # not part of the core spec but a common feature for NFT projects
-paused: public(bool)
+paused: public(bool)                            
 
 # the contracts URI to find the metadata
 baseuri: String[MAX_URI_LENGTH]
@@ -58,7 +63,7 @@ event unPaused:
 
 event OwnershipTransferred:
     # Emits smart contract ownership transfer from current to new owner
-    previouwOwner: address
+    previouwOwner: address 
     newOwner: address
 
 event TransferSingle:
@@ -86,7 +91,7 @@ event ApprovalForAll:
 event URI:
     # This emits when the URI gets changed
     value: String[MAX_URI_LENGTH]
-    id: indexed(uint256)
+    id: uint256
 
 ############### interfaces ###############
 implements: ERC165
@@ -133,7 +138,7 @@ def __init__(name: String[128], symbol: String[16], uri: String[MAX_URI_LENGTH],
 def pause():
     """
     @dev Pause the contract, checks if the caller is the owner and if the contract is paused already
-    @dev emits a pause event
+    @dev emits a pause event 
     @dev not part of the core spec but a common feature for NFT projects
     """
     assert self.owner == msg.sender, "Ownable: caller is not the owner"
@@ -145,7 +150,7 @@ def pause():
 def unpause():
     """
     @dev Unpause the contract, checks if the caller is the owner and if the contract is paused already
-    @dev emits an unpause event
+    @dev emits an unpause event 
     @dev not part of the core spec but a common feature for NFT projects
     """
     assert self.owner == msg.sender, "Ownable: caller is not the owner"
@@ -202,7 +207,7 @@ def balanceOfBatch(accounts: DynArray[address, BATCH_SIZE], ids: DynArray[uint25
 
 ## mint ##
 @external
-def mint(receiver: address, id: uint256, amount:uint256):
+def mint(receiver: address, id: uint256, amount:uint256, data:bytes32):
     """
     @dev mint one new token with a certain ID
     @dev this can be a new token or "topping up" the balance of a non-fungible token ID
@@ -220,7 +225,7 @@ def mint(receiver: address, id: uint256, amount:uint256):
 
 
 @external
-def mintBatch(receiver: address, ids: DynArray[uint256, BATCH_SIZE], amounts: DynArray[uint256, BATCH_SIZE]):
+def mintBatch(receiver: address, ids: DynArray[uint256, BATCH_SIZE], amounts: DynArray[uint256, BATCH_SIZE], data: bytes32):
     """
     @dev mint a batch of new tokens with the passed IDs
     @dev this can be new tokens or "topping up" the balance of existing non-fungible token IDs in the contract
@@ -234,12 +239,12 @@ def mintBatch(receiver: address, ids: DynArray[uint256, BATCH_SIZE], amounts: Dy
     assert receiver != empty(address), "Can not mint to ZERO ADDRESS"
     assert len(ids) == len(amounts), "ERC1155: ids and amounts length mismatch"
     operator: address = msg.sender
-
+    
     for i in range(BATCH_SIZE):
         if i >= len(ids):
             break
         self.balanceOf[receiver][ids[i]] += amounts[i]
-
+    
     log TransferBatch(operator, empty(address), receiver, ids, amounts)
 
 ## burn ##
@@ -255,7 +260,7 @@ def burn(id: uint256, amount: uint256):
     assert self.balanceOf[msg.sender][id] > 0 , "caller does not own this ID"
     self.balanceOf[msg.sender][id] -= amount
     log TransferSingle(msg.sender, msg.sender, empty(address), id, amount)
-
+    
 @external
 def burnBatch(ids: DynArray[uint256, BATCH_SIZE], amounts: DynArray[uint256, BATCH_SIZE]):
     """
@@ -267,13 +272,13 @@ def burnBatch(ids: DynArray[uint256, BATCH_SIZE], amounts: DynArray[uint256, BAT
     """
     assert not self.paused, "The contract has been paused"
     assert len(ids) == len(amounts), "ERC1155: ids and amounts length mismatch"
-    operator: address = msg.sender
-
+    operator: address = msg.sender 
+    
     for i in range(BATCH_SIZE):
         if i >= len(ids):
             break
         self.balanceOf[msg.sender][ids[i]] -= amounts[i]
-
+    
     log TransferBatch(msg.sender, msg.sender, empty(address), ids, amounts)
 
 ## approval ##
@@ -332,7 +337,7 @@ def safeBatchTransferFrom(sender: address, receiver: address, ids: DynArray[uint
         amount: uint256 = amounts[i]
         self.balanceOf[sender][id] -= amount
         self.balanceOf[receiver][id] += amount
-
+    
     log TransferBatch(operator, sender, receiver, ids, amounts)
 
 # URI #
@@ -363,7 +368,7 @@ def toggleDynUri(status: bool):
 def uri(id: uint256) -> String[MAX_URL_LENGTH]:
     """
     @dev retrieve the uri. Adds requested ID when dynamic URI is active
-    @param id NFT ID to retrieve the uri for.
+    @param id NFT ID to retrieve the uri for. 
     """
     if self.dynamicUri:
         return concat(self.baseuri, uint2str(id), '.json')
@@ -394,5 +399,6 @@ def supportsInterface(interfaceId: bytes4) -> bool:
     return interfaceId in [
         ERC165_INTERFACE_ID,
         ERC1155_INTERFACE_ID,
-        ERC1155_INTERFACE_ID_METADATA,
-    ]
+        ERC1155_INTERFACE_ID_METADATA, 
+    ] 
+

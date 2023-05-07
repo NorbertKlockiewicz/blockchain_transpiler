@@ -1,3 +1,4 @@
+import os
 from io import StringIO
 
 from antlr4 import *
@@ -11,7 +12,7 @@ from dist.VyperParser import VyperParser
 # Define the input code to be parsed
 solidity_script = open("./scripts/solidity_1.sol", "r").read()
 yul_script = open("./scripts/yul_2.yul", "r").read()
-vyper_script = open("./scripts/vyper_1.vy", "r").read()
+vyper_script = open("./scripts/vyper_2.vy", "r").read()
 
 def parse_solidity(code):
     input_stream = InputStream(code)
@@ -50,7 +51,10 @@ def parse_vyper(code):
 
     parse_tree = parser.module()
     print(parse_tree.toStringTree(recog=parser))
-    print('a')
 
 
-parse_vyper(vyper_script)
+for f in os.scandir('scripts/vyper'):
+    if f.is_file():
+        print(f.name)
+        vyper_script = open(f.path, "r").read()
+        parse_vyper(vyper_script)

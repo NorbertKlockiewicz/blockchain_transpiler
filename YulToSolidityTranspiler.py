@@ -1,5 +1,28 @@
 from dist.YulVisitor import YulVisitor
 from antlr4 import *
+# operators needed to for loop conditions
+# for { initialization } condition { update } {
+#     // loop body
+# }
+operators = {
+    "lt": "<",
+    "gt": ">",
+    "eq": "==",
+    "ne": "!=",
+    "le": "<=",
+    "ge": ">=",
+}
+
+update_operations = {
+    "add": "+",
+    "sub": "-",
+    "mul": "*",
+    "div": "/",
+    "shl": "<<",
+    "shr": ">>",
+}
+
+
 if __name__ is not None and "." in __name__:
     from dist.YulParser import YulParser
 else:
@@ -54,16 +77,28 @@ class YulToSolidityTranspiler(YulVisitor):
         return self.visitBlock(ctx.block()),
 
     def visitForStatement(self, ctx:YulParser.ForStatementContext):
-        return self.visitChildren(ctx)
+        loop_val = ctx.init.getText().split(":=")[1].replace("}", "")
+        loop_bounds = ctx.cond.getText().replace("lt(", "").replace(")", "").split(",")
+        condition = ctx.cond.getText().split("(")[0]
+        update = ctx.post.getText().split(":=")[1].replace(")}", "").replace("(", ",").split(",")
 
-    def visitSwitchCase(self, ctx:YulParser.SwitchCaseContext):
-        self.add_line(f"if ({ctx.parentCtx.expression().getText()} == {ctx.literal().getText()})")
+        self.add_line(f'for (int {loop_bounds[0]} = {loop_val}; {loop_bounds[0]} {operators[condition]}'
+                      f' {loop_bounds[1]}; '
+                      f'i = {update[1]} {update_operations[update[0]]} {update[2]})')
+        print(ctx.body.getText())
+        return self.visit(ctx.body)
+
+    def visitSwitchCase(self, ctx:YulParser.SwitchCaseContext, if_or_elif="if"):
+        self.add_line(f"{if_or_elif} ({ctx.parentCtx.expression().getText()} == {ctx.literal().getText()})")
         return self.visit(ctx.block())
 
     def visitSwitchStatement(self, ctx:YulParser.SwitchStatementContext):
         print(ctx.switchCase())
-        for x in ctx.switchCase():
-            self.visit(x)
+        for i, x in enumerate(ctx.switchCase()):
+            if i == 0:
+                self.visitSwitchCase(x, "if")
+            else:
+                self.visitSwitchCase(x, "else if")
 
         if ctx.Default() is not None:
             self.add_line(f"else")

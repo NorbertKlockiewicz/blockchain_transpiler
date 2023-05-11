@@ -13,7 +13,7 @@ from YulToSolidityTranspiler import YulToSolidityTranspiler
 
 # Define the input code to be parsed
 solidity_script = open("./scripts/solidity_1.sol", "r").read()
-yul_script = open("./scripts/yul_2.yul", "r").read()
+yul_script = open("./scripts/yul_for.yul", "r").read()
 vyper_script = open("./scripts/vyper_1.vy", "r").read()
 
 def parse_solidity(code):
@@ -61,3 +61,4 @@ def parse_vyper(code):
 
 
 parse_vyper(vyper_script)
+parse_yul(yul_script)

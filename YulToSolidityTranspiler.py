@@ -1,5 +1,6 @@
 from dist.YulVisitor import YulVisitor
 from antlr4 import *
+
 # operators needed to for loop conditions
 # for { initialization } condition { update } {
 #     // loop body
@@ -22,11 +23,12 @@ update_operations = {
     "shr": ">>",
 }
 
-
 if __name__ is not None and "." in __name__:
     from dist.YulParser import YulParser
 else:
     from dist.YulParser import YulParser
+
+
 class YulToSolidityTranspiler(YulVisitor):
     def __init__(self):
         self.indentation_level = 0
@@ -36,47 +38,59 @@ class YulToSolidityTranspiler(YulVisitor):
     def add_line(self, line: str):
         self.output.append(self.indentation * self.indentation_level + line)
 
-    def visitSourceUnit(self, ctx:YulParser.SourceUnitContext):
+    def visitSourceUnit(self, ctx: YulParser.SourceUnitContext):
         return self.visitChildren(ctx)
 
-    def visitObject(self, ctx:YulParser.ObjectContext):
+    def visitObject(self, ctx: YulParser.ObjectContext):
         self.add_line("contract " + ctx.StringLiteral().getText().replace("\"", ""))
         return self.visitChildren(ctx)
 
-    def visitCode(self, ctx:YulParser.CodeContext):
+    def visitCode(self, ctx: YulParser.CodeContext):
         return self.visitChildren(ctx)
 
-    def visitData(self, ctx:YulParser.DataContext):
+    def visitData(self, ctx: YulParser.DataContext):
         return self.visitChildren(ctx)
 
-    def visitStatement(self, ctx:YulParser.StatementContext):
+    def visitStatement(self, ctx: YulParser.StatementContext):
         return self.visitChildren(ctx)
 
-    def visitBlock(self, ctx:YulParser.BlockContext):
+    def visitBlock(self, ctx: YulParser.BlockContext):
         self.add_line("{")
         self.indentation_level += 1
         self.visitChildren(ctx)
         self.indentation_level -= 1
         self.add_line("}")
 
-    def visitVariableDeclaration(self, ctx:YulParser.VariableDeclarationContext):
-        self.add_line(f"string public {ctx.variables[0].getText()} = {ctx.expression().getText()};")
+    def visitVariableDeclaration(self, ctx: YulParser.VariableDeclarationContext):
+        print(ctx.getText())
+        if ctx.expression().getText()[:3] in update_operations.keys():
+            operation = ctx.expression().getText().replace("(", ",").replace(")", "").split(",")
+            self.add_line(f"int public {ctx.variables[0].getText()} = "
+                          f"{operation[1]}{update_operations[operation[0]]}{operation[2]};")
+        else:
+            self.add_line(f"string public {ctx.variables[0].getText()} = {ctx.expression().getText()};")
         return self.visitChildren(ctx)
 
-    def visitAssignment(self, ctx:YulParser.AssignmentContext):
-        self.add_line(f"string public {ctx.identifierList().getText()} = {ctx.expression().getText()};")
+    def visitAssignment(self, ctx: YulParser.AssignmentContext):
+        if ctx.expression().getText()[:3] in update_operations.keys():
+            operation = ctx.expression().getText().replace("(", ",").replace(")", "").split(",")
+            self.add_line(f"int public {ctx.identifierList().getText()} = "
+                          f"{operation[1]}{update_operations[operation[0]]}{operation[2]};")
+
+        else:
+            self.add_line(f"string public {ctx.identifierList().getText()} = {ctx.expression().getText()};")
         return self.visitChildren(ctx)
 
-    def visitExpression(self, ctx:YulParser.ExpressionContext):
+    def visitExpression(self, ctx: YulParser.ExpressionContext):
         return self.visitChildren(ctx)
 
-    def visitIfStatement(self, ctx:YulParser.IfStatementContext):
+    def visitIfStatement(self, ctx: YulParser.IfStatementContext):
         self.add_line(f"if (")
         self.visit(ctx.expression())
         self.add_line(f")")
         return self.visitBlock(ctx.block()),
 
-    def visitForStatement(self, ctx:YulParser.ForStatementContext):
+    def visitForStatement(self, ctx: YulParser.ForStatementContext):
         loop_val = ctx.init.getText().split(":=")[1].replace("}", "")
         loop_bounds = ctx.cond.getText().replace("lt(", "").replace(")", "").split(",")
         condition = ctx.cond.getText().split("(")[0]
@@ -85,15 +99,14 @@ class YulToSolidityTranspiler(YulVisitor):
         self.add_line(f'for (int {loop_bounds[0]} = {loop_val}; {loop_bounds[0]} {operators[condition]}'
                       f' {loop_bounds[1]}; '
                       f'i = {update[1]} {update_operations[update[0]]} {update[2]})')
-        print(ctx.body.getText())
+
         return self.visit(ctx.body)
 
-    def visitSwitchCase(self, ctx:YulParser.SwitchCaseContext, if_or_elif="if"):
+    def visitSwitchCase(self, ctx: YulParser.SwitchCaseContext, if_or_elif="if"):
         self.add_line(f"{if_or_elif} ({ctx.parentCtx.expression().getText()} == {ctx.literal().getText()})")
         return self.visit(ctx.block())
 
-    def visitSwitchStatement(self, ctx:YulParser.SwitchStatementContext):
-        print(ctx.switchCase())
+    def visitSwitchStatement(self, ctx: YulParser.SwitchStatementContext):
         for i, x in enumerate(ctx.switchCase()):
             if i == 0:
                 self.visitSwitchCase(x, "if")
@@ -106,7 +119,7 @@ class YulToSolidityTranspiler(YulVisitor):
 
         pass
 
-    def visitFunctionDefinition(self, ctx:YulParser.FunctionDefinitionContext):
+    def visitFunctionDefinition(self, ctx: YulParser.FunctionDefinitionContext):
         func_name = ctx.Identifier()
         try:
             returns = ctx.returnParameters[0].getText()
@@ -124,8 +137,10 @@ class YulToSolidityTranspiler(YulVisitor):
             self.add_line(f"function {func_name}({params}) public")
         self.visit(ctx.block())
 
-    def visitFunctionCall(self, ctx:YulParser.FunctionCallContext):
-        if type(ctx.parentCtx.parentCtx) is not YulParser.SwitchStatementContext:
+    def visitFunctionCall(self, ctx: YulParser.FunctionCallContext):
+        if ctx.getText()[:3] in update_operations.keys():
+            pass
+        elif type(ctx.parentCtx.parentCtx) is not YulParser.SwitchStatementContext:
             expressions = []
             for expression in ctx.expression():
                 expressions.append(expression.getText())
@@ -136,19 +151,19 @@ class YulToSolidityTranspiler(YulVisitor):
 
         pass
 
-    def visitBoolean(self, ctx:YulParser.BooleanContext):
+    def visitBoolean(self, ctx: YulParser.BooleanContext):
         return self.visitChildren(ctx)
 
-    def visitLiteral(self, ctx:YulParser.LiteralContext):
+    def visitLiteral(self, ctx: YulParser.LiteralContext):
         return self.visitChildren(ctx)
 
-    def visitTypedIdentifierList(self, ctx:YulParser.TypedIdentifierListContext):
+    def visitTypedIdentifierList(self, ctx: YulParser.TypedIdentifierListContext):
         return self.visitChildren(ctx)
 
-    def visitIdentifierList(self, ctx:YulParser.IdentifierListContext):
+    def visitIdentifierList(self, ctx: YulParser.IdentifierListContext):
         return self.visitChildren(ctx)
 
-    def visitTypeName(self, ctx:YulParser.TypeNameContext):
+    def visitTypeName(self, ctx: YulParser.TypeNameContext):
         return self.visitChildren(ctx)
 
     def get_solidity_code(self) -> str:

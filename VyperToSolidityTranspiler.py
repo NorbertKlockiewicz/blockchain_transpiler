@@ -21,7 +21,7 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
         self.output.write('pragma solidity >=0.4.0 <0.9.0;\n\n')
         self.output.write('contract FromVyper {\n')
         self.indentation_level += 1
-        super().visitModule(ctx)
+        self.visitChildren(ctx)
         self.output.write('\n}')
 
     def visitImportname(self, ctx: VyperParser.ImportnameContext):
@@ -181,7 +181,7 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
 
     def visitBody(self, ctx: VyperParser.BodyContext):
         self.output.write('\n')
-        isStatement = lambda x: isinstance(x, VyperParser.StmtContext)\
+        isStatement = lambda x: isinstance(x, VyperParser.StmtContext) \
                                 and x.getChild(0) is not None \
                                 and not isinstance(x.getChild(0), VyperParser.LogstmtContext) \
                                 and not isinstance(x.getChild(0), VyperParser.PassstmtContext)
@@ -189,6 +189,7 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
         for child in ctx.getChildren(isStatement):
             self.output.write(self.get_indentation())
             self.visit(child)
+
             self.output.write(';\n')
 
     def visitEventmember(self, ctx: VyperParser.EventmemberContext):
@@ -355,7 +356,11 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
         return super().visitStmt(ctx)
 
     def visitDeclaration(self, ctx: VyperParser.DeclarationContext):
-        return super().visitDeclaration(ctx)
+        self.visit(ctx.variable())
+
+        if ctx.expr() is not None:
+            self.output.write(' = ')
+            self.visit(ctx.expr())
 
     def visitMultipleassign(self, ctx: VyperParser.MultipleassignContext):
         return super().visitMultipleassign(ctx)
@@ -366,19 +371,22 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
         self.visit(ctx.getChild(2))
 
     def visitAugoperator(self, ctx: VyperParser.AugoperatorContext):
-        self.output.write(ctx.getText())
+        self.output.write(' ' + ctx.getText())
 
     def visitAugassign(self, ctx: VyperParser.AugassignContext):
-        return super().visitAugassign(ctx)
+        self.visit(ctx.variableaccess())
+        self.visit(ctx.augoperator())
+        self.output.write('= ')
+        self.visit(ctx.expr())
 
     def visitPassstmt(self, ctx: VyperParser.PassstmtContext):
-        return super().visitPassstmt(ctx)
+        self.output.write('{}')
 
     def visitBreakstmt(self, ctx: VyperParser.BreakstmtContext):
-        return super().visitBreakstmt(ctx)
+        self.output.write('break;')
 
     def visitContinuestmt(self, ctx: VyperParser.ContinuestmtContext):
-        return super().visitContinuestmt(ctx)
+        self.output.write('continue;')
 
     def visitLogstmt(self, ctx: VyperParser.LogstmtContext):
         return
@@ -408,7 +416,7 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
 
         if ctx.getChildCount() == 2:
             self.visit(ctx.getChild(1))
-            self.output.write(');\n')
+            self.output.write(')')
             return
 
         if ctx.getChildCount() == 4 and isinstance(ctx.getChild(3), VyperParser.ExprContext):
@@ -450,7 +458,25 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
         return super().visitLoopiterator(ctx)
 
     def visitForstmt(self, ctx: VyperParser.ForstmtContext):
-        return super().visitForstmt(ctx)
+        expr_type = self.get_expr_type(ctx.loopiterator().expr())
+
+        if isinstance(expr_type, VyperParser.VariableaccessContext):
+            if expr_type.NAME().getText() == 'range':
+                args = expr_type.call()[0].arguments().argument()
+                i_name = ctx.loopvariable().NAME()[0].getText()
+                if len(args) == 1:
+                    self.output.write(f'for (uint {i_name} = 0; {i_name} < {args[0].getText()}; {i_name}++) {{\n')
+                elif len(args) == 2:
+                    self.output.write(f'for (uint {i_name} = {args[0].getText()}; {i_name} < {args[1].getText()}; {i_name}++) {{\n')
+
+                self.indentation_level += 1
+
+                self.visit(ctx.body())
+
+                self.indentation_level -= 1
+
+                self.output.write(self.get_indentation() + '}\n')
+
 
     def visitExpr(self, ctx: VyperParser.ExprContext):
         return super().visitExpr(ctx)
@@ -673,3 +699,9 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
 
     def get_solidity_code(self) -> str:
         return "\n".join(self.output)
+
+    def get_expr_type(self, ctx: VyperParser.ExprContext):
+        while ctx.getChildCount() == 1:
+            ctx = ctx.getChild(0)
+
+        return ctx

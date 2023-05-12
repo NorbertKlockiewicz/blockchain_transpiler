@@ -25,6 +25,8 @@ chairperson: public(address)
 int128Proposals: public(int128)
 
 
+implements : IERC20
+
 @view
 @internal
 def _delegated(addr: address) -> bool:

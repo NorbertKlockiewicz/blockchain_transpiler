@@ -55,6 +55,7 @@ def parse_vyper(code):
     parser = VyperParser(token_stream)
 
     parse_tree = parser.module()
+    print(parse_tree.toStringTree(recog=parser))
     with open("./transpiledCode/VyperToSolidity.sol", "w") as f:
         visitor = VyperToSolidityTranspiler(f)
         visitor.visitModule(parse_tree)

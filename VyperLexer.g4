@@ -138,6 +138,8 @@ GT: '>';
 EMPTY: 'empty';
 ABIDECODE: 'abidecode';
 
+BOOL: 'True' | 'False';
+
 // Tokens
 // Adapted from Lark repo. https://github.com/lark-parser/lark/blob/master/examples/python3.lark
 // Adapted from: https://docs.python.org/3/reference/grammar.html
@@ -146,38 +148,10 @@ NAME: [a-zA-Z_][a-zA-Z0-9_]*;
 
 
 TYPE: [a-zA-Z_][a-zA-Z0-9_]*;
-STRING: ( [b] )? ( SHORT_STRING );
+STRING: ('b'? '"' (ESC|.)*? '"' | 'b'? '\'' (ESC|.)*? '\'') ;
+DOCSTRING: ('"""' (ESC|.)*? '"""' | '\'\'\'' (ESC|.)*? '\'\'\'') ;
 
-/// shortstring     ::=  "'" shortstringitem* "'" | '"' shortstringitem* '"'
-/// shortstringitem ::=  shortstringchar | stringescapeseq
-/// shortstringchar ::=  <any source character except "\" or newline or the quote>
-fragment SHORT_STRING
- : '\'' ( STRING_ESCAPE_SEQ | ~[\\\r\n\f'] )* '\''
- | '"' ( STRING_ESCAPE_SEQ | ~[\\\r\n\f"] )* '"'
- ;
-/// longstring      ::=  "'''" longstringitem* "'''" | '"""' longstringitem* '"""'
-DOCSTRING
- : '\'\'\'' LONG_STRING_ITEM*? '\'\'\''
- | '"""' LONG_STRING_ITEM*? '"""' NEWLINE?
- ;
-
-/// longstringitem  ::=  longstringchar | stringescapeseq
-fragment LONG_STRING_ITEM
- : LONG_STRING_CHAR
- | STRING_ESCAPE_SEQ
- ;
-
-/// longstringchar  ::=  <any source character except "\">
-fragment LONG_STRING_CHAR
- : ~'\\'
- ;
-
-/// stringescapeseq ::=  "\" <any source character>
-fragment STRING_ESCAPE_SEQ
- : '\\' .
- | '\\' NEWLINE
- ;
-BOOL: 'True' | 'False';
+fragment ESC: '\\\\' | '\\"' | '\\\'' ;
 
 DECNUMBER: [0-9]+;
 HEXNUMBER: '0x' [0-9a-f]*;

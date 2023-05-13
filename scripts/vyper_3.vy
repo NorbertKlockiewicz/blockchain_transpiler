@@ -1,4 +1,3 @@
 @external
 def __init__():
-    for i in range(5, 10):
-        print(i)
+    self.proposals[self.voters[target].vote].voteCount += weight_to_forward

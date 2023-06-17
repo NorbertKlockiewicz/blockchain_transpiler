@@ -74,7 +74,7 @@ eventdef: EVENTDECL NAME COLON ( eventbody | PASS );
 
 // Enums
 enummember: NAME;
-enumbody: NEWLINE INDENT (enummember NEWLINE?)+ DEDENT;
+enumbody: INDENT (enummember NEWLINE?)+ DEDENT;
 enumdef: ENUMDECL NAME COLON enumbody;
 
 // Types

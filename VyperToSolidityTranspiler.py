@@ -887,5 +887,3 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
             ctx = ctx.getChild(0)
 
         return ctx
-
-# TODO: SELFDESTRUCT https://docs.vyperlang.org/en/stable/built-in-functions.html?highlight=send#selfdestruct

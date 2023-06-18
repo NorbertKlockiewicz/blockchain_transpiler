@@ -136,7 +136,7 @@ LT: '<';
 GT: '>';
 
 EMPTY: 'empty';
-ABIDECODE: 'abidecode';
+ABIDECODE: '_abi_decode';
 
 BOOL: 'True' | 'False';
 
@@ -168,4 +168,4 @@ NEWLINE
 };
 
 COMMENT
- : '#' ~[\r\n\f]* -> skip;
+ : '#' ~[\r\n\f]*;

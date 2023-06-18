@@ -138,4 +138,4 @@ COMMENT=78
 '<'=62
 '>'=63
 'empty'=64
-'abidecode'=65
+'_abi_decode'=65

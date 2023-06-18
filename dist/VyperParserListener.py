@@ -377,6 +377,24 @@ class VyperParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by VyperParser#comment.
+    def enterComment(self, ctx:VyperParser.CommentContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#comment.
+    def exitComment(self, ctx:VyperParser.CommentContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#docstring.
+    def enterDocstring(self, ctx:VyperParser.DocstringContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#docstring.
+    def exitDocstring(self, ctx:VyperParser.DocstringContext):
+        pass
+
+
     # Enter a parse tree produced by VyperParser#declaration.
     def enterDeclaration(self, ctx:VyperParser.DeclarationContext):
         pass

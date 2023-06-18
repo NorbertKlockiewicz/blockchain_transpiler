@@ -214,6 +214,16 @@ class VyperParserVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by VyperParser#comment.
+    def visitComment(self, ctx:VyperParser.CommentContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#docstring.
+    def visitDocstring(self, ctx:VyperParser.DocstringContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by VyperParser#declaration.
     def visitDeclaration(self, ctx:VyperParser.DeclarationContext):
         return self.visitChildren(ctx)

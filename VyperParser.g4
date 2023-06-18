@@ -10,7 +10,8 @@ options {
 }
 
 module: (STRING
-        | COMMENT
+        | comment
+        | docstring
         | import_
         | structdef
         | interfacedef
@@ -63,7 +64,7 @@ parameters: INDENT? parameter (COMMA NEWLINE? parameter?)* DEDENT?;
 returns_: RETURNTYPE type_;
 functionsig: FUNCDECL NAME LPAREN parameters? RPAREN returns_?;
 functiondef: decorators? functionsig COLON body;
-body: INDENT (DOCSTRING | stmt NEWLINE?)+ DEDENT;
+body: INDENT ( DOCSTRING NEWLINE?)? ( stmt NEWLINE?)+ DEDENT;
 
 // Events can be composed of 0 or more members
 eventmember: NAME COLON type_;
@@ -105,10 +106,10 @@ interfacedef: INTERFACEDECL NAME COLON INDENT ( interfacefunction NEWLINE? )+ DE
 // IF and FOR blocks create a new block, and thus are complete when de-indented
 // Conversely, the rest of the statements require a newline to be considered complete
 // (as they do not create a new block)
-stmt: ( ifstmt | forstmt ) COMMENT?
-     | (declaration
-       | assign
+stmt: ( ifstmt | forstmt )
+     | ( assign
        | augassign
+       | declaration
        | returnstmt
        | passstmt
        | breakstmt
@@ -116,7 +117,11 @@ stmt: ( ifstmt | forstmt ) COMMENT?
        | logstmt
        | raisestmt
        | assertstmt
-       | expr ) COMMENT?;
+       | expr ) COMMENT?
+       | comment;
+
+comment: COMMENT;
+docstring: DOCSTRING;
 
 declaration: variable (ASSIGN expr)?;
 multipleassign: (variableaccess | SKIPASSIGN) (COMMA (variableaccess | SKIPASSIGN))+;
@@ -152,7 +157,6 @@ raisestmt: RAISE
 assertstmt: ASSERT expr
            | ASSERT expr COMMA expr
            | ASSERT expr COMMA UNREACHABLE;
-
 
 condexec: expr COLON body;
 defaultexec: body;

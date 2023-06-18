@@ -14,7 +14,7 @@ from YulToSolidityTranspiler import YulToSolidityTranspiler
 # Define the input code to be parsed
 solidity_script = open("./scripts/solidity_1.sol", "r").read()
 yul_script = open("./scripts/yul_for.yul", "r").read()
-vyper_script = open("./scripts/vyper/blind_auction.vy", "r").read()
+vyper_script = open("./scripts/vyper/ERC1155ownable.vy", "r").read()
 
 def parse_solidity(code):
     input_stream = InputStream(code)

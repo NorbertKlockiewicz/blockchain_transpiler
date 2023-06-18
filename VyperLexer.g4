@@ -58,6 +58,7 @@ IMMUTABLE: 'immutable';
 PUBLIC: 'public';
 INDEXED: 'indexed';
 
+IMPLEMENTS : 'implements';
 
 // Types
 DYNARRAY: 'DynArray';
@@ -149,7 +150,7 @@ NAME: [a-zA-Z_][a-zA-Z0-9_]*;
 
 TYPE: [a-zA-Z_][a-zA-Z0-9_]*;
 STRING: ('b'? '"' (ESC|.)*? '"' | 'b'? '\'' (ESC|.)*? '\'') ;
-DOCSTRING: ('"""' (ESC|.)*? '"""' | '\'\'\'' (ESC|.)*? '\'\'\'') ;
+DOCSTRING: ' '* ('"""' (ESC|.)*? '"""' | '\'\'\'' (ESC|.)*? '\'\'\'') ;
 
 fragment ESC: '\\\\' | '\\"' | '\\\'' ;
 
@@ -168,4 +169,4 @@ NEWLINE
 };
 
 COMMENT
- : '#' ~[\r\n\f]*;
+ : ' '* '#' ~[\r\n\f]*;

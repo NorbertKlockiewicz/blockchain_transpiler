@@ -9,7 +9,8 @@ options {
     tokenVocab=VyperLexer;
 }
 
-module: (STRING
+module: (string
+        | implements
         | comment
         | docstring
         | import_
@@ -34,7 +35,7 @@ importalias: AS NAME;
 importlist: importname importalias? (COMMA importname importalias? )* COMMA?;
 importfrom: FROM (DOT* importpath | DOT+);
 
-
+implements: IMPLEMENTS COLON NAME;
 
 // Constant definitions
 // NOTE: Temporary until decorators used
@@ -64,18 +65,18 @@ parameters: INDENT? parameter (COMMA NEWLINE? parameter?)* DEDENT?;
 returns_: RETURNTYPE type_;
 functionsig: FUNCDECL NAME LPAREN parameters? RPAREN returns_?;
 functiondef: decorators? functionsig COLON body;
-body: INDENT ( DOCSTRING NEWLINE?)? ( stmt NEWLINE?)+ DEDENT;
+body: comment? INDENT ( DOCSTRING NEWLINE?)? ( stmt NEWLINE?)+ DEDENT;
 
 // Events can be composed of 0 or more members
 eventmember: NAME COLON type_;
 indexedeventarg: NAME COLON INDEXED LPAREN type_ RPAREN;
-eventbody: INDENT ((eventmember | indexedeventarg) NEWLINE?)+ DEDENT;
+eventbody: INDENT (docstring NEWLINE?)? ((comment | eventmember | indexedeventarg) NEWLINE?)+ DEDENT;
 // Events which use no args use a pass statement instead
 eventdef: EVENTDECL NAME COLON ( eventbody | PASS );
 
 // Enums
 enummember: NAME;
-enumbody: INDENT (enummember NEWLINE?)+ DEDENT;
+enumbody: INDENT (docstring NEWLINE?)? (comment | enummember NEWLINE?)+ DEDENT;
 enumdef: ENUMDECL NAME COLON enumbody;
 
 // Types
@@ -93,13 +94,13 @@ mapdef: MAP LSQUARE ( NAME | arraydef ) COMMA type_ RSQUARE;
 type_: ( NAME | arraydef | tupledef | mapdef | dynarraydef );
 
 // Structs can be composed of 1+ basic types or other customtypes
-structmember: NAME COLON type_;
-structdef: STRUCTDECL NAME COLON INDENT (structmember NEWLINE?)+ DEDENT;
+structmember: NAME COLON type_ ;
+structdef: STRUCTDECL NAME COLON INDENT (docstring NEWLINE?)? ((comment | structmember) NEWLINE?)+ DEDENT;
 
 // INterfaces are composed of a series of method definitions, plus their mutability
 mutability: NAME;
 interfacefunction: functionsig COLON mutability;
-interfacedef: INTERFACEDECL NAME COLON INDENT ( interfacefunction NEWLINE? )+ DEDENT;
+interfacedef: INTERFACEDECL NAME COLON INDENT (docstring NEWLINE?)? ((comment | interfacefunction) NEWLINE? )+ DEDENT;
 
 
 // Statements
@@ -189,7 +190,7 @@ dict: LCURLY RCURLY | LCURLY (NAME COLON expr) (COMMA (NAME COLON expr))* (COMMA
 // See https://docs.python.org/3/reference/expressions.html#operator-precedence
 // NOTE: The recursive cycle here helps enforce operator precedence
 //       Precedence goes up the lower down you go
-operation: boolor;
+operation: comment? boolor;
 
 // Boolean Operations
 boolor: booland
@@ -259,4 +260,6 @@ number: DECNUMBER
        | OCTNUMBER
        | FLOATNUMBER;
 
-literal: ( number | STRING | BOOL );
+literal: ( number | string | BOOL );
+
+string: STRING;

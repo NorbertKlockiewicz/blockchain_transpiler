@@ -22,10 +22,18 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
         return self.indentation * self.indentation_level
 
     def visitModule(self, ctx: VyperParser.ModuleContext):
+        for interface in ctx.interfacedef():
+            self.visit(interface)
+
         self.output.write('pragma solidity >=0.4.0 <0.9.0;\n\n')
         self.output.write('contract FromVyper {\n')
         self.indentation_level += 1
-        self.visitChildren(ctx)
+
+        for child in ctx.children:
+            if type(child) != type(ctx.NEWLINE(0)) and not isinstance(child, VyperParser.InterfacedefContext):
+                self.visit(child)
+                self.output.write('\n')
+
         self.output.write('\n}\n\n')
 
         self.output.write('//######## INSTRUCTIONS TO TRANSLATE MANUALLY ########\n')
@@ -61,9 +69,6 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
 
         self.output.write(';')
 
-        if ctx.NEWLINE() is not None:
-            self.output.write('\n')
-
     def visitImmutabledef(self, ctx: VyperParser.ImmutabledefContext):
         line = \
             self.get_indentation() \
@@ -92,9 +97,6 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
         super().visitVariabledef(ctx)
 
         self.output.write(';')
-
-        if ctx.NEWLINE() is not None:
-            self.output.write('\n\n')
 
 
     def visitDecorator(self, ctx: VyperParser.DecoratorContext):
@@ -245,9 +247,10 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
         )
 
     def visitEventbody(self, ctx: VyperParser.EventbodyContext):
+        self.show_docstring(ctx.docstring())
 
-
-        isEventMember = lambda x: isinstance(x, VyperParser.EventmemberContext) or isinstance(x, VyperParser.IndexedeventargContext)
+        isEventMember = lambda x: isinstance(x, VyperParser.EventmemberContext) \
+                                  or isinstance(x, VyperParser.IndexedeventargContext)
 
         children = list(ctx.getChildren(isEventMember))
 
@@ -258,6 +261,11 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
                 self.output.write(', ')
 
     def visitEventdef(self, ctx: VyperParser.EventdefContext):
+        for comment in ctx.eventbody().comment():
+            self.output.write(self.get_indentation())
+            self.visit(comment)
+            self.output.write('\n')
+
         self.output.write(
             self.get_indentation() +
             'event' +
@@ -272,14 +280,16 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
         self.output.write(ctx.NAME().getText())
 
     def visitEnumbody(self, ctx: VyperParser.EnumbodyContext):
-        is_enum_member = lambda x: isinstance(x, VyperParser.EnummemberContext)
+        self.show_docstring(ctx.docstring())
+
+        is_enum_member = lambda x: isinstance(x, VyperParser.EnummemberContext) or isinstance(x, VyperParser.CommentContext)
 
         enum_members = list(ctx.getChildren(is_enum_member))
 
         for idx, child in enumerate(enum_members):
             self.visit(child)
 
-            if idx != len(enum_members) - 1:
+            if not isinstance(child, VyperParser.CommentContext) and idx != len(enum_members) - 1:
                 self.output.write(', ')
 
 
@@ -380,12 +390,22 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
         self.visit(ctx.type_())
         self.output.write(' ')
         self.output.write(ctx.NAME().getText())
-        self.output.write(';\n')
+        self.output.write(';')
 
     def visitStructdef(self, ctx: VyperParser.StructdefContext):
         self.output.write(self.get_indentation() + 'struct ' + ctx.NAME().getText() + ' {\n')
         self.indentation_level += 1
-        self.visitChildren(ctx)
+        self.show_docstring(ctx.docstring())
+
+        for child in ctx.children:
+            if isinstance(child, VyperParser.CommentContext):
+                self.output.write(self.get_indentation())
+                self.visit(child)
+                self.output.write('\n')
+            if isinstance(child, VyperParser.StructmemberContext):
+                self.visit(child)
+                self.output.write('\n')
+
         self.indentation_level -= 1
         self.output.write(self.get_indentation() + '}\n\n')
 
@@ -420,7 +440,7 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
         if isinstance(ctx.parentCtx, VyperParser.ModuleContext):
             self.output.write(self.get_indentation())
 
-        self.output.write('//' + ctx.COMMENT().getText()[1:] + '\n')
+        self.output.write('//' + ctx.COMMENT().getText()[1:])
 
     def visitDocstring(self, ctx:VyperParser.DocstringContext):
         if isinstance(ctx.parentCtx, VyperParser.ModuleContext):
@@ -602,10 +622,13 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
         return super().visitExpr(ctx)
 
     def visitVariableaccess(self, ctx: VyperParser.VariableaccessContext):
+        if ctx.getText() == 'self':
+            self.output.write('this')
+            return
+
         skip_first_get_attr = False
 
         if ctx.getText()[:5] == 'send(':
-            print(ctx.getText())
             self.visit(ctx.call(0).arguments().argument(0))
             self.output.write('.transfer(')
             self.visit(ctx.call(0).arguments().argument(1))
@@ -643,7 +666,8 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
     def visitCall(self, ctx: VyperParser.CallContext):
         self.output.write('(')
 
-        self.visit(ctx.arguments())
+        if ctx.arguments() is not None:
+            self.visit(ctx.arguments())
 
         self.output.write(')')
 
@@ -712,7 +736,11 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
         self.output.write(self.get_indentation() + '}')
 
     def visitOperation(self, ctx: VyperParser.OperationContext):
-        return super().visitOperation(ctx)
+        if ctx.comment() is not None:
+            self.visit(ctx.comment())
+            self.output.write('\n' + self.get_indentation())
+
+        self.visit(ctx.boolor())
 
     def visitBoolor(self, ctx: VyperParser.BoolorContext):
         if ctx.getChildCount() == 1:
@@ -877,13 +905,30 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
     def visitLiteral(self, ctx: VyperParser.LiteralContext):
         if ctx.number() is not None:
             self.visit(ctx.number())
-        elif ctx.STRING() is not None:
-            self.output.write(ctx.STRING().getText())
+        elif ctx.string() is not None:
+            self.visit(ctx.string())
         elif ctx.BOOL() is not None:
             self.output.write(ctx.BOOL().getText().lower())
+
+    def visitImplements(self, ctx:VyperParser.ImplementsContext):
+        self.output.write(self.get_indentation())
+        self.output.write("// TODO: FIX INTERFACE IMPLEMENTATION ")
+        self.output.write(f"{ctx.IMPLEMENTS().getText()}: {ctx.NAME()}")
+
+    def visitString(self, ctx:VyperParser.StringContext):
+        if ctx.getText()[0] == "b":
+            self.output.write(f"bytes({ctx.getText()[1:]})")
+        else:
+            self.output.write(ctx.getText())
 
     def get_expr_type(self, ctx: VyperParser.ExprContext):
         while ctx.getChildCount() == 1:
             ctx = ctx.getChild(0)
 
         return ctx
+
+    def show_docstring(self, docstring):
+        if docstring is not None:
+            self.output.write('/**')
+            self.output.write(docstring.getText()[3:-3].replace('\n', '\n' + self.get_indentation()))
+            self.output.write('*/\n')

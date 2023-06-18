@@ -71,6 +71,15 @@ class VyperParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by VyperParser#implements.
+    def enterImplements(self, ctx:VyperParser.ImplementsContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#implements.
+    def exitImplements(self, ctx:VyperParser.ImplementsContext):
+        pass
+
+
     # Enter a parse tree produced by VyperParser#constantdef.
     def enterConstantdef(self, ctx:VyperParser.ConstantdefContext):
         pass
@@ -833,6 +842,15 @@ class VyperParserListener(ParseTreeListener):
 
     # Exit a parse tree produced by VyperParser#literal.
     def exitLiteral(self, ctx:VyperParser.LiteralContext):
+        pass
+
+
+    # Enter a parse tree produced by VyperParser#string.
+    def enterString(self, ctx:VyperParser.StringContext):
+        pass
+
+    # Exit a parse tree produced by VyperParser#string.
+    def exitString(self, ctx:VyperParser.StringContext):
         pass
 
 

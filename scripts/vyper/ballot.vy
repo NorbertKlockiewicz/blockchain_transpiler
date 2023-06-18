@@ -131,7 +131,7 @@ def delegate(to: address):
     self.voters[msg.sender].delegate = to
 
     # This call will throw if and only if this delegation would cause a loop
-        # of length <= 5 that ends up delegating back to the delegator.
+    # of length <= 5 that ends up delegating back to the delegator.
     self._forwardWeight(msg.sender)
 
 # Give your vote (including votes delegated to you)

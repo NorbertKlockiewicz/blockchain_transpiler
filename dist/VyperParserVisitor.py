@@ -44,6 +44,11 @@ class VyperParserVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by VyperParser#implements.
+    def visitImplements(self, ctx:VyperParser.ImplementsContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by VyperParser#constantdef.
     def visitConstantdef(self, ctx:VyperParser.ConstantdefContext):
         return self.visitChildren(ctx)
@@ -466,6 +471,11 @@ class VyperParserVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by VyperParser#literal.
     def visitLiteral(self, ctx:VyperParser.LiteralContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by VyperParser#string.
+    def visitString(self, ctx:VyperParser.StringContext):
         return self.visitChildren(ctx)
 
 

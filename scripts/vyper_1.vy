@@ -1,5 +1,6 @@
 # Voting with delegation.
 
+
 # Information about voters
 struct Voter:
     # weight is accumulated by delegation

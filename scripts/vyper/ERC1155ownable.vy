@@ -189,7 +189,7 @@ def renounceOwnership():
 
 @external
 @view
-def balanceOfBatch(accounts: DynArray[address, BATCH_SIZE], ids: DynArray[uint256, BATCH_SIZE]) -> DynArray[uint256,BATCH_SIZE]:  # uint256[BATCH_SIZE]:
+def balanceOfBatch(accounts: DynArray[address, BATCH_SIZE], ids: DynArray[uint256, BATCH_SIZE]) -> DynArray[uint256,BATCH_SIZE]:
     """
     @dev check the balance for an array of specific IDs and addresses
     @dev will return an array of balances

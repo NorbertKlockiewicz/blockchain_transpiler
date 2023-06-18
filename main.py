@@ -1,3 +1,4 @@
+import os
 from io import StringIO
 
 from antlr4 import *
@@ -46,19 +47,22 @@ def parse_yul(code):
 
 
 def parse_vyper(code):
-    input_stream = InputStream(code)
+    for file in os.scandir('scripts/vyper'):
+        with open(file, 'r') as f:
+            input_stream = InputStream(f.read())
 
-    lexer = VyperLexer(input_stream)
+            lexer = VyperLexer(input_stream)
 
-    token_stream = CommonTokenStream(lexer)
+            token_stream = CommonTokenStream(lexer)
 
-    parser = VyperParser(token_stream)
+            parser = VyperParser(token_stream)
 
-    parse_tree = parser.module()
-    print(parse_tree.toStringTree(recog=parser))
-    with open("./transpiledCode/VyperToSolidity.sol", "a+") as f:
-        visitor = VyperToSolidityTranspiler(f)
-        visitor.visitModule(parse_tree)
+            parse_tree = parser.module()
+            print(file, parse_tree.toStringTree(recog=parser))
+
+            with open("./transpiledCode/vyper-to-solidity/" + file.name[:-2] + ".sol", "w") as f:
+                visitor = VyperToSolidityTranspiler(f)
+                visitor.visitModule(parse_tree)
 
 
 parse_vyper(vyper_script)

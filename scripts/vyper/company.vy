@@ -79,7 +79,7 @@ def cash() -> uint256:
 @external
 def sellStock(sell_order: uint256):
     assert sell_order > 0 # Otherwise, this would fail at send() below,
-        # due to an OOG error (there would be zero value available for gas).
+    # due to an OOG error (there would be zero value available for gas).
     # You can only sell as much stock as you own.
     assert self._getHolding(msg.sender) >= sell_order
     # Check that the company can pay you.

@@ -24,4 +24,3 @@ contract FromVyper {
 
 }
 
-//######## INSTRUCTIONS TO TRANSLATE MANUALLY ########

@@ -5,6 +5,7 @@ interface IERC1155Receiver {
 interface IERC1155MetadataURI {
     function uri(uint256 id) public external view returns (string[MAX_URI_LENGTH]);
 }
+// TODO: FIX IMPORT fromvyper.interfacesimportERC165
 pragma solidity >=0.4.0 <0.9.0;
 
 contract FromVyper {
@@ -15,6 +16,7 @@ contract FromVyper {
     */
 
     //############## imports ###############
+// TODO: FIX IMPORT fromvyper.interfacesimportERC165
 
     //############## variables ###############
     // maximum items in a batch call. Set to 128, to be determined what the practical limits are.
@@ -569,5 +571,3 @@ contract FromVyper {
 
 }
 
-//######## INSTRUCTIONS TO TRANSLATE MANUALLY ########
-// TODO: fromvyper.interfacesimportERC165

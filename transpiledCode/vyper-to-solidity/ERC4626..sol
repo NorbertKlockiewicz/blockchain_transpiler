@@ -1,8 +1,12 @@
+// TODO: FIX IMPORT fromvyper.interfacesimportERC20
+// TODO: FIX IMPORT fromvyper.interfacesimportERC4626
 pragma solidity >=0.4.0 <0.9.0;
 
 contract FromVyper {
     // NOTE: Copied from https://github.com/fubuloubu/ERC4626/blob/1a10b051928b11eeaad15d80397ed36603c2a49b/contracts/VyperVault.vy
+// TODO: FIX IMPORT fromvyper.interfacesimportERC20
 
+// TODO: FIX IMPORT fromvyper.interfacesimportERC4626
 
     // TODO: FIX INTERFACE IMPLEMENTATION implements: ERC20
     // TODO: FIX INTERFACE IMPLEMENTATION implements: ERC4626
@@ -308,6 +312,3 @@ contract FromVyper {
 
 }
 
-//######## INSTRUCTIONS TO TRANSLATE MANUALLY ########
-// TODO: fromvyper.interfacesimportERC20
-// TODO: fromvyper.interfacesimportERC4626

@@ -1,6 +1,8 @@
+// TODO: FIX IMPORT fromvyper.interfacesimportERC20
 pragma solidity >=0.4.0 <0.9.0;
 
 contract FromVyper {
+// TODO: FIX IMPORT fromvyper.interfacesimportERC20
 
     uint256 public totalEthQty;
     uint256 public totalTokenQty;
@@ -72,5 +74,3 @@ contract FromVyper {
 
 }
 
-//######## INSTRUCTIONS TO TRANSLATE MANUALLY ########
-// TODO: fromvyper.interfacesimportERC20

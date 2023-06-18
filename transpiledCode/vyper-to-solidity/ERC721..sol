@@ -1,13 +1,17 @@
 interface ERC721Receiver {
     function onERC721Received(address _operator, address _from, uint256 _tokenId, bytes[1024] _data) public external view returns (bytes4);
 }
+// TODO: FIX IMPORT fromvyper.interfacesimportERC165
+// TODO: FIX IMPORT fromvyper.interfacesimportERC721
 pragma solidity >=0.4.0 <0.9.0;
 
 contract FromVyper {
     // @dev Implementation of ERC-721 non-fungible token standard.
     // @author Ryuya Nakamura (@nrryuya)
     // Modified from: https://github.com/vyperlang/vyper/blob/de74722bf2d8718cca46902be165f9fe0e3641dd/examples/tokens/ERC721.vy
+// TODO: FIX IMPORT fromvyper.interfacesimportERC165
 
+// TODO: FIX IMPORT fromvyper.interfacesimportERC721
 
     // TODO: FIX INTERFACE IMPLEMENTATION implements: ERC721
     // TODO: FIX INTERFACE IMPLEMENTATION implements: ERC165
@@ -392,6 +396,3 @@ contract FromVyper {
 
 }
 
-//######## INSTRUCTIONS TO TRANSLATE MANUALLY ########
-// TODO: fromvyper.interfacesimportERC165
-// TODO: fromvyper.interfacesimportERC721

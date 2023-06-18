@@ -3,9 +3,11 @@ interface Exchange {
     function receive(address _from, uint256 _amt) public external nonpayable;
     function transfer(address _to, uint256 _amt) public external nonpayable;
 }
+// TODO: FIX IMPORT fromvyper.interfacesimportERC20
 pragma solidity >=0.4.0 <0.9.0;
 
 contract FromVyper {
+// TODO: FIX IMPORT fromvyper.interfacesimportERC20
 
     bytes32 public exchange_codehash;
     // Maps token addresses to exchange addresses
@@ -53,5 +55,3 @@ contract FromVyper {
 
 }
 
-//######## INSTRUCTIONS TO TRANSLATE MANUALLY ########
-// TODO: fromvyper.interfacesimportERC20

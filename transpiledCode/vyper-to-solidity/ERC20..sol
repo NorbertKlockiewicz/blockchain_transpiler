@@ -1,10 +1,14 @@
+// TODO: FIX IMPORT fromvyper.interfacesimportERC20
+// TODO: FIX IMPORT fromvyper.interfacesimportERC20Detailed
 pragma solidity >=0.4.0 <0.9.0;
 
 contract FromVyper {
     // @dev Implementation of ERC-20 token standard.
     // @author Takayuki Jimba (@yudetamago)
     // https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md
+// TODO: FIX IMPORT fromvyper.interfacesimportERC20
 
+// TODO: FIX IMPORT fromvyper.interfacesimportERC20Detailed
 
     // TODO: FIX INTERFACE IMPLEMENTATION implements: ERC20
     // TODO: FIX INTERFACE IMPLEMENTATION implements: ERC20Detailed
@@ -164,6 +168,3 @@ contract FromVyper {
 
 }
 
-//######## INSTRUCTIONS TO TRANSLATE MANUALLY ########
-// TODO: fromvyper.interfacesimportERC20
-// TODO: fromvyper.interfacesimportERC20Detailed

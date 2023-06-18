@@ -1,9 +1,11 @@
 interface Factory {
     function register() public external nonpayable;
 }
+// TODO: FIX IMPORT fromvyper.interfacesimportERC20
 pragma solidity >=0.4.0 <0.9.0;
 
 contract FromVyper {
+// TODO: FIX IMPORT fromvyper.interfacesimportERC20
 
     ERC20 public token;
     Factory factory;
@@ -51,5 +53,3 @@ contract FromVyper {
 
 }
 
-//######## INSTRUCTIONS TO TRANSLATE MANUALLY ########
-// TODO: fromvyper.interfacesimportERC20

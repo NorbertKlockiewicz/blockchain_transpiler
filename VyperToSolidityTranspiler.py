@@ -13,9 +13,6 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
         self.indentation_level = 0
         self.indentation = '    '
         self.output = fp
-
-        self.comments = []
-
         self.output.truncate(0)
 
     def get_indentation(self):
@@ -25,26 +22,26 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
         for interface in ctx.interfacedef():
             self.visit(interface)
 
+        for _import in ctx.import_():
+            self.visit(_import)
+
         self.output.write('pragma solidity >=0.4.0 <0.9.0;\n\n')
         self.output.write('contract FromVyper {\n')
         self.indentation_level += 1
 
         for child in ctx.children:
-            if type(child) != type(ctx.NEWLINE(0)) and not isinstance(child, VyperParser.InterfacedefContext):
+            if type(child) != type(ctx.NEWLINE(0)) and not isinstance(child, VyperParser.InterfacedefContext) \
+                and not isinstance(child, VyperParser.Import_Context):
                 self.visit(child)
                 self.output.write('\n')
 
         self.output.write('\n}\n\n')
 
-        self.output.write('//######## INSTRUCTIONS TO TRANSLATE MANUALLY ########\n')
-        for comment in self.comments:
-            self.output.write(comment)
-
     def visitImportname(self, ctx: VyperParser.ImportnameContext):
         return super().visitImportname(ctx)
 
     def visitImport_(self, ctx: VyperParser.Import_Context):
-        self.comments.append('// TODO: ' + ctx.getText() + '\n')
+        self.output.write(self.get_indentation() + '// TODO: FIX IMPORT ' + ctx.getText() + '\n')
 
     def visitImportpath(self, ctx: VyperParser.ImportpathContext):
         return super().visitImportpath(ctx)

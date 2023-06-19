@@ -1,151 +1,41 @@
 pragma solidity >=0.4.0 <0.9.0;
 
 contract FromVyper {
-    enum Roles { ADMIN, USER }
-    struct Bid {
-        bytes32 blindedBid;
-        uint256 deposit;
+    interface Exchange {
+        function token() external view returns (ERC20);
+        function receive(address _from, uint256 _amt) external nonpayable;
+        function transfer(address _to, uint256 _amt) external nonpayable;
     }
+    bytes32 public exchange_codehash;
 
-    int128 constant MAX_BIDS = 128;
-    event AuctionEnded(address highestBidder, uint256 highestBid);
-    event Test();
-    address public beneficiary;
-
-    uint256 public biddingEnd;
-
-    uint256 public revealEnd;
-
-    bool public ended;
-
-    uint256 public highestBid;
-
-    address public highestBidder;
-
-    mapping (address => Bid) bids;
-
-    mapping (address => int128) bidCounts;
-
-    mapping (address => uint256) pendingReturns;
+    mapping (ERC20 => Exchange) public exchanges;
 
     // ##### VYPER DECORATORS #####
     // @external
-    constructor (address _beneficiary, uint256 _biddingTime, uint256 _revealTime) external 
+    constructor (bytes32 _exchange_codehash) external 
     {
-        beneficiary = _beneficiary;
-        biddingEnd = block.timestamp + _biddingTime;
-        revealEnd = biddingEnd + _revealTime;
+        exchange_codehash = _exchange_codehash;
     }
 
     // ##### VYPER DECORATORS #####
     // @external
-    // @payable
-    // @noreentrant('key')
-    bool internal bidReentrancyLock = False;
-    function bid(bytes32 _blindedBid) external payable
+    function register() external 
     {
-        // Reentrancy lock
-        require(!bidReentrancyLock, "No re-entrancy");
-        bidReentrancyLock = true;
-
-        require(block.timestamp < biddingEnd);
-        int128 numBids = bidCounts[msg.sender];
-        require(numBids < MAX_BIDS);
-        bids[msg.sender][numBids] = Bid({
-            blindedBid: _blindedBid,
-            deposit: msg.value
-        });
-        bidCounts[msg.sender] += 1;
-
-        // Reentrancy unlock
-        bidReentrancyLock = false;
-    }
-
-    // ##### VYPER DECORATORS #####
-    // @internal
-    function placeBid(address bidder, uint256 _value) internal  returns (bool)
-    {
-        
-        if (_value <= highestBid) {
-            return false;
-        }
-
-        
-        if (highestBidder != address(0)) {
-            pendingReturns[highestBidder] += highestBid;
-        }
-
-        highestBid = _value;
-        highestBidder = bidder;
-        return true;
+        require(msg.sender.codehash == exchange_codehash);
+        Exchange exchange = Exchange(msg.sender);
+        exchanges[exchange.token()] = exchange;
     }
 
     // ##### VYPER DECORATORS #####
     // @external
-    function reveal(int128 _numBids, uint256 _values, bool _fakes, bytes32 _secrets) external 
+    function trade(ERC20 _token1, ERC20 _token2, uint256 _amt) external 
     {
-        require(block.timestamp > biddingEnd);
-        require(block.timestamp < revealEnd);
-        require(_numBids == bidCounts[msg.sender]);
-        uint256 refund = 0;
-        
-        for (uint i = 0; i < MAX_BIDS; i++) {
-            
-            if (i >= _numBids) {
-                break;
-            }
-
-            Bid bidToCheck = (bids[msg.sender])[i];
-            uint256 value = _values[i];
-            bool fake = _fakes[i];
-            bytes32 secret = _secrets[i];
-            bytes32 blindedBid = keccak256(concat(convert(value, bytes32), convert(fake, bytes32), secret));
-            require(blindedBid == bidToCheck.blindedBid);
-            refund += bidToCheck.deposit;
-            
-            if (!fake && bidToCheck.deposit >= value) {
-                
-                if (placeBid(msg.sender, value)) {
-                    refund -= value;
-                }
-
-            }
-
-            bytes32 zeroBytes32 = bytes32(0);
-            bidToCheck.blindedBid = zeroBytes32;
-        }
-
-        
-        if (refund != 0) {
-            msg.sender.transfer(refund);
-        }
-
-    }
-
-    // ##### VYPER DECORATORS #####
-    // @external
-    function withdraw() external 
-    {
-        uint256 pendingAmount = pendingReturns[msg.sender];
-        
-        if (pendingAmount > 0) {
-            pendingReturns[msg.sender] = 0;
-            msg.sender.transfer(pendingAmount);
-        }
-
-    }
-
-    // ##### VYPER DECORATORS #####
-    // @external
-    function auctionEnd() external 
-    {
-        require(block.timestamp > revealEnd);
-        require(!ended);
-        ended = true;
-        beneficiary.transfer(highestBid);
+        exchanges[_token1].receive(msg.sender, _amt);
+        exchanges[_token2].transfer(msg.sender, _amt);
     }
 
 
 }
 
 //######## INSTRUCTIONS TO TRANSLATE MANUALLY ########
+// fromvyper.interfacesimportERC20

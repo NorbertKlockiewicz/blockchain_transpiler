@@ -2653,8 +2653,8 @@ class SolidityParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.payableSet = false
-            self.visibilitySet = false
+            self.payableSet = False
+            self.visibilitySet = False
             self.arguments = None # ParameterListContext
             self.body = None # BlockContext
 
@@ -2959,10 +2959,10 @@ class SolidityParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.visibilitySet = false
-            self.mutabilitySet = false
-            self.virtualSet = false
-            self.overrideSpecifierSet = false
+            self.visibilitySet = False
+            self.mutabilitySet = False
+            self.virtualSet = False
+            self.overrideSpecifierSet = False
             self.arguments = None # ParameterListContext
             self.returnParameters = None # ParameterListContext
             self.body = None # BlockContext
@@ -3363,8 +3363,8 @@ class SolidityParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.virtualSet = false
-            self.overrideSpecifierSet = false
+            self.virtualSet = False
+            self.overrideSpecifierSet = False
             self.name = None # IdentifierContext
             self.arguments = None # ParameterListContext
             self.body = None # BlockContext
@@ -3516,11 +3516,11 @@ class SolidityParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.visibilitySet = false
-            self.mutabilitySet = false
-            self.virtualSet = false
-            self.overrideSpecifierSet = false
-            self.hasParameters = false
+            self.visibilitySet = False
+            self.mutabilitySet = False
+            self.virtualSet = False
+            self.overrideSpecifierSet = False
+            self.hasParameters = False
             self.kind = None # Token
             self.returnParameters = None # ParameterListContext
             self.body = None # BlockContext
@@ -3744,10 +3744,10 @@ class SolidityParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.visibilitySet = false
-            self.mutabilitySet = false
-            self.virtualSet = false
-            self.overrideSpecifierSet = false
+            self.visibilitySet = False
+            self.mutabilitySet = False
+            self.virtualSet = False
+            self.overrideSpecifierSet = False
             self.kind = None # Token
             self.body = None # BlockContext
 
@@ -4209,7 +4209,7 @@ class SolidityParser ( Parser ):
             self.state = 608
             self.match(SolidityParser.Is)
             self.state = 609
-            self.elementaryTypeName(true)
+            self.elementaryTypeName(True)
             self.state = 610
             self.match(SolidityParser.Semicolon)
         except RecognitionException as re:
@@ -4227,9 +4227,9 @@ class SolidityParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.constantnessSet = false
-            self.visibilitySet = false
-            self.overrideSpecifierSet = false
+            self.constantnessSet = False
+            self.visibilitySet = False
+            self.overrideSpecifierSet = False
             self.type_ = None # TypeNameContext
             self.name = None # IdentifierContext
             self.initialValue = None # ExpressionContext
@@ -5191,7 +5191,7 @@ class SolidityParser ( Parser ):
             la_ = self._interp.adaptivePredict(self._input,74,self._ctx)
             if la_ == 1:
                 self.state = 733
-                self.elementaryTypeName(true)
+                self.elementaryTypeName(True)
                 pass
 
             elif la_ == 2:
@@ -5399,8 +5399,8 @@ class SolidityParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.visibilitySet = false
-            self.mutabilitySet = false
+            self.visibilitySet = False
+            self.mutabilitySet = False
             self.arguments = None # ParameterListContext
             self.returnParameters = None # ParameterListContext
 
@@ -6603,7 +6603,7 @@ class SolidityParser ( Parser ):
 
                 elif la_ == 4:
                     self.state = 815
-                    self.elementaryTypeName(false)
+                    self.elementaryTypeName(False)
                     pass
 
 
@@ -9622,7 +9622,7 @@ class SolidityParser ( Parser ):
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1170
-                self.elementaryTypeName(false)
+                self.elementaryTypeName(False)
                 pass
 
             elif la_ == 2:

@@ -6,6 +6,22 @@ if __name__ is not None and "." in __name__:
 else:
     from dist.YulParser import YulParser
 
+import re
+def extract_function_names(string):
+    pattern = r'\b\w+\('  # Matches word characters followed by an opening parenthesis
+
+    # Find all matches of the pattern in the string
+    matches = re.findall(pattern, string)
+
+    # Extract the function names by removing the opening parenthesis
+    function_names = [match.rstrip('(') for match in matches]
+
+    return function_names
+
+
+# TODO: Fix the constructor with functions inside
+# TODO: Fix assembly operations
+# TODO: Fix chcecking functions calls in assignments
 
 class YulToSolidityTranspiler(YulVisitor):
     def __init__(self):
@@ -13,8 +29,9 @@ class YulToSolidityTranspiler(YulVisitor):
         self.indentation = '    '
         self.output = []
         self.is_assembly = False
+        self.was_assembly = False
+        self.is_runtime = False
         self.wholeSentence = ""
-        self.overthefunctions = False
 
     def add_line(self, line: str):
         self.output.append(self.indentation * self.indentation_level + line)
@@ -25,64 +42,118 @@ class YulToSolidityTranspiler(YulVisitor):
         return self.visitChildren(ctx)
 
     def visitObject(self, ctx: YulParser.ObjectContext):
-        self.add_line("contract " + ctx.StringLiteral().getText().replace("\"", ""))
-        print(ctx.getText())
+        for child in ctx.children:
+            print(type(child))
+        if ctx.StringLiteral().getText() == '"runtime"':
+            self.add_line("function " + ctx.StringLiteral().getText().replace("\"", "") + "() public")
+            self.is_runtime = True
+        else:
+            self.add_line("contract " + ctx.StringLiteral().getText().replace("\"", ""))
+            self.add_line("{")
+            self.indentation_level += 1
+            isObject = lambda x: type(x) == YulParser.ObjectContext
+            isNotObject = lambda x: not type(x) == YulParser.ObjectContext
+            children = list(ctx.getChildren(isNotObject))
+            for child in children:
+                self.visit(child)
+            self.indentation_level -= 1
+            self.add_line("}")
+            children = list(ctx.getChildren(isObject))
+            for child in children:
+                self.visit(child)
+            return
+        # self.add_line("contract " + ctx.StringLiteral().getText().replace("\"", ""))
         return self.visitChildren(ctx)
 
     def visitCode(self, ctx: YulParser.CodeContext):
-        # self.add_line("{")
-        # self.indentation_level += 1
-        # self.add_line("constructor()")
-        # self.visitChildren(ctx)
-        # self.indentation_level -= 1
-        # self.add_line("}")
+        if not ctx.parentCtx.getText().startswith("object\"runtime\""):
+            self.add_line(" constructor() public")
+
         return self.visitChildren(ctx)
 
     def visitData(self, ctx: YulParser.DataContext):
         return self.visitChildren(ctx)
 
     def visitStatement(self, ctx: YulParser.StatementContext):
-        # if any(operation in ctx.getText() for operation in assembly_operations):
-        operation = ctx.getText().split("(")[0].split(":=")
-        if len(operation) > 1:
-            operation = operation[1]
-        else:
-            operation = operation[0]
-        # print(operation)
-        # if operation in assembly_operations:
-            # print(operation)
-        # if type(ctx.parentCtx.parentCtx) != YulParser.FunctionDefinitionContext and self.overthefunctions is False:
-        #     self.overthefunctions = True
-        #     self.output.append(self.indentation * self.indentation_level + "function startup(){")
-        #     self.indentation_level += 1
-            # print(ctx.getText())
-        # if type(ctx.parentCtx.parentCtx) == YulParser.FunctionDefinitionContext and self.overthefunctions is True:
-        #     self.indentation_level -= 1
-        #     self.output.append(self.indentation * self.indentation_level + "}")
-        #     self.overthefunctions = False
+        if type(ctx.children[0]) == YulParser.IfStatementContext:
+            operation = extract_function_names(ctx.getText())
+        elif type(ctx.children[0]) == YulParser.ForStatementContext:
+            operation = ""
+            # Its beacuse for statement is changed for solidity
+            operation = ""
+        elif type(ctx.children[0]) == YulParser.FunctionDefinitionContext:
+            # It cant be that in function definition is function in assembly
 
-        if operation not in assembly_operations:
-            self.visitChildren(ctx)
+            operation = ""
+        elif type(ctx.children[0]) == YulParser.ExpressionContext:
+            operation = extract_function_names(ctx.getText())
+        elif type(ctx.children[0]) == YulParser.SwitchStatementContext:
+            # operation = extract_function_names(ctx.switchStatement().expression().getText())
+            operation = ""
+        else:
+            operation = ctx.getText().split("(")[0].split(":=")
+            if len(operation) > 1:
+                operation = extract_function_names(ctx.getText().split(":=")[1])
+            else:
+                operation = operation[0]
+
+        if not any(function_name in list(set(assembly_operations))# - set(operators)-set(update_operations))
+               for function_name in operation):
+            return self.visitChildren(ctx)
+
         elif type(ctx.children[0]) != YulParser.FunctionDefinitionContext and \
-                type(ctx.children[0]) != YulParser.IfStatementContext and \
-                type(ctx.children[0]) != YulParser.ForStatementContext \
-                and type(ctx.children[0]) != YulParser.FunctionCallContext \
-                and type(ctx.children[0]) != YulParser.SwitchStatementContext:
+                type(ctx.children[0]) != YulParser.ForStatementContext and not self.was_assembly:
             self.add_line(f"assembly {{")
             self.indentation_level += 1
             self.is_assembly = True
             self.visitChildren(ctx)
             self.is_assembly = False
+            self.was_assembly = False
             self.indentation_level -= 1
             self.add_line("}")
-        # if ctx.parentCtx.parentCtx.children[-1].children[-2] == ctx and self.overthefunctions is True:
-        #     self.indentation_level -= 1
-        #     self.output.append(self.indentation * self.indentation_level + "}")
-        #     self.overthefunctions = False
-        return
-        # return self.visitChildren(ctx)
+            return
+
+        return self.visitChildren(ctx)
 
     def visitBlock(self, ctx: YulParser.BlockContext):
+
+        # if self.is_runtime:
+        #     self.visitChildren(ctx)
+        #     self.output.pop()
+        #     return
+        if ctx.parentCtx.parentCtx.getText().startswith("object\"runtime\""):
+            isFunction = lambda x: isinstance(x, YulParser.StatementContext) and x.functionDefinition() is not None
+            isNotFunction = lambda x: isinstance(x, YulParser.StatementContext) and x.functionDefinition() is None
+            children = list(ctx.getChildren(isNotFunction))
+            self.add_line("{")
+            self.indentation_level += 1
+            for child in children:
+                self.visit(child)
+
+            self.indentation_level -= 1
+            self.add_line("}")
+            children = list(ctx.getChildren(isFunction))
+            for child in children:
+                self.visit(child)
+
+            return
+        elif ctx.parentCtx.parentCtx.getText().startswith("object"):
+            isFunction = lambda x: isinstance(x, YulParser.StatementContext) and x.functionDefinition() is not None
+            isNotFunction = lambda x: isinstance(x, YulParser.StatementContext) and x.functionDefinition() is None
+            children = list(ctx.getChildren(isNotFunction))
+            self.add_line("{")
+            self.indentation_level += 1
+            for child in children:
+                self.visit(child)
+
+            self.indentation_level -= 1
+            self.add_line("}")
+            children = list(ctx.getChildren(isFunction))
+            for child in children:
+                self.visit(child)
+
+            return
+
         self.add_line("{")
         self.indentation_level += 1
         self.visitChildren(ctx)
@@ -106,26 +177,22 @@ class YulToSolidityTranspiler(YulVisitor):
             if len(ctx.expression().getText().split("(")) > 1:
                 if ctx.expression().getText().split("(")[0] not in assembly_operations and \
                         "function"+ctx.expression().getText().split("(")[0] not in self.wholeSentence:
-                    self.add_line(f"//string {ctx.variables[0].getText()} {equal} "
+                    self.add_line(f"//uint256 {ctx.variables[0].getText()} {equal} "
                                   f"{ctx.expression().getText()}{semicolon}: "
                                   f"function {ctx.expression().getText()} not implemented")
-                    self.add_line(f"string {ctx.variables[0].getText()} {equal} \"ManuallyAddValue\"{semicolon}")
+                    self.add_line(f"uint256 {ctx.variables[0].getText()} {equal} \"ManuallyAddValue\"{semicolon}")
                 else:
-                    self.add_line(f"string {ctx.variables[0].getText()} {equal} "
+                    self.add_line(f"uint256 {ctx.variables[0].getText()} {equal} "
                                   f"{ctx.expression().getText()}{semicolon}")
             else:
-                self.add_line(f"string {ctx.variables[0].getText()} {equal} {ctx.expression().getText()}{semicolon}")
+                self.add_line(f"uint256 {ctx.variables[0].getText()} {equal} {ctx.expression().getText()}{semicolon}")
         return self.visitChildren(ctx)
 
     def visitAssignment(self, ctx: YulParser.AssignmentContext):
+        equal = "="
+        semicolon = ";"
         if self.is_assembly:
-            equal = ":="
-            semicolon = ""
-        else:
-            equal = "="
-            semicolon = ";"
-        if self.is_assembly:
-            self.add_line(f"{ctx.expression().getText()}")
+            self.add_line(f"{ctx.getText()}")
 
         elif ctx.expression().getText()[:3] in update_operations.keys():
             operation = ctx.expression().getText().replace("(", ",").replace(")", "").split(",")
@@ -151,15 +218,11 @@ class YulToSolidityTranspiler(YulVisitor):
                 or (type(ctx.parentCtx) == YulParser.VariableDeclarationContext and
                     type(ctx.children[0]) == YulParser.FunctionCallContext):
             return
-        # print(ctx.getText())
-        # print(ctx.parentCtx.getText())
-        # print(type(ctx.parentCtx))
-        # print(type(ctx.children[0]))
-        # print()
         return self.visitChildren(ctx)
 
     def visitIfStatement(self, ctx: YulParser.IfStatementContext):
         if self.is_assembly:
+            self.was_assembly = True
             self.add_line(f"if {ctx.expression().getText()}")
 
         else:
@@ -167,6 +230,7 @@ class YulToSolidityTranspiler(YulVisitor):
         return self.visitBlock(ctx.block())
 
     def visitForStatement(self, ctx: YulParser.ForStatementContext):
+
         loop_val = ctx.init.getText().split(":=")[1].replace("}", "")
         loop_bounds = ctx.cond.getText().replace("lt(", "").replace(")", "").split(",")
         condition = ctx.cond.getText().split("(")[0]
@@ -209,14 +273,14 @@ class YulToSolidityTranspiler(YulVisitor):
             params = ""
 
         params = params.replace(":u256", "")
-        type_arg = "string"
+        type_arg = "uint256"
         if returns != "":
             returns = returns.replace(":u256", "")
             returns = returns.split(",")
             if len(returns) > 1:
-                returns = "string " + ",string ".join(returns)
+                returns = "uint256 " + ",uint256 ".join(returns)
             else:
-                returns = "string " + returns[0]
+                returns = "uint256 " + returns[0]
 
             if params != "":
                 params = f"{type_arg} " + params.replace(",", f", {type_arg} ")
@@ -229,7 +293,10 @@ class YulToSolidityTranspiler(YulVisitor):
         self.visit(ctx.block())
 
     def visitFunctionCall(self, ctx: YulParser.FunctionCallContext):
-        if ctx.getText()[:3] in update_operations.keys():
+        if ctx.getText()[:3] in update_operations.keys() or (ctx.Identifier().getText() in assembly_operations and self.is_assembly
+        and type(ctx.parentCtx.parentCtx) is not YulParser.StatementContext)\
+                or ("function" + ctx.Identifier().getText() in self.wholeSentence
+        and type(ctx.parentCtx.parentCtx) is not YulParser.StatementContext):
             pass
         elif type(ctx.parentCtx.parentCtx) is not YulParser.SwitchStatementContext: # I don't know why I did that
             expressions = []
@@ -237,7 +304,6 @@ class YulToSolidityTranspiler(YulVisitor):
                 expressions.append(expression.getText())
 
             expression = ",".join(expressions)
-            # print(("function" + ctx.Identifier().getText() in self.wholeSentence))
             if ("function" + ctx.Identifier().getText() not in self.wholeSentence) and \
                     ctx.Identifier().getText() not in assembly_operations and ctx.Identifier().getText() != "return":
                 self.add_line(f"//{ctx.Identifier().getText()}({expression}) function {ctx.Identifier()} not declared")

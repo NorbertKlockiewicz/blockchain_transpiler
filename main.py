@@ -14,7 +14,7 @@ from YulToVyperTranspiler import YulToVyperTranspiler
 
 # Define the input code to be parsed
 solidity_script = open("./scripts/solidity_1.sol", "r").read()
-yul_script = open("scripts/yul/yul_2.yul", "r").read()
+yul_script = open("scripts/yul/yul_4.yul", "r").read()
 vyper_script = open("./scripts/vyper/Factory.vy", "r").read()
 
 def parse_solidity(code):

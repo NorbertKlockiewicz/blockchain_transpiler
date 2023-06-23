@@ -5,7 +5,7 @@ object "Token" {
 
         // Deploy the contract
         datacopy(0, dataoffset("runtime"), datasize("runtime"))
-        return(0, datasize("runtime"))1
+        return(0, datasize("runtime"))
     }
     object "runtime" {
         code {

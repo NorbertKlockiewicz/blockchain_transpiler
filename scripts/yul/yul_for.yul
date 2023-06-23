@@ -15,7 +15,7 @@ function fibonacci(n: u256, k: u256, j) -> result: u256 {
         fib := add(fib, prevFib)
         prevFib := temp
     }
-
+    result := fib()
     result := fib
 }
 

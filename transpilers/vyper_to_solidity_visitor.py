@@ -159,11 +159,6 @@ class VyperToSolidityVisitor(VyperParserVisitor):
 
         self.output.write(')')
 
-        if ctx.NAME().getText()[0] == '_':
-            self.output.write(' private')
-        else:
-            self.output.write(' public')
-
         if isinstance(ctx.parentCtx, VyperParser.InterfacefunctionContext):
             self.output.write(' external')
             self.output.write(' ' + ctx.parentCtx.mutability().getText())

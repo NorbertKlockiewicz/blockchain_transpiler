@@ -1,4 +1,4 @@
-/**
+/*
 Storage Layout:
 slot 0 = campaign ID counter
 slot keccak256(campaign ID) = owner address

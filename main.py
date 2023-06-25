@@ -14,8 +14,8 @@ from YulToVyperTranspiler import YulToVyperTranspiler
 
 # Define the input code to be parsed
 solidity_script = open("./scripts/solidity_1.sol", "r").read()
-yul_script = open("scripts/yul/yul_4.yul", "r").read()
-vyper_script = open("./scripts/vyper/Factory.vy", "r").read()
+yul_script = open("scripts/yul/yul_for.yul", "r").read()
+vyper_script = open("./scripts/vyper/blind_auction.vy", "r").read()
 
 def parse_solidity(code):
     input_stream = InputStream(code)
@@ -78,6 +78,6 @@ def parse_vyper(code):
         visitor.visitModule(parse_tree)
 
 
-parse_yul_to_vyper(yul_script)
+# parse_yul_to_vyper(yul_script)
 parse_yul_to_solidity(yul_script)
 # parse_vyper(vyper_script)

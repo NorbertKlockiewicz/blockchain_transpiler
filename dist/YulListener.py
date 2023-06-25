@@ -1,6 +1,6 @@
-# Generated from Yul.g4 by ANTLR 4.12.0
+# Generated from Yul.g4 by ANTLR 4.13.0
 from antlr4 import *
-if __name__ is not None and "." in __name__:
+if "." in __name__:
     from .YulParser import YulParser
 else:
     from YulParser import YulParser
@@ -185,6 +185,15 @@ class YulListener(ParseTreeListener):
 
     # Exit a parse tree produced by YulParser#typeName.
     def exitTypeName(self, ctx:YulParser.TypeNameContext):
+        pass
+
+
+    # Enter a parse tree produced by YulParser#comment.
+    def enterComment(self, ctx:YulParser.CommentContext):
+        pass
+
+    # Exit a parse tree produced by YulParser#comment.
+    def exitComment(self, ctx:YulParser.CommentContext):
         pass
 
 

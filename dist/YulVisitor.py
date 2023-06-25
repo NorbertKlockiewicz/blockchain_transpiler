@@ -1,6 +1,6 @@
-# Generated from Yul.g4 by ANTLR 4.12.0
+# Generated from Yul.g4 by ANTLR 4.13.0
 from antlr4 import *
-if __name__ is not None and "." in __name__:
+if "." in __name__:
     from .YulParser import YulParser
 else:
     from YulParser import YulParser
@@ -106,6 +106,11 @@ class YulVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by YulParser#typeName.
     def visitTypeName(self, ctx:YulParser.TypeNameContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by YulParser#comment.
+    def visitComment(self, ctx:YulParser.CommentContext):
         return self.visitChildren(ctx)
 
 

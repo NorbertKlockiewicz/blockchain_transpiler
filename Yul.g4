@@ -2,7 +2,7 @@ grammar Yul;
 
 sourceUnit: (object | statement)* EOF;
 
-object: Object StringLiteral LBrace code ( object | data )* RBrace;
+object: Object StringLiteral LBrace comment* code ( object | comment | data )* RBrace;
 code: Code block;
 data: Data StringLiteral ( HexStringLiteral | StringLiteral );
 
@@ -17,7 +17,8 @@ statement: block
         | Break
         | Continue
         | functionDefinition
-        | expression;
+        | expression
+        | comment;
 
 block: LBrace statement* RBrace;
 
@@ -55,6 +56,7 @@ typedIdentifierList: Identifier ( ':' typeName )? ( ',' Identifier ( ':' typeNam
 identifierList: Identifier ( ',' Identifier)*;
 
 typeName: Identifier;
+comment: COMMENT | LINE_COMMENT;
 Colon: ':';
 Object: 'object';
 Code: 'code';
@@ -86,9 +88,9 @@ StringLiteral: '"' (~["\r\n])*  '"';
 HexNumber: '0x' [0-9a-fA-F]+;
 HexStringLiteral: 'hex"' ~["\r\n]* '"';
 LINE_COMMENT
-  : '//' ~[\r\n]* -> channel(HIDDEN) ;
+  : '//' ~[\r\n]*;
 
 COMMENT
-  : '/*' .*? '*/' -> channel(HIDDEN) ;
+  : '/*' .*? '*/';
 
 WS: [ \t\r\n]+ -> skip;

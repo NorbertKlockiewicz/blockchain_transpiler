@@ -4,7 +4,7 @@ from antlr4 import *
 import io
 from dist.SolidityLexer import SolidityLexer
 
-class SolidityToVyperTranspiler(SolidityParserVisitor):
+class SolidityToVyperVisitor(SolidityParserVisitor):
     def __init__(self):
         self.indentation_level = 0
         self.indentation = '    '

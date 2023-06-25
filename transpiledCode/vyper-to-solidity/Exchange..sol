@@ -5,8 +5,6 @@ interface Factory {
 pragma solidity >=0.4.0 <0.9.0;
 
 contract FromVyper {
-// TODO: FIX IMPORT fromvyper.interfacesimportERC20
-
     ERC20 public token;
     Factory factory;
     // ##### VYPER DECORATORS #####

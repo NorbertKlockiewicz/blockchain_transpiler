@@ -6,10 +6,6 @@ contract FromVyper {
     // @dev Implementation of ERC-20 token standard.
     // @author Takayuki Jimba (@yudetamago)
     // https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md
-// TODO: FIX IMPORT fromvyper.interfacesimportERC20
-
-// TODO: FIX IMPORT fromvyper.interfacesimportERC20Detailed
-
     // TODO: FIX INTERFACE IMPLEMENTATION implements: ERC20
     // TODO: FIX INTERFACE IMPLEMENTATION implements: ERC20Detailed
     event Transfer(address indexed sender, address indexed receiver, uint256 value);

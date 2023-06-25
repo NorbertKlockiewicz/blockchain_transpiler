@@ -7,8 +7,6 @@ interface Exchange {
 pragma solidity >=0.4.0 <0.9.0;
 
 contract FromVyper {
-// TODO: FIX IMPORT fromvyper.interfacesimportERC20
-
     bytes32 public exchange_codehash;
     // Maps token addresses to exchange addresses
     mapping (ERC20 => Exchange) public exchanges;

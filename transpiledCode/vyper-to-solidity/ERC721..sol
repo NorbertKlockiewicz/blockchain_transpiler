@@ -9,10 +9,6 @@ contract FromVyper {
     // @dev Implementation of ERC-721 non-fungible token standard.
     // @author Ryuya Nakamura (@nrryuya)
     // Modified from: https://github.com/vyperlang/vyper/blob/de74722bf2d8718cca46902be165f9fe0e3641dd/examples/tokens/ERC721.vy
-// TODO: FIX IMPORT fromvyper.interfacesimportERC165
-
-// TODO: FIX IMPORT fromvyper.interfacesimportERC721
-
     // TODO: FIX INTERFACE IMPLEMENTATION implements: ERC721
     // TODO: FIX INTERFACE IMPLEMENTATION implements: ERC165
     // Interface for the contract called by safeTransferFrom()

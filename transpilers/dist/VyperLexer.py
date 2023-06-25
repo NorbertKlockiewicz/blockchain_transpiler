@@ -1,6 +1,5 @@
 # Generated from VyperLexer.g4 by ANTLR 4.13.0
 from antlr4 import *
-from io import StringIO
 import sys
 if sys.version_info[1] > 5:
     from typing import TextIO
@@ -9,7 +8,7 @@ else:
 
 
 from antlr_denter.DenterHelper import DenterHelper
-from dist.VyperParser import VyperParser
+from transpilers.dist.VyperParser import VyperParser
 
 
 def serializedATN():

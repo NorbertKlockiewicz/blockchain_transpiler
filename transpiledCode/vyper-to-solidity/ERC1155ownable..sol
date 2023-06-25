@@ -16,8 +16,6 @@ contract FromVyper {
     */
 
     //############## imports ###############
-// TODO: FIX IMPORT fromvyper.interfacesimportERC165
-
     //############## variables ###############
     // maximum items in a batch call. Set to 128, to be determined what the practical limits are.
     uint256 constant BATCH_SIZE = 128;
@@ -524,7 +522,9 @@ contract FromVyper {
     {
         if (dynamicUri) {
             return concat(baseuri, uint2str(id), '.json');
-        }
+        }        else
+        return baseuri;
+
     }
 
 

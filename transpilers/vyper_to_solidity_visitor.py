@@ -1,14 +1,12 @@
 from antlr4.tree.Tree import SyntaxTree, TerminalNodeImpl
 
-from dist.VyperParser import VyperParser
-from dist.VyperParserVisitor import VyperParserVisitor
-from dist.SolidityParser import SolidityParser
-import io
+from .dist.VyperParser import VyperParser
+from .dist.VyperParserVisitor import VyperParserVisitor
 
 st = SyntaxTree()
 
 
-class VyperToSolidityTranspiler(VyperParserVisitor):
+class VyperToSolidityVisitor(VyperParserVisitor):
     def __init__(self, fp):
         self.indentation_level = 0
         self.indentation = '    '
@@ -127,6 +125,16 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
 
             if idx < len(children) - 1:
                 self.output.write(', ')
+
+    def visitBody(self):
+        isFunction = lambda x: x() is not None
+        isNotFunction = lambda x: not isinstance(x, VyperParser.FunctionContext)
+
+        children = list(self.ctx.getChildren(isNotFunction))
+
+        for child in children:
+            self.visit(child)
+
 
     def visitReturns_(self, ctx: VyperParser.Returns_Context):
         self.output.write(' returns (')
@@ -579,6 +587,10 @@ class VyperToSolidityTranspiler(VyperParserVisitor):
         for idx, another_condition in enumerate(ctx.ELIF(), start=1):
             self.output.write(self.get_indentation() + 'else if ')
             self.visit(ctx.getChild(idx * 2 + 1))
+
+        if ctx.ELSE() is not None:
+            self.output.write(self.get_indentation() + 'else')
+            self.visit(ctx.defaultexec())
 
     def visitLoopvariable(self, ctx: VyperParser.LoopvariableContext):
         return super().visitLoopvariable(ctx)

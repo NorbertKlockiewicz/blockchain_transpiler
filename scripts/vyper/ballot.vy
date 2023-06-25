@@ -24,6 +24,10 @@ voterCount: public(int128)
 chairperson: public(address)
 int128Proposals: public(int128)
 
+enum E:
+    A
+    B
+    C
 
 @view
 @internal

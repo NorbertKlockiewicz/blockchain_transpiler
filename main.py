@@ -1,5 +1,3 @@
-from io import StringIO
-
 from antlr4 import *
 
 from VyperToSolidityTranspiler import VyperToSolidityTranspiler
@@ -9,7 +7,7 @@ from dist.YulLexer import YulLexer
 from dist.YulParser import YulParser
 from dist.VyperLexer import VyperLexer
 from dist.VyperParser import VyperParser
-from YulToSolidityTranspiler import YulToSolidityTranspiler
+from transpilers.yul_to_solidity_visitor import YulToSolidityVisitor
 from YulToVyperTranspiler import YulToVyperTranspiler
 
 # Define the input code to be parsed
@@ -40,7 +38,7 @@ def parse_yul_to_solidity(code):
     parser = YulParser(token_stream)
 
     parse_tree = parser.sourceUnit()
-    visitor = YulToSolidityTranspiler()
+    visitor = YulToSolidityVisitor()
     visitor.visitSourceUnit(parse_tree)
     with open("./transpiledCode/YulToSolidity.sol", "w") as f:
         f.write(visitor.get_solidity_code())

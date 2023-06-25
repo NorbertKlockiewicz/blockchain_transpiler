@@ -1,10 +1,6 @@
-from dist.YulVisitor import YulVisitor
-from yul_operators import operators, update_operations, assembly_operations
-
-if __name__ is not None and "." in __name__:
-    from dist.YulParser import YulParser
-else:
-    from dist.YulParser import YulParser
+from .dist.YulParser import YulParser
+from .dist.YulVisitor import YulVisitor
+from .yul_operators import operators, update_operations, assembly_operations
 
 import re
 
@@ -19,8 +15,7 @@ def extract_function_names(string):
     return function_names
 
 
-# TODO: Fix assembly operations
-class YulToSolidityTranspiler(YulVisitor):
+class YulToSolidityVisitor(YulVisitor):
     def __init__(self):
         self.indentation_level = 0
         self.indentation = '    '

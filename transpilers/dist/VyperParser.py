@@ -764,14 +764,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_module
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterModule" ):
-                listener.enterModule(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitModule" ):
-                listener.exitModule(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitModule" ):
                 return visitor.visitModule(self)
@@ -894,14 +886,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_importname
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterImportname" ):
-                listener.enterImportname(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitImportname" ):
-                listener.exitImportname(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitImportname" ):
                 return visitor.visitImportname(self)
@@ -975,14 +959,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_import_
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterImport_" ):
-                listener.enterImport_(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitImport_" ):
-                listener.exitImport_(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitImport_" ):
@@ -1105,14 +1081,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_importpath
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterImportpath" ):
-                listener.enterImportpath(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitImportpath" ):
-                listener.exitImportpath(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitImportpath" ):
                 return visitor.visitImportpath(self)
@@ -1167,14 +1135,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_importalias
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterImportalias" ):
-                listener.enterImportalias(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitImportalias" ):
-                listener.exitImportalias(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitImportalias" ):
@@ -1233,14 +1193,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_importlist
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterImportlist" ):
-                listener.enterImportlist(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitImportlist" ):
-                listener.exitImportlist(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitImportlist" ):
@@ -1329,14 +1281,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_importfrom
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterImportfrom" ):
-                listener.enterImportfrom(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitImportfrom" ):
-                listener.exitImportfrom(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitImportfrom" ):
                 return visitor.visitImportfrom(self)
@@ -1417,14 +1361,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_implements
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterImplements" ):
-                listener.enterImplements(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitImplements" ):
-                listener.exitImplements(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitImplements" ):
                 return visitor.visitImplements(self)
@@ -1493,14 +1429,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_constantdef
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterConstantdef" ):
-                listener.enterConstantdef(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitConstantdef" ):
-                listener.exitConstantdef(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitConstantdef" ):
@@ -1582,14 +1510,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_immutabledef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterImmutabledef" ):
-                listener.enterImmutabledef(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitImmutabledef" ):
-                listener.exitImmutabledef(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitImmutabledef" ):
                 return visitor.visitImmutabledef(self)
@@ -1654,14 +1574,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_variable
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterVariable" ):
-                listener.enterVariable(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitVariable" ):
-                listener.exitVariable(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitVariable" ):
                 return visitor.visitVariable(self)
@@ -1721,14 +1633,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_variablewithgetter
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterVariablewithgetter" ):
-                listener.enterVariablewithgetter(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitVariablewithgetter" ):
-                listener.exitVariablewithgetter(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitVariablewithgetter" ):
                 return visitor.visitVariablewithgetter(self)
@@ -1785,14 +1689,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_variabledef
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterVariabledef" ):
-                listener.enterVariabledef(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitVariabledef" ):
-                listener.exitVariabledef(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitVariabledef" ):
@@ -1869,14 +1765,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_decorator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDecorator" ):
-                listener.enterDecorator(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDecorator" ):
-                listener.exitDecorator(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitDecorator" ):
                 return visitor.visitDecorator(self)
@@ -1943,14 +1831,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_decorators
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDecorators" ):
-                listener.enterDecorators(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDecorators" ):
-                listener.exitDecorators(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitDecorators" ):
                 return visitor.visitDecorators(self)
@@ -2014,14 +1894,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_parameter
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterParameter" ):
-                listener.enterParameter(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitParameter" ):
-                listener.exitParameter(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitParameter" ):
@@ -2098,14 +1970,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_parameters
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterParameters" ):
-                listener.enterParameters(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitParameters" ):
-                listener.exitParameters(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitParameters" ):
@@ -2193,14 +2057,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_returns_
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterReturns_" ):
-                listener.enterReturns_(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitReturns_" ):
-                listener.exitReturns_(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitReturns_" ):
                 return visitor.visitReturns_(self)
@@ -2258,14 +2114,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_functionsig
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFunctionsig" ):
-                listener.enterFunctionsig(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFunctionsig" ):
-                listener.exitFunctionsig(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitFunctionsig" ):
@@ -2341,14 +2189,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_functiondef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFunctiondef" ):
-                listener.enterFunctiondef(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFunctiondef" ):
-                listener.exitFunctiondef(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitFunctiondef" ):
                 return visitor.visitFunctiondef(self)
@@ -2423,14 +2263,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_body
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBody" ):
-                listener.enterBody(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBody" ):
-                listener.exitBody(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitBody" ):
@@ -2525,14 +2357,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_eventmember
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEventmember" ):
-                listener.enterEventmember(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEventmember" ):
-                listener.exitEventmember(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitEventmember" ):
                 return visitor.visitEventmember(self)
@@ -2591,14 +2415,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_indexedeventarg
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterIndexedeventarg" ):
-                listener.enterIndexedeventarg(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitIndexedeventarg" ):
-                listener.exitIndexedeventarg(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitIndexedeventarg" ):
@@ -2682,14 +2498,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_eventbody
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEventbody" ):
-                listener.enterEventbody(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEventbody" ):
-                listener.exitEventbody(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitEventbody" ):
@@ -2799,14 +2607,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_eventdef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEventdef" ):
-                listener.enterEventdef(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEventdef" ):
-                listener.exitEventdef(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitEventdef" ):
                 return visitor.visitEventdef(self)
@@ -2863,14 +2663,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_enummember
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEnummember" ):
-                listener.enterEnummember(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEnummember" ):
-                listener.exitEnummember(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitEnummember" ):
@@ -2937,14 +2729,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_enumbody
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEnumbody" ):
-                listener.enterEnumbody(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEnumbody" ):
-                listener.exitEnumbody(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitEnumbody" ):
@@ -3046,14 +2830,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_enumdef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEnumdef" ):
-                listener.enterEnumdef(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEnumdef" ):
-                listener.exitEnumdef(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitEnumdef" ):
                 return visitor.visitEnumdef(self)
@@ -3110,14 +2886,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_arraydef
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterArraydef" ):
-                listener.enterArraydef(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitArraydef" ):
-                listener.exitArraydef(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitArraydef" ):
@@ -3206,14 +2974,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_arraydeftail
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterArraydeftail" ):
-                listener.enterArraydeftail(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitArraydeftail" ):
-                listener.exitArraydeftail(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitArraydeftail" ):
                 return visitor.visitArraydeftail(self)
@@ -3282,14 +3042,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_dynarraydef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDynarraydef" ):
-                listener.enterDynarraydef(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDynarraydef" ):
-                listener.exitDynarraydef(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitDynarraydef" ):
                 return visitor.visitDynarraydef(self)
@@ -3352,14 +3104,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_dynarraydefinner
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDynarraydefinner" ):
-                listener.enterDynarraydefinner(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDynarraydefinner" ):
-                listener.exitDynarraydefinner(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitDynarraydefinner" ):
@@ -3434,14 +3178,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_tupledef
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTupledef" ):
-                listener.enterTupledef(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTupledef" ):
-                listener.exitTupledef(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitTupledef" ):
@@ -3519,14 +3255,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_tupledefinner
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTupledefinner" ):
-                listener.enterTupledefinner(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTupledefinner" ):
-                listener.exitTupledefinner(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitTupledefinner" ):
@@ -3612,14 +3340,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_mapdef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterMapdef" ):
-                listener.enterMapdef(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitMapdef" ):
-                listener.exitMapdef(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitMapdef" ):
                 return visitor.visitMapdef(self)
@@ -3697,14 +3417,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_type_
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterType_" ):
-                listener.enterType_(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitType_" ):
-                listener.exitType_(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitType_" ):
                 return visitor.visitType_(self)
@@ -3777,14 +3489,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_structmember
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterStructmember" ):
-                listener.enterStructmember(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitStructmember" ):
-                listener.exitStructmember(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitStructmember" ):
@@ -3864,14 +3568,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_structdef
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterStructdef" ):
-                listener.enterStructdef(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitStructdef" ):
-                listener.exitStructdef(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitStructdef" ):
@@ -3969,14 +3665,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_mutability
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterMutability" ):
-                listener.enterMutability(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitMutability" ):
-                listener.exitMutability(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitMutability" ):
                 return visitor.visitMutability(self)
@@ -4023,14 +3711,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_interfacefunction
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterInterfacefunction" ):
-                listener.enterInterfacefunction(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitInterfacefunction" ):
-                listener.exitInterfacefunction(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitInterfacefunction" ):
@@ -4110,14 +3790,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_interfacedef
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterInterfacedef" ):
-                listener.enterInterfacedef(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitInterfacedef" ):
-                listener.exitInterfacedef(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitInterfacedef" ):
@@ -4271,14 +3943,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterStmt" ):
-                listener.enterStmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitStmt" ):
-                listener.exitStmt(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitStmt" ):
                 return visitor.visitStmt(self)
@@ -4414,14 +4078,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_comment
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterComment" ):
-                listener.enterComment(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitComment" ):
-                listener.exitComment(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitComment" ):
                 return visitor.visitComment(self)
@@ -4460,14 +4116,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_docstring
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDocstring" ):
-                listener.enterDocstring(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDocstring" ):
-                listener.exitDocstring(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitDocstring" ):
@@ -4515,14 +4163,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_declaration
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDeclaration" ):
-                listener.enterDeclaration(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDeclaration" ):
-                listener.exitDeclaration(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitDeclaration" ):
@@ -4589,14 +4229,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_multipleassign
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterMultipleassign" ):
-                listener.enterMultipleassign(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitMultipleassign" ):
-                listener.exitMultipleassign(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitMultipleassign" ):
@@ -4693,14 +4325,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_assign
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAssign" ):
-                listener.enterAssign(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAssign" ):
-                listener.exitAssign(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitAssign" ):
@@ -4802,14 +4426,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_augoperator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAugoperator" ):
-                listener.enterAugoperator(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAugoperator" ):
-                listener.exitAugoperator(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitAugoperator" ):
                 return visitor.visitAugoperator(self)
@@ -4867,14 +4483,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_augassign
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAugassign" ):
-                listener.enterAugassign(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAugassign" ):
-                listener.exitAugassign(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitAugassign" ):
                 return visitor.visitAugassign(self)
@@ -4920,14 +4528,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_passstmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPassstmt" ):
-                listener.enterPassstmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPassstmt" ):
-                listener.exitPassstmt(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitPassstmt" ):
                 return visitor.visitPassstmt(self)
@@ -4967,14 +4567,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_breakstmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBreakstmt" ):
-                listener.enterBreakstmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBreakstmt" ):
-                listener.exitBreakstmt(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitBreakstmt" ):
                 return visitor.visitBreakstmt(self)
@@ -5013,14 +4605,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_continuestmt
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterContinuestmt" ):
-                listener.enterContinuestmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitContinuestmt" ):
-                listener.exitContinuestmt(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitContinuestmt" ):
@@ -5073,14 +4657,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_logstmt
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLogstmt" ):
-                listener.enterLogstmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLogstmt" ):
-                listener.exitLogstmt(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitLogstmt" ):
@@ -5149,14 +4725,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_returnstmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterReturnstmt" ):
-                listener.enterReturnstmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitReturnstmt" ):
-                listener.exitReturnstmt(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitReturnstmt" ):
                 return visitor.visitReturnstmt(self)
@@ -5223,14 +4791,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_raisestmt
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterRaisestmt" ):
-                listener.enterRaisestmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitRaisestmt" ):
-                listener.exitRaisestmt(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitRaisestmt" ):
@@ -5306,14 +4866,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_assertstmt
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAssertstmt" ):
-                listener.enterAssertstmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAssertstmt" ):
-                listener.exitAssertstmt(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitAssertstmt" ):
@@ -5395,14 +4947,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_condexec
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCondexec" ):
-                listener.enterCondexec(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCondexec" ):
-                listener.exitCondexec(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitCondexec" ):
                 return visitor.visitCondexec(self)
@@ -5446,14 +4990,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_defaultexec
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDefaultexec" ):
-                listener.enterDefaultexec(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDefaultexec" ):
-                listener.exitDefaultexec(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitDefaultexec" ):
@@ -5516,14 +5052,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_ifstmt
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterIfstmt" ):
-                listener.enterIfstmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitIfstmt" ):
-                listener.exitIfstmt(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitIfstmt" ):
@@ -5597,14 +5125,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_loopvariable
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLoopvariable" ):
-                listener.enterLoopvariable(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLoopvariable" ):
-                listener.exitLoopvariable(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitLoopvariable" ):
                 return visitor.visitLoopvariable(self)
@@ -5655,14 +5175,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_loopiterator
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLoopiterator" ):
-                listener.enterLoopiterator(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLoopiterator" ):
-                listener.exitLoopiterator(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitLoopiterator" ):
@@ -5721,14 +5233,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_forstmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterForstmt" ):
-                listener.enterForstmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitForstmt" ):
-                listener.exitForstmt(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitForstmt" ):
                 return visitor.visitForstmt(self)
@@ -5782,14 +5286,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_expr
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExpr" ):
-                listener.enterExpr(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExpr" ):
-                listener.exitExpr(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitExpr" ):
@@ -5873,14 +5369,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_variableaccess
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterVariableaccess" ):
-                listener.enterVariableaccess(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitVariableaccess" ):
-                listener.exitVariableaccess(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitVariableaccess" ):
@@ -5967,14 +5455,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_getattr
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterGetattr" ):
-                listener.enterGetattr(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitGetattr" ):
-                listener.exitGetattr(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitGetattr" ):
                 return visitor.visitGetattr(self)
@@ -6022,14 +5502,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_getitem
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterGetitem" ):
-                listener.enterGetitem(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitGetitem" ):
-                listener.exitGetitem(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitGetitem" ):
@@ -6080,14 +5552,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_call
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCall" ):
-                listener.enterCall(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCall" ):
-                listener.exitCall(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitCall" ):
@@ -6141,14 +5605,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_arg
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterArg" ):
-                listener.enterArg(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitArg" ):
-                listener.exitArg(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitArg" ):
                 return visitor.visitArg(self)
@@ -6194,14 +5650,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_kwarg
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterKwarg" ):
-                listener.enterKwarg(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitKwarg" ):
-                listener.exitKwarg(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitKwarg" ):
@@ -6250,14 +5698,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_argument
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterArgument" ):
-                listener.enterArgument(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitArgument" ):
-                listener.exitArgument(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitArgument" ):
@@ -6319,14 +5759,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_arguments
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterArguments" ):
-                listener.enterArguments(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitArguments" ):
-                listener.exitArguments(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitArguments" ):
@@ -6404,14 +5836,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_tuple
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTuple" ):
-                listener.enterTuple(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTuple" ):
-                listener.exitTuple(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitTuple" ):
@@ -6526,14 +5950,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_list
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterList" ):
-                listener.enterList(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitList" ):
-                listener.exitList(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitList" ):
                 return visitor.visitList(self)
@@ -6642,14 +6058,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_dict
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDict" ):
-                listener.enterDict(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDict" ):
-                listener.exitDict(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitDict" ):
                 return visitor.visitDict(self)
@@ -6745,14 +6153,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_operation
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOperation" ):
-                listener.enterOperation(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOperation" ):
-                listener.exitOperation(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitOperation" ):
                 return visitor.visitOperation(self)
@@ -6808,14 +6208,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_boolor
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBoolor" ):
-                listener.enterBoolor(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBoolor" ):
-                listener.exitBoolor(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitBoolor" ):
@@ -6889,14 +6281,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_booland
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBooland" ):
-                listener.enterBooland(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBooland" ):
-                listener.exitBooland(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitBooland" ):
                 return visitor.visitBooland(self)
@@ -6968,14 +6352,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_boolnot
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBoolnot" ):
-                listener.enterBoolnot(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBoolnot" ):
-                listener.exitBoolnot(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitBoolnot" ):
@@ -7059,14 +6435,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_comparator
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterComparator" ):
-                listener.enterComparator(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitComparator" ):
-                listener.exitComparator(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitComparator" ):
@@ -7240,14 +6608,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_bitwiseor
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBitwiseor" ):
-                listener.enterBitwiseor(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBitwiseor" ):
-                listener.exitBitwiseor(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitBitwiseor" ):
                 return visitor.visitBitwiseor(self)
@@ -7320,14 +6680,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_bitwisexor
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBitwisexor" ):
-                listener.enterBitwisexor(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBitwisexor" ):
-                listener.exitBitwisexor(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitBitwisexor" ):
                 return visitor.visitBitwisexor(self)
@@ -7399,14 +6751,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_bitwiseand
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBitwiseand" ):
-                listener.enterBitwiseand(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBitwiseand" ):
-                listener.exitBitwiseand(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitBitwiseand" ):
@@ -7482,14 +6826,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_shift
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterShift" ):
-                listener.enterShift(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitShift" ):
-                listener.exitShift(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitShift" ):
@@ -7585,14 +6921,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_summation
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSummation" ):
-                listener.enterSummation(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSummation" ):
-                listener.exitSummation(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitSummation" ):
@@ -7691,14 +7019,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_product
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterProduct" ):
-                listener.enterProduct(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitProduct" ):
-                listener.exitProduct(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitProduct" ):
@@ -7807,14 +7127,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_unary
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterUnary" ):
-                listener.enterUnary(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitUnary" ):
-                listener.exitUnary(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitUnary" ):
                 return visitor.visitUnary(self)
@@ -7891,14 +7203,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_power
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPower" ):
-                listener.enterPower(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPower" ):
-                listener.exitPower(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitPower" ):
                 return visitor.visitPower(self)
@@ -7973,14 +7277,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_empty
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEmpty" ):
-                listener.enterEmpty(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEmpty" ):
-                listener.exitEmpty(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitEmpty" ):
                 return visitor.visitEmpty(self)
@@ -8053,14 +7349,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_abidecode
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAbidecode" ):
-                listener.enterAbidecode(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAbidecode" ):
-                listener.exitAbidecode(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitAbidecode" ):
                 return visitor.visitAbidecode(self)
@@ -8127,14 +7415,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_specialbuiltins
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSpecialbuiltins" ):
-                listener.enterSpecialbuiltins(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSpecialbuiltins" ):
-                listener.exitSpecialbuiltins(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitSpecialbuiltins" ):
@@ -8214,14 +7494,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_atom
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAtom" ):
-                listener.enterAtom(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAtom" ):
-                listener.exitAtom(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitAtom" ):
@@ -8315,14 +7587,6 @@ class VyperParser ( Parser ):
         def getRuleIndex(self):
             return VyperParser.RULE_number
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNumber" ):
-                listener.enterNumber(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNumber" ):
-                listener.exitNumber(self)
-
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitNumber" ):
                 return visitor.visitNumber(self)
@@ -8375,14 +7639,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_literal
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLiteral" ):
-                listener.enterLiteral(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLiteral" ):
-                listener.exitLiteral(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitLiteral" ):
@@ -8438,14 +7694,6 @@ class VyperParser ( Parser ):
 
         def getRuleIndex(self):
             return VyperParser.RULE_string
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterString" ):
-                listener.enterString(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitString" ):
-                listener.exitString(self)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitString" ):

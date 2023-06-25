@@ -9,8 +9,7 @@ options {
     tokenVocab=VyperLexer;
 }
 
-module: (string
-        | implements
+module: (implements
         | comment
         | docstring
         | import_

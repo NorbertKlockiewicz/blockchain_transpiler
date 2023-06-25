@@ -1,8 +1,8 @@
-from dist.SolidityParserVisitor import SolidityParserVisitor
-from dist.SolidityParser import SolidityParser
+from .dist.SolidityParserVisitor import SolidityParserVisitor
+from .dist.SolidityParser import SolidityParser
 from antlr4 import *
 import io
-from dist.SolidityLexer import SolidityLexer
+from .dist.SolidityLexer import SolidityLexer
 
 class SolidityToVyperVisitor(SolidityParserVisitor):
     def __init__(self):
@@ -12,7 +12,6 @@ class SolidityToVyperVisitor(SolidityParserVisitor):
         self.state_variables = []
 
     def add_line(self, line: str):
-        print('add', line)
         self.output.append(self.indentation * (self.indentation_level - 1) + line)
 
     def visitSourceUnit(self, ctx: SolidityParser.SourceUnitContext):

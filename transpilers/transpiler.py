@@ -10,6 +10,7 @@ from transpilers.dist.YulLexer import YulLexer
 from transpilers.dist.YulParser import YulParser
 from .vyper_to_solidity_visitor import VyperToSolidityVisitor
 from .yul_to_solidity_visitor import YulToSolidityVisitor
+from .solidity_to_vyper_visitor import SolidityToVyperVisitor
 
 
 class Transpiler:
@@ -57,16 +58,18 @@ class Transpiler:
                     output_file = os.path.abspath(output_file)
                     print("Output written to " + output_file)
 
-            # case ["solidity", "vyper"]:
-            #     output_file = os.path.splitext(os.path.basename(self._input_file))[0] + ".vy"
-            #
-            #     with open(output_file, "w") as f:
-            #         parse_tree = self._parse_solidity()
-            #
-            #         visitor = SolidityToVyperVisitor(f)
-            #         visitor.visitSourceUnit(parse_tree)
-            #         output_file = os.path.abspath(output_file)
-            #         print("Output written to " + output_file)
+            case ["solidity", "vyper"]:
+                output_file = os.path.splitext(os.path.basename(self._input_file))[0] + ".vy"
+
+                with open(output_file, "w") as f:
+                    parse_tree = self._parse_solidity()
+
+                    visitor = SolidityToVyperVisitor()
+                    visitor.visitSourceUnit(parse_tree)
+
+                    f.write(visitor.get_vyper_code())
+                    output_file = os.path.abspath(output_file)
+                    print("Output written to " + output_file)
 
             case ["yul", "solidity"]:
                 output_file = os.path.splitext(os.path.basename(self._input_file))[0] + ".sol"
